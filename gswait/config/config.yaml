@@ -1,0 +1,18 @@
+default:
+    command:
+        history:
+            filename: ../../cmdhist.pcap
+        port: 3075
+
+    logging:
+        name:     ait
+        hostname: localhost
+
+    cmddict:
+        filename:  cmd.yaml
+
+    tlmdict:
+        filename:  tlm.yaml
+
+    server:
+
