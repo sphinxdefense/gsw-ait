@@ -24,4 +24,3 @@ default:
                 handlers:
                     - name: gswait.handlers.CCSDSPacketHandler
                       packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
-

@@ -13,5 +13,3 @@ logs:
 
 bash:
 	@docker compose exec ttc bash
-
-
