@@ -13,7 +13,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python           = '>= 3.7 < 3.11'
+python           = '>= 3.8 < 3.11'
 bottle           = '0.12.23'
 jsonschema       = '3.0.2'
 pyyaml           = '5.3.1'  # Temporarily pinning this to 5.3.1 because pyyaml and Cython 3 don't get along
@@ -23,7 +23,8 @@ gevent           = '*'
 gevent-websocket = '0.10.1'
 pyzmq            = '24.0.0'
 gipc             = "^1.1.0"
-setproctitle = "^1.2.3"
+setproctitle     = "^1.2.3"
+ait-core         = { git = "https://github.com/cjjacks/AIT-Core.git", branch = "issue-517" }
 
 [tool.poetry.dev-dependencies]
 black                     = '*'

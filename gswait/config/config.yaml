@@ -1,8 +1,4 @@
 default:
-    command:
-        history:
-            filename: ../../cmdhist.pcap
-        port: 3075
 
     logging:
         name:     ait
@@ -15,4 +11,17 @@ default:
         filename:  tlm.yaml
 
     server:
+        plugins: []
+
+        inbound-streams:
+
+            - stream:
+                name: telem_stream
+                input:
+                    - "UDP"
+                    - "nos_fsw"
+                    - 5013
+                handlers:
+                    - name: gswait.handlers.CCSDSPacketHandler
+                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
 
