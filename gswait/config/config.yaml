@@ -16,11 +16,21 @@ default:
         inbound-streams:
 
             - stream:
-                name: telem_stream
+                name: telem_stream_1
                 input:
                     - "UDP"
-                    - "nos_fsw"
+                    - "sc_1_nos_fsw"
                     - 5012
+                handlers:
+                    - name: gswait.handlers.CCSDSPacketHandler
+                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
+
+            - stream:
+                name: telem_stream_2
+                input:
+                    - "UDP"
+                    - "sc_1_nos_fsw"
+                    - 5013
                 handlers:
                     - name: gswait.handlers.CCSDSPacketHandler
                       packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
