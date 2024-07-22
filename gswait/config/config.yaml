@@ -24,3 +24,15 @@ default:
                 handlers:
                     - name: gswait.handlers.CCSDSPacketHandler
                       packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
+
+            - stream:
+                name: telem_stream_2
+                input:
+                    - "UDP"
+                    - "nos_fsw"
+                    - 5013
+                handlers:
+                    - name: gswait.handlers.CCSDSPacketHandler
+                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
+
+        outbound-streams:
