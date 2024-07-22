@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.9-1136
 
 ENV LOG_LEVEL=INFO
-USER ${USER_ID}:${GROUP_ID}
+USER ${UID}:${GID}
 ENV HOME=/home/$USER_ID
 ENV PROJECT_HOME=/home/$USER_ID/ait
 
