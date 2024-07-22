@@ -20,7 +20,7 @@ default:
                 input:
                     - "UDP"
                     - "sc_1_nos_fsw"
-                    - 5012
+                    - 5013
                 handlers:
                     - name: gswait.handlers.CCSDSPacketHandler
                       packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
