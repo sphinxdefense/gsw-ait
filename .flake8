@@ -1,12 +1,3 @@
-[tool:pytest]
-junit_family=xunit1
-addopts = --cov=ait
-filterwarnings =
-    ignore::DeprecationWarning:ait.core.*:
-
-[coverage:run]
-omit = */_version.py,*/__init__.py,*/bin/*,*/test/*
-
 [flake8]
 extend-exclude = versioneer.py,_version.py,docs,doc,tests,test,setup.py
 max-line-length = 120
@@ -39,25 +30,3 @@ extend-ignore = E203, E501, E402, E266, E701, E704, W503, B905, B907, B108
 #       E501: it considers "max-line-length" but only triggers when the value
 #       has been exceeded by more than 10%.
 select = E,F,N,W,B,B902,B903,B950
-
-
-[mypy]
-
-#
-# TODO: Evaluate whether updating to newer dependency versions fixes our ability
-# to locate type stubs for these ignored libraries.
-#
-[mypy-gevent.*]
-ignore_missing_imports = True
-
-[mypy-zmq.*]
-ignore_missing_imports = True
-
-[mypy-bottle.*]
-ignore_missing_imports = True
-
-[mypy-jsonschema.*]
-ignore_missing_imports = True
-
-[mypy-geventwebsocket.*]
-ignore_missing_imports = True
