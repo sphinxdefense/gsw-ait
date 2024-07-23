@@ -34,3 +34,4 @@ RUN python3.9 -m pip install --user --upgrade pip setuptools virtualenvwrapper v
     && chmod -R 777 $PROJECT_HOME
 ENTRYPOINT ["/usr/bin/bash","-c"]
 CMD ["source /home/ait/.bashrc && cd gsw-ait && workon gswait && ait-server"]
+# force
