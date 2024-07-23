@@ -35,4 +35,21 @@ default:
                     - name: gswait.handlers.CCSDSPacketHandler
                       packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
 
+
+            - stream:
+                name: telem_stream_3
+                input:
+                    - 5012
+                handlers:
+                    - name: gswait.handlers.CCSDSPacketHandler
+                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
+
+            - stream:
+                name: telem_stream_4
+                input:
+                    - 5013
+                handlers:
+                    - name: gswait.handlers.CCSDSPacketHandler
+                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
+
         outbound-streams:
