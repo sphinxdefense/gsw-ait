@@ -9,6 +9,7 @@ ARG HOME=/home/$USER
 ENV PROJECT_HOME=/home/$USER
 
 RUN dnf install -y python3.9 python3-pip \
+    && yum install -y nc \
     && groupadd -r -g ${GID} ${GROUP} \
     && useradd -m -u ${UID} -g ${GROUP} ${USER}
 
@@ -34,4 +35,3 @@ RUN python3.9 -m pip install --user --upgrade pip setuptools virtualenvwrapper v
     && chmod -R 777 $PROJECT_HOME
 ENTRYPOINT ["/usr/bin/bash","-c"]
 CMD ["source /home/ait/.bashrc && cd gsw-ait && workon gswait && ait-server"]
-# force

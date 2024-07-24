@@ -1,4 +1,9 @@
 default:
+    extensions:
+        ait.core.cmd.Cmd: gswait.cmd.cFSCmd
+
+    command:
+        port: 3075
 
     logging:
         name:     ait
@@ -11,45 +16,23 @@ default:
         filename:  tlm.yaml
 
     server:
-        plugins: []
 
         inbound-streams:
 
             - stream:
-                name: telem_stream_1
-                input:
-                    - "UDP"
-                    - "nos_fsw"
-                    - 5012
-                handlers:
-                    - name: gswait.handlers.CCSDSPacketHandler
-                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
-
-            - stream:
-                name: telem_stream_2
-                input:
-                    - "UDP"
-                    - "nos_fsw"
-                    - 5013
-                handlers:
-                    - name: gswait.handlers.CCSDSPacketHandler
-                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
-
-
-            - stream:
-                name: telem_stream_3
-                input:
-                    - 5012
-                handlers:
-                    - name: gswait.handlers.CCSDSPacketHandler
-                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
-
-            - stream:
-                name: telem_stream_4
+                name: telem_stream_debug
                 input:
                     - 5013
                 handlers:
-                    - name: gswait.handlers.CCSDSPacketHandler
-                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
+                    - name: gswait.handlers.DebugHandler
 
         outbound-streams:
+            - stream:
+                name: command_stream
+                handlers:
+                    - name: gswait.handlers.DebugHandler
+                output:
+                    - "UDP"
+                    - "127.0.0.1"
+                    - 5012
+                command-subscriber: True
