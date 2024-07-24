@@ -33,6 +33,6 @@ default:
                     - name: gswait.handlers.DebugHandler
                 output:
                     - "UDP"
-                    - "127.0.0.1"
+                    - "nos_fsw"
                     - 5012
                 command-subscriber: True
