@@ -55,7 +55,6 @@ class CCSDSPacketHandler(Handler):
         Returns:
             tuple of packet UID and packet data field
         """
-        ait.core.log.info(len(input_data))
         # Check if packet length is at least 7 bytes
         primary_header_length = 6
         if len(input_data) < primary_header_length + 1:
@@ -70,7 +69,7 @@ class CCSDSPacketHandler(Handler):
         packet_apid = str(bin(int(binascii.hexlify(input_data[0:2]), 16) & 0x07FF))[
             2:
         ].zfill(11)
-
+        print(packet_apid)
         # Check if packet_apid matches with an APID in the config
         config_apid = self.comp_apid(packet_apid)
         if not config_apid:

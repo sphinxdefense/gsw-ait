@@ -26,7 +26,8 @@ default:
                     - "0.0.0.0"
                     - 5013
                 handlers:
-                    - name: gswait.handlers.DebugHandler
+                    - name: gswait.handlers.CCSDSPacketHandler
+                      packet_types: {'XXXXXXXXXXXX': "CCSDS_HEADER"}
 
         outbound-streams:
             - stream:
