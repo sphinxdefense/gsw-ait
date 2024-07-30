@@ -84,7 +84,9 @@ class CCSDSPacketHandler(Handler):
         # Map APID to packet name in config to get UID from telemetry dictionary
         packet_name = self.packet_types[stream_id]
         packet_uid = self.tlm_dict[packet_name].uid
-
+        ait.core.log.info(
+            f"CCSDSPacketHandler - handling packet: {packet_name} - id: {packet_uid}"
+        )
         # Extract user data field from packet
         packet_data_length = ccsds_hdr.packet_length
         # ait.core.log.info(f"{packet_data_length} - {len(input_data)}")
