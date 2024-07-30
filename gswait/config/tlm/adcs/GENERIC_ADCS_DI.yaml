@@ -1,0 +1,437 @@
+!Packet
+name: GENERIC_ADCS_DI
+fields:
+- !Field
+  name: MAG_QBS_0
+  desc: Quaternion from magnetic sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: MAG_QBS_1
+  desc: Quaternion from magnetic sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: MAG_QBS_2
+  desc: Quaternion from magnetic sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: MAG_QBS_3
+  desc: Quaternion from magnetic sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: BVB_X
+  desc: Magnetic Field Vector in Body Frame, X component (T)
+  type: LSB_D64
+
+- !Field
+  name: BVB_Y
+  desc: Magnetic Field Vector in Body Frame, Y component (T)
+  type: LSB_D64
+
+- !Field
+  name: BVB_Z
+  desc: Magnetic Field Vector in Body Frame, Z component (T)
+  type: LSB_D64
+
+- !Field
+  name: FSS_QBS_0
+  desc: Quaternion from fine sun sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: FSS_QBS_1
+  desc: Quaternion from fine sun sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: FSS_QBS_2
+  desc: Quaternion from fine sun sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: FSS_QBS_3
+  desc: Quaternion from fine sun sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: FSS_VALID
+  desc: FSS Sun Unit Vector valid (1) / invalid (0)
+  type: U8
+
+- !Field
+  name: FSS_SVB_X
+  desc: FSS Sun Unit Vector in Body Frame, X component
+  type: LSB_D64
+
+- !Field
+  name: FSS_SVB_Y
+  desc: FSS Sun Unit Vector in Body Frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: FSS_SVB_Z
+  desc: FSS Sun Unit Vector in Body Frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: CSS0_X
+  desc: CSS 0 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: CSS0_Y
+  desc: CSS 0 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: CSS0_Z
+  desc: CSS 0 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: SCALE0
+  desc: CSS 0 scale factor
+  type: LSB_D64
+
+- !Field
+  name: PERCENTON0
+  desc: CSS 0 percent on
+  type: LSB_D64
+
+- !Field
+  name: CSS1_X
+  desc: CSS 1 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: CSS1_Y
+  desc: CSS 1 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: CSS1_Z
+  desc: CSS 1 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: SCALE1
+  desc: CSS 1 scale factor
+  type: LSB_D64
+
+- !Field
+  name: PERCENTON1
+  desc: CSS 1 percent on
+  type: LSB_D64
+
+- !Field
+  name: CSS2_X
+  desc: CSS 2 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: CSS2_Y
+  desc: CSS 2 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: CSS2_Z
+  desc: CSS 2 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: SCALE2
+  desc: CSS 2 scale factor
+  type: LSB_D64
+
+- !Field
+  name: PERCENTON2
+  desc: CSS 2 percent on
+  type: LSB_D64
+
+- !Field
+  name: CSS3_X
+  desc: CSS 3 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: CSS3_Y
+  desc: CSS 3 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: CSS3_Z
+  desc: CSS 3 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: SCALE3
+  desc: CSS 3 scale factor
+  type: LSB_D64
+
+- !Field
+  name: PERCENTON3
+  desc: CSS 3 percent on
+  type: LSB_D64
+
+- !Field
+  name: CSS4_X
+  desc: CSS 4 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: CSS4_Y
+  desc: CSS 4 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: CSS4_Z
+  desc: CSS 4 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: SCALE4
+  desc: CSS 4 scale factor
+  type: LSB_D64
+
+- !Field
+  name: PERCENTON4
+  desc: CSS 4 percent on
+  type: LSB_D64
+
+- !Field
+  name: CSS5_X
+  desc: CSS 5 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: CSS5_Y
+  desc: CSS 5 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: CSS5_Z
+  desc: CSS 5 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: SCALE5
+  desc: CSS 5 scale factor
+  type: LSB_D64
+
+- !Field
+  name: PERCENTON5
+  desc: CSS 5 percent on
+  type: LSB_D64
+
+- !Field
+  name: CSS_VALID
+  desc: CSS Sun Unit Vector valid (1) / invalid (0)
+  type: U8
+
+- !Field
+  name: CSS_SVB_X
+  desc: CSS Sun Unit Vector in Body Frame, X component
+  type: LSB_D64
+
+- !Field
+  name: CSS_SVB_Y
+  desc: CSS Sun Unit Vector in Body Frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: CSS_SVB_Z
+  desc: CSS Sun Unit Vector in Body Frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: IMU_QBS_0
+  desc: Quaternion from IMU sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: IMU_QBS_1
+  desc: Quaternion from IMU sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: IMU_QBS_2
+  desc: Quaternion from IMU sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: IMU_QBS_3
+  desc: Quaternion from IMU sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: IMU_POS_X
+  desc: Position of IMU sensor in body, X component
+  type: LSB_D64
+
+- !Field
+  name: IMU_POS_Y
+  desc: Position of IMU sensor in body, Y component
+  type: LSB_D64
+
+- !Field
+  name: IMU_POS_Z
+  desc: Position of IMU sensor in body, Z component
+  type: LSB_D64
+
+- !Field
+  name: IMU_VALID
+  desc: IMU data valid(1) / invalid(0)
+  type: U8
+
+- !Field
+  name: IMU_WBN_X
+  desc: Angular rate of body, X component
+  type: LSB_D64
+
+- !Field
+  name: IMU_WBN_Y
+  desc: Angular rate of body, Y component
+  type: LSB_D64
+
+- !Field
+  name: IMU_WBN_Z
+  desc: Angular rate of body, Z component
+  type: LSB_D64
+
+- !Field
+  name: IMU_ACC_X
+  desc: Acceleration, X component
+  type: LSB_D64
+
+- !Field
+  name: IMU_ACC_Y
+  desc: Acceleration, Y component
+  type: LSB_D64
+
+- !Field
+  name: IMU_ACC_Z
+  desc: Acceleration, Z component
+  type: LSB_D64
+
+- !Field
+  name: RW_0_X
+  desc: Reaction wheel 0 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: RW_0_Y
+  desc: Reaction wheel 0 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW_0_Z
+  desc: Reaction wheel 0 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: RW_1_X
+  desc: Reaction wheel 1 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: RW_1_Y
+  desc: Reaction wheel 1 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW_1_Z
+  desc: Reaction wheel 1 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: RW_2_X
+  desc: Reaction wheel 2 axis in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: RW_2_Y
+  desc: Reaction wheel 2 axis in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW_2_Z
+  desc: Reaction wheel 2 axis in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: RW_MAX_MOMENTUM_X
+  desc: Reaction wheel maximum momentum in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: RW_MAX_MOMENTUM_Y
+  desc: Reaction wheel maximum momentum in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW_MAX_MOMENTUM_Z
+  desc: Reaction wheel maximum momentum in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: RW_MOMENTUM_X
+  desc: Reaction wheel momentum in body frame, X component
+  type: LSB_D64
+
+- !Field
+  name: RW_MOMENTUM_Y
+  desc: Reaction wheel momentum in body frame, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW_MOMENTUM_Z
+  desc: Reaction wheel momentum in body frame, Z component
+  type: LSB_D64
+
+- !Field
+  name: ST_QBS_0
+  desc: Quaternion from star tracker sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: ST_QBS_1
+  desc: Quaternion from star tracker sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: ST_QBS_2
+  desc: Quaternion from star tracker sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: ST_QBS_3
+  desc: Quaternion from star tracker sensor to body frame
+  type: LSB_D64
+
+- !Field
+  name: ST_Q_0
+  desc: Inertial quaternion of body, 0 component
+  type: LSB_D64
+
+- !Field
+  name: ST_Q_1
+  desc: Inertial quaternion of body, 1 component
+  type: LSB_D64
+
+- !Field
+  name: ST_Q_2
+  desc: Inertial quaternion of body, 2 component
+  type: LSB_D64
+
+- !Field
+  name: ST_Q_3
+  desc: Inertial quaternion of body, 3 component
+  type: LSB_D64
+
+- !Field
+  name: ST_VALID
+  desc: Star tracker data valid(1) / invalid(0)
+  type: U8

@@ -1,0 +1,32 @@
+!Packet
+name: GENERIC_IMU_DATA_TLM
+fields:
+- !Field
+  name: X_LINEAR_ACCELERATION
+  desc: Linear acceleration in the X-direction
+  type: LSB_F32
+
+- !Field
+  name: X_ANGULAR_ACCELERATION
+  desc: Angular acceleration in the X-direction
+  type: LSB_F32
+
+- !Field
+  name: Y_LINEAR_ACCELERATION
+  desc: Linear acceleration in the Y-direction
+  type: LSB_F32
+
+- !Field
+  name: Y_ANGULAR_ACCELERATION
+  desc: Angular acceleration in the Y-direction
+  type: LSB_F32
+
+- !Field
+  name: Z_LINEAR_ACCELERATION
+  desc: Linear acceleration in the Z-direction
+  type: LSB_F32
+
+- !Field
+  name: Z_ANGULAR_ACCELERATION
+  desc: Angular acceleration in the Z-direction
+  type: LSB_F32

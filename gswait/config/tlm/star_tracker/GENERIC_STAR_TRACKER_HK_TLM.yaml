@@ -1,0 +1,34 @@
+!Packet
+name: GENERIC_STAR_TRACKER_HK_TLM
+fields:
+- !Field
+  name: CMD_ERR_COUNT
+  desc: Command Error Count
+  type: U8
+
+- !Field
+  name: CMD_COUNT
+  desc: Command Count
+  type: U8
+
+- !Field
+  name: DEVICE_ERR_COUNT
+  desc: Device Command Error Count
+  type: U8
+
+- !Field
+  name: DEVICE_COUNT
+  desc: Device Command Count
+  type: U8
+
+- !Field
+  name: DEVICE_ENABLED
+  desc: Device Enable Status
+  type: U8
+  enum:
+    0: DISABLED
+    1: ENABLED
+- !Field
+  name: DEVICE_COUNTER
+  desc: Reported Device Command Counter
+  type: LSB_U32

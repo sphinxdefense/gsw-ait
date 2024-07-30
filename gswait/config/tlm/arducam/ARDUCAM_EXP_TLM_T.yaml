@@ -1,0 +1,16 @@
+!Packet
+name: ARDUCAM_EXP_TLM_T
+fields:
+- !Field
+  name: CAM_DATA
+  desc: CAM Data
+  type: U8
+  bytes: [0,8080]
+- !Field
+  name: MSG_COUNT
+  desc: CAM Experiment Message Count
+  type: LSB_U32
+- !Field
+  name: CAM_FIFO_LENGTH
+  desc: CAM FIFO Length
+  type: LSB_U32

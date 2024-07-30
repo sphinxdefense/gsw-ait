@@ -1,4 +1,11 @@
 default:
+
+    database:
+        host: influxdb
+        port: 8086
+        un: ait
+        pw: admin_password
+
     extensions:
         ait.core.cmd.Cmd: gswait.cmd.cFSCmd
 
@@ -17,6 +24,15 @@ default:
 
     server:
 
+        plugins:
+            - plugin:
+                name: ait.core.server.plugins.DataArchive
+                inputs:
+                    - telem_stream_debug
+                datastore:
+                    ait.core.db.InfluxDBBackend
+
+
         inbound-streams:
 
             - stream:
@@ -26,7 +42,37 @@ default:
                     - "0.0.0.0"
                     - 5013
                 handlers:
-                    - name: gswait.handlers.DebugHandler
+                    - name: gswait.handlers.CCSDSPacketHandler
+                      packet_types:
+                        2368: "GENERIC_ADCS_HK_TLM"
+                        2369: "GENERIC_ADCS_DI"
+                        2370: "GENERIC_ADCS_AD"
+                        2371: "GENERIC_ADCS_GNC"
+                        2372: "GENERIC_ADCS_AC"
+                        2373: "GENERIC_ADCS_DO"
+                        2249: "ARDUCAM_EXP_TLM_T"
+                        2248: "ARDUCAM_HK_TLM_T"
+                        2298: "SAMPLE_HK_TLM"
+                        2299: "SAMPLE_DATA_TLM"
+                        2320: "GENERIC_CSS_HK_TLM"
+                        2321: "GENERIC_CSS_DATA_TLM"
+                        2330: "GENERIC_EPS_HK_TLM"
+                        2336: "GENERIC_FSS_HK_TLM"
+                        2337: "GENERIC_FSS_DATA_TLM"
+                        2341: "GENERIC_IMU_HK_TLM"
+                        2342: "GENERIC_IMU_DATA_TLM"
+                        2346: "GENERIC_MAG_HK_TLM"
+                        2347: "GENERIC_MAG_DATA_TLM"
+                        2352: "GENERIC_RADIO_HK_TLM"
+                        2451: "GENRW_HK_TLM_T"
+                        2357: "GENERIC_STAR_TRACKER_HK_TLM"
+                        2358: "GENERIC_STAR_TRACKER_DATA_TLM"
+                        2362: "GENERIC_TORQUER_HK_TLM_T"
+                        2160: "NOVATEL_OEM615_HK_TLM"
+                        2161: "NOVATEL_OEM615_DATA_TLM"
+                        2300: "SYN_HK_TLM"
+                      packet_secondary_header_length: 10
+
 
         outbound-streams:
             - stream:

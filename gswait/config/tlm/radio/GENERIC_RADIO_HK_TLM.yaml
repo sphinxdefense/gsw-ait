@@ -1,0 +1,47 @@
+!Packet
+name: GENERIC_RADIO_HK_TLM
+fields:
+- !Field
+  name: CMD_ERR_COUNT
+  desc: Command Error Count
+  type: U8
+
+- !Field
+  name: CMD_COUNT
+  desc: Command Count
+  type: U8
+
+- !Field
+  name: DEVICE_ERR_COUNT
+  desc: Device Command Error Count
+  type: U8
+
+- !Field
+  name: DEVICE_COUNT
+  desc: Device Command Count
+  type: U8
+
+- !Field
+  name: FORWARD_ERR_COUNT
+  desc: Proxmity Forward Error Count
+  type: U8
+
+- !Field
+  name: FORWARD_COUNT
+  desc: Proximity Forward Count
+  type: U8
+
+- !Field
+  name: DEVICE_COUNTER
+  desc: Reported Device Command Counter
+  type: LSB_U32
+
+- !Field
+  name: DEVICE_CONFIG
+  desc: Reported Device Configuration
+  type: LSB_U32
+
+- !Field
+  name: PROXIMITY_SIGNAL
+  desc: Proxmity Signal Strength
+  type: LSB_U32

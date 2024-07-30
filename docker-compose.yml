@@ -6,3 +6,36 @@ services:
       context: .
     environment:
       LOG_LEVEL: INFO
+    networks:
+      - ait
+
+  telem:
+    container_name: telem
+    platform: linux/amd64
+    build:
+      context: .
+    depends_on: [gsw-ait]
+    command: ["source /home/ait/.bashrc && cd gsw-ait && workon gswait && python scripts/udp_replay.py"]
+    environment:
+      HOST: gsw-ait
+      PORT: 5013
+    networks:
+      - ait
+
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    ports:
+      - 8086:8086
+    environment:
+        INFLUXDB_DB: ait
+        INFLUXDB_ADMIN_USER: ait
+        INFLUXDB_ADMIN_PASSWORD: admin_password
+    networks:
+      - ait
+
+
+
+networks:
+  ait:
+    name: ait

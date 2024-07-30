@@ -1,0 +1,47 @@
+!Packet
+name: NOVATEL_OEM615_DATA_TLM
+fields:
+- !Field
+  name: GPS_WEEKS
+  desc: GPS Week Number
+  type: LSB_U16
+
+- !Field
+  name: GPS_SECONDS
+  desc: GPS Seconds into the Week
+  type: LSB_U32
+
+- !Field
+  name: GPS_FRAC_SECS
+  desc: GPS Fractions of a Second
+  type: LSB_D64
+
+- !Field
+  name: ECEF_X
+  desc: ECEF Position X (meters)
+  type: LSB_D64
+
+- !Field
+  name: ECEF_Y
+  desc: ECEF Position Y (meters)
+  type: LSB_D64
+
+- !Field
+  name: ECEF_Z
+  desc: ECEF Position Z (meters)
+  type: LSB_D64
+
+- !Field
+  name: VEL_X
+  desc: ECEF Velocity X (m/s)
+  type: LSB_D64
+
+- !Field
+  name: VEL_Y
+  desc: ECEF Velocity Y (m/s)
+  type: LSB_D64
+
+- !Field
+  name: VEL_Z
+  desc: ECEF Velocity Z (m/s)
+  type: LSB_D64
