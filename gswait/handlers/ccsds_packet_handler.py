@@ -3,6 +3,7 @@ import ait.core.log
 
 from ait.core.server.handler import Handler
 from gswait.settings import CCSDS_PRIMARY_HEADER_LEN
+from ait.core import tlm
 
 
 class CCSDSPacketHandler(Handler):
@@ -56,7 +57,6 @@ class CCSDSPacketHandler(Handler):
         Returns:
             tuple of packet UID and packet data field
         """
-
         if (
             len(input_data)
             < CCSDS_PRIMARY_HEADER_LEN + self.packet_secondary_header_length + 1
@@ -68,7 +68,7 @@ class CCSDSPacketHandler(Handler):
         ait.core.log.debug(
             f"CCSDSPacketHandler: Received packet length of {len(input_data)}"
         )
-        ccsds_hdr = ait.core.tlm.Packet(
+        ccsds_hdr = tlm.Packet(
             self.hdr_def,
             data=input_data[
                 0 : CCSDS_PRIMARY_HEADER_LEN + self.packet_secondary_header_length
