@@ -1,0 +1,289 @@
+!Packet
+name: HS_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNT
+  desc: HS Application Command Counter.
+  type: U8
+
+
+- !Field
+  name: CMDERRCOUNT
+  desc: HS Application Command Error Counter.
+  type: U8
+
+
+- !Field
+  name: CURRENTAPPMONSTATE
+  desc: Status of HS Critical Application Monitor.
+  type: U8
+
+
+- !Field
+  name: CURRENTEVENTMONSTATE
+  desc: Status of HS Critical Events Monitor.
+  type: U8
+
+
+- !Field
+  name: CURRENTALIVENESSSTATE
+  desc: Status of HS Aliveness Indicator.
+  type: U8
+
+
+- !Field
+  name: CURRENTCPUHOGSTATE
+  desc: Status of HS Hogging Indicator.
+  type: U8
+
+
+- !Field
+  name: STATUSFLAGS
+  desc: Internal HS Error States.
+  type: U8
+
+
+- !Field
+  name: SPAREBYTES
+  desc: Alignment Spares.
+  type: U8
+
+
+- !Field
+  name: RESETSPERFORMED
+  desc: HS Performed Processor Reset Count.
+  type: LSB_U16
+
+
+- !Field
+  name: MAXRESETS
+  desc: HS Maximum Processor Reset Count.
+  type: LSB_U16
+
+
+- !Field
+  name: EVENTSMONITOREDCOUNT
+  desc: Total count of Event Messages Monitored by the Critical Events Monitor.
+  type: LSB_U32
+
+
+- !Field
+  name: INVALIDEVENTMONCOUNT
+  desc: Total count of Invalid Event Monitors Monitored by the Critical Events Monitor.
+  type: LSB_U32
+
+
+- !Field
+  name: APPMONENABLES_1
+  desc: Enable states of App Monitor Entries. byte 1
+  type: LSB_U32
+
+
+- !Field
+  name: MSGACTEXEC
+  desc: Number of Software Bus Message Actions Executed.
+  type: LSB_U32
+
+
+- !Field
+  name: UTILCPUAVG
+  desc: Current CPU Utilization Average.
+  type: LSB_U32
+
+
+- !Field
+  name: UTILCPUPEAK
+  desc: Current CPU Utilization Peak.
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_1
+  desc: Execution Counters. byte 1
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_2
+  desc: Execution Counters. byte 2
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_3
+  desc: Execution Counters. byte 3
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_4
+  desc: Execution Counters. byte 4
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_5
+  desc: Execution Counters. byte 5
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_6
+  desc: Execution Counters. byte 6
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_7
+  desc: Execution Counters. byte 7
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_8
+  desc: Execution Counters. byte 8
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_9
+  desc: Execution Counters. byte 9
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_10
+  desc: Execution Counters. byte 10
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_11
+  desc: Execution Counters. byte 11
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_12
+  desc: Execution Counters. byte 12
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_13
+  desc: Execution Counters. byte 13
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_14
+  desc: Execution Counters. byte 14
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_15
+  desc: Execution Counters. byte 15
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_16
+  desc: Execution Counters. byte 16
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_17
+  desc: Execution Counters. byte 17
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_18
+  desc: Execution Counters. byte 18
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_19
+  desc: Execution Counters. byte 19
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_20
+  desc: Execution Counters. byte 20
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_21
+  desc: Execution Counters. byte 21
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_22
+  desc: Execution Counters. byte 22
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_23
+  desc: Execution Counters. byte 23
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_24
+  desc: Execution Counters. byte 24
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_25
+  desc: Execution Counters. byte 25
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_26
+  desc: Execution Counters. byte 26
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_27
+  desc: Execution Counters. byte 27
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_28
+  desc: Execution Counters. byte 28
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_29
+  desc: Execution Counters. byte 29
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_30
+  desc: Execution Counters. byte 30
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_31
+  desc: Execution Counters. byte 31
+  type: LSB_U32
+
+
+- !Field
+  name: EXECOUNTS_32
+  desc: Execution Counters. byte 32
+  type: LSB_U32

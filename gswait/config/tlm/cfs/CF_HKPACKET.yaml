@@ -1,0 +1,397 @@
+!Packet
+name: CF_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNTER
+  desc: Count of valid commands received.
+  type: LSB_U16
+
+- !Field
+  name: ERRCOUNTER
+  desc: Count of invalid commands received.
+  type: LSB_U16
+
+- !Field
+  name: SPARE
+  desc: ''
+  type: LSB_U32
+
+- !Field
+  name: CH1_SENT_FILE_DATA_BYTES
+  desc: Sent file data bytes
+  type: LSB_U64
+
+- !Field
+  name: CH1_SENT_PDU
+  desc: Sent PDUs counter
+  type: LSB_U32
+
+- !Field
+  name: CH1_SENT_NAK_SEGMENT_REQUESTS
+  desc: Sent NAK segment requests counter
+  type: LSB_U32
+
+- !Field
+  name: CH1_RECV_FILE_DATA_BYTES
+  desc: Received file data bytes
+  type: LSB_U64
+
+- !Field
+  name: CH1_RECV_PDU
+  desc: Received PDUs counter
+  type: LSB_U32
+
+- !Field
+  name: CH1_RECV_ERROR
+  desc: Received PDUs with error counter, see related event for cause
+  type: LSB_U32
+
+- !Field
+  name: CH1_RECV_SPURIOUS
+  desc: Received PDUs with invalid directive code
+  type: LSB_U16
+
+- !Field
+  name: CH1_RECV_DROPPED
+  desc: Received PDUs dropped due to a transaction error
+  type: LSB_U16
+
+- !Field
+  name: CH1_RECV_NAK_SEGMENT_REQUESTS
+  desc: Received NAK segment requests counter
+  type: LSB_U32
+
+- !Field
+  name: CH1_FAULT_FILE_OPEN
+  desc: File open fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_FILE_READ
+  desc: File read fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_FILE_SEEK
+  desc: File seek fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_FILE_WRITE
+  desc: File write fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_FILE_RENAME
+  desc: File rename fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_DIRECTORY_READ
+  desc: Directory read fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_CRC_MISMATCH
+  desc: CRC mismatch fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_FILE_SIZE_MISMATCH
+  desc: File size mismatch fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_NAK_LIMIT
+  desc: NAK limit exceeded fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_ACK_LIMIT
+  desc: ACK limit exceeded fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_INACTIVITY_TIMER
+  desc: Inactivity timer exceeded counter
+  type: LSB_U16
+
+- !Field
+  name: CH1_FAULT_SPARE
+  desc: Alignment spare to avoid implicit padding
+  type: LSB_U16
+
+- !Field
+  name: CH1_Q_SIZE_1
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH1_Q_SIZE_2
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH1_Q_SIZE_3
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH1_Q_SIZE_4
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH1_Q_SIZE_5
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH1_Q_SIZE_6
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH1_Q_SIZE_7
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH1_POLL_COUNTER
+  desc: Number of active polling directories
+  type: U8
+
+- !Field
+  name: CH1_PLAYBACK_COUNTER
+  desc: Number of active playback directories
+  type: U8
+
+- !Field
+  name: CH1_FROZEN
+  desc: 'Frozen state: 0 == not frozen, else frozen'
+  type: U8
+
+- !Field
+  name: CH1_SPARE_1
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH1_SPARE_2
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH1_SPARE_3
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH1_SPARE_4
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH1_SPARE_5
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH1_SPARE_6
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH1_SPARE_7
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH2_SENT_FILE_DATA_BYTES
+  desc: Sent file data bytes
+  type: LSB_U64
+
+- !Field
+  name: CH2_SENT_PDU
+  desc: Sent PDUs counter
+  type: LSB_U32
+
+- !Field
+  name: CH2_SENT_NAK_SEGMENT_REQUESTS
+  desc: Sent NAK segment requests counter
+  type: LSB_U32
+
+- !Field
+  name: CH2_RECV_FILE_DATA_BYTES
+  desc: Received file data bytes
+  type: LSB_U64
+
+- !Field
+  name: CH2_RECV_PDU
+  desc: Received PDUs counter
+  type: LSB_U32
+
+- !Field
+  name: CH2_RECV_ERROR
+  desc: Received PDUs with error counter, see related event for cause
+  type: LSB_U32
+
+- !Field
+  name: CH2_RECV_SPURIOUS
+  desc: Received PDUs with invalid directive code
+  type: LSB_U16
+
+- !Field
+  name: CH2_RECV_DROPPED
+  desc: Received PDUs dropped due to a transaction error
+  type: LSB_U16
+
+- !Field
+  name: CH2_RECV_NAK_SEGMENT_REQUESTS
+  desc: Received NAK segment requests counter
+  type: LSB_U32
+
+- !Field
+  name: CH2_FAULT_FILE_OPEN
+  desc: File open fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_FILE_READ
+  desc: File read fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_FILE_SEEK
+  desc: File seek fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_FILE_WRITE
+  desc: File write fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_FILE_RENAME
+  desc: File rename fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_DIRECTORY_READ
+  desc: Directory read fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_CRC_MISMATCH
+  desc: CRC mismatch fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_FILE_SIZE_MISMATCH
+  desc: File size mismatch fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_NAK_LIMIT
+  desc: NAK limit exceeded fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_ACK_LIMIT
+  desc: ACK limit exceeded fault counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_INACTIVITY_TIMER
+  desc: Inactivity timer exceeded counter
+  type: LSB_U16
+
+- !Field
+  name: CH2_FAULT_SPARE
+  desc: Alignment spare to avoid implicit padding
+  type: LSB_U16
+
+- !Field
+  name: CH2_Q_SIZE_1
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH2_Q_SIZE_2
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH2_Q_SIZE_3
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH2_Q_SIZE_4
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH2_Q_SIZE_5
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH2_Q_SIZE_6
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH2_Q_SIZE_7
+  desc: Queue size
+  type: LSB_U16
+
+- !Field
+  name: CH2_POLL_COUNTER
+  desc: Number of active polling directories
+  type: U8
+
+- !Field
+  name: CH2_PLAYBACK_COUNTER
+  desc: Number of active playback directories
+  type: U8
+
+- !Field
+  name: CH2_FROZEN
+  desc: 'Frozen state: 0 == not frozen, else frozen'
+  type: U8
+
+- !Field
+  name: CH2_SPARE_1
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH2_SPARE_2
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH2_SPARE_3
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH2_SPARE_4
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH2_SPARE_5
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH2_SPARE_6
+  desc: ''
+  type: U8
+
+- !Field
+  name: CH2_SPARE_7
+  desc: ''
+  type: U8

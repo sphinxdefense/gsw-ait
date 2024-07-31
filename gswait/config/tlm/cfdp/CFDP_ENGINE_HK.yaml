@@ -1,0 +1,180 @@
+!Packet
+name: CFDP_ENGINE_HK
+fields:
+- !Field
+  name: PKT_ID
+  desc: CFDP_ENGINE_PACKETID
+  type: LSB_U64
+
+- !Field
+  name: ENG_SOURCEID
+  desc: ENG_SOURCEID
+  type: LSB_U64
+
+- !Field
+  name: ENG_LASTFAILEDTRANS
+  desc: Last failed transaction destination name
+  type: U8
+  bytes: [16,527]
+
+- !Field
+  name: ENG_UP_LASTFILEUPLINKED
+  desc: Last file uplinked
+  type: U8
+  bytes: [528,1039]
+
+- !Field
+  name: ENG_DOWN_LASTFILEDOWNLINKED
+  desc: Last file downlinked
+  type: U8
+  bytes: [1040,1551]
+
+- !Field
+  name: ENG_TOTALERRORS
+  desc: ENG_TOTALERRORS
+  type: LSB_U64
+
+- !Field
+  name: ENG_PDUSRECEIVED
+  desc: ENG_PDUSRECEIVED
+  type: LSB_U64
+
+- !Field
+  name: ENG_PDUSREJECTED
+  desc: ENG_PDUSREJECTED
+  type: LSB_U64
+
+- !Field
+  name: ENG_INPROGRESSTRANS
+  desc: ENG_INPROGRESSTRANS
+  type: LSB_U64
+
+- !Field
+  name: ENG_TOTALSUCCESSTRANS
+  desc: ENG_TOTALFAILEDTRANS
+  type: LSB_U64
+
+- !Field
+  name: ENG_TOTALFAILEDTRANS
+  desc: ENG_TOTALFAILEDTRANS
+  type: LSB_U64
+
+- !Field
+  name: COND_POSACKNUM
+  desc: COND_POSACKNUM
+  type: LSB_U64
+
+- !Field
+  name: COND_FILESTOREREJNUM
+  desc: COND_FILESTOREREJNUM
+  type: LSB_U64
+
+- !Field
+  name: COND_FILECHECKSUMNUM
+  desc: COND_FILECHECKSUMNUM
+  type: LSB_U64
+
+- !Field
+  name: COND_FILESIZENUM
+  desc: COND_FILESIZENUM
+  type: LSB_U64
+
+- !Field
+  name: COND_NAKLIMITNUM
+  desc: COND_NAKLIMITNUM
+  type: LSB_U64
+
+- !Field
+  name: COND_INACTIVENUM
+  desc: COND_INACTIVENUM
+  type: LSB_U64
+
+- !Field
+  name: ENG_TOTALFILESSENT
+  desc: ENG_TOTALFILESSENT
+  type: LSB_U64
+
+- !Field
+  name: ENG_TOTALFILESRCVD
+  desc: ENG_TOTALFILESRCVD
+  type: LSB_U64
+
+- !Field
+  name: ENG_RCVD_METADATA
+  desc: ENG_RCVD_METADATA
+  type: LSB_U64
+
+- !Field
+  name: ENG_RCVD_FILEDATA
+  desc: ENG_RCVD_FILEDATA
+  type: LSB_U64
+
+- !Field
+  name: ENG_RCVD_EOF
+  desc: ENG_RCVD_EOF
+  type: LSB_U64
+
+- !Field
+  name: ENG_RCVD_FINISHED
+  desc: ENG_RCVD_FINISHED
+  type: LSB_U64
+
+- !Field
+  name: ENG_RCVD_NAK
+  desc: ENG_RCVD_NAK
+  type: LSB_U64
+
+- !Field
+  name: ENG_RCVD_ACK
+  desc: ENG_RCVD_ACK
+  type: LSB_U64
+
+- !Field
+  name: ENG_SENT_METADATA
+  desc: ENG_SENT_METADATA
+  type: LSB_U64
+
+- !Field
+  name: ENG_SENT_FILEDATA
+  desc: ENG_SENT_FILEDATA
+  type: LSB_U64
+
+- !Field
+  name: ENG_SENT_EOF
+  desc: ENG_SENT_EOF
+  type: LSB_U64
+
+- !Field
+  name: ENG_SENT_FINISHED
+  desc: ENG_SENT_FINISHED
+  type: LSB_U64
+
+- !Field
+  name: ENG_SENT_NAK
+  desc: ENG_SENT_NAK
+  type: LSB_U64
+
+- !Field
+  name: ENG_SENT_ACK
+  desc: ENG_SENT_ACK
+  type: LSB_U64
+
+- !Field
+  name: ENG_UP_SUCCESSCOUNTER
+  desc: ENG_UP_SUCCESSCOUNTER
+  type: LSB_U64
+
+- !Field
+  name: ENG_UP_FAILEDCOUNTER
+  desc: ENG_UP_FAILEDCOUNTER
+  type: LSB_U64
+
+- !Field
+  name: ENG_DOWN_SUCCESSDOWNLINKS
+  desc: ENG_DOWN_SUCCESSDOWNLINKS
+  type: LSB_U64
+
+- !Field
+  name: ENG_DOWN_FAILEDDOWNLINKS
+  desc: ENG_DOWN_FAILEDDOWNLINKS
+  type: LSB_U64

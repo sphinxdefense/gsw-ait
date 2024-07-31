@@ -1,0 +1,67 @@
+!Packet
+name: CFE_TIME_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNTER
+  desc: Time Command Execution Counter.
+  type: U8
+
+
+- !Field
+  name: ERRCOUNTER
+  desc: Time Command Error Counter.
+  type: U8
+
+
+- !Field
+  name: CLOCKSTATEFLAGS
+  desc: State Flags.
+  type: LSB_U16
+
+
+- !Field
+  name: CLOCKSTATEAPI
+  desc: API State.
+  type: LSB_I16
+
+
+- !Field
+  name: LEAPSECONDS
+  desc: Current Leaps Seconds.
+  type: LSB_I16
+
+
+- !Field
+  name: SECONDSMET
+  desc: Current MET (seconds).
+  type: LSB_U32
+
+
+- !Field
+  name: SUBSECSMET
+  desc: Current MET (sub-seconds).
+  type: LSB_U32
+
+
+- !Field
+  name: SECONDSSTCF
+  desc: Current STCF (seconds).
+  type: LSB_U32
+
+
+- !Field
+  name: SUBSECSSTCF
+  desc: Current STCF (sub-seconds).
+  type: LSB_U32
+
+
+- !Field
+  name: SECONDS1HZADJ
+  desc: Current 1 Hz SCTF adjustment (seconds).
+  type: LSB_U32
+
+
+- !Field
+  name: SUBSECS1HZADJ
+  desc: Current 1 Hz SCTF adjustment (sub-seconds).
+  type: LSB_U32

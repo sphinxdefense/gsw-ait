@@ -1,0 +1,188 @@
+!Packet
+name: CF_TRANSPACKET
+fields:
+- !Field
+  name: ENG_TRANSLEN
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_TRANSVAL
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_NAKS
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_PARTLEN
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_PARTVAL
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_PHASE
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_SPARE1
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_SPARE2
+  desc: ' (Parent: )'
+  type: U8
+
+- !Field
+  name: ENG_FLAGS
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_TRANSNUM
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_ATTEMPTS
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_CONDCODE
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_DELICODE
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_FDOFFSET
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_FDLENGTH
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_CHECKSUM
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_FINALSTAT
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_FILESIZE
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_RCVDFILESIZE
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_ROLE
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_STATE
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_STARTTIME
+  desc: ' (Parent: )'
+  type: LSB_U32
+
+- !Field
+  name: ENG_SRCFILE
+  desc: ' (Parent: )'
+  type: U8
+  bytes: [64,575]
+
+- !Field
+  name: ENG_DSTFILE
+  desc: ' (Parent: )'
+  type: U8
+  bytes: [576,1087]
+
+- !Field
+  name: ENG_TMPFILE
+  desc: ' (Parent: )'
+  type: U8
+  bytes: [1088,1599]
+
+- !Field
+  name: APP_STATUS
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_CONDCODE
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_PRIORITY
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_CLASS
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_CHANNUM
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_SOURCE
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_NODETYPE
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_TRANSNUM
+  desc: ' (Parent:  )'
+  type: LSB_U32
+
+- !Field
+  name: APP_SRCENTITYID
+  desc: ' (Parent:  )'
+  type: U8
+  bytes: [1632,1759]
+
+- !Field
+  name: APP_SRCFILE
+  desc: ' (Parent:  )'
+  type: U8
+  bytes: [1760,2271]
+
+- !Field
+  name: APP_DSTFILE
+  desc: ' (Parent:  )'
+  type: U8
+  bytes: [2272,2783]

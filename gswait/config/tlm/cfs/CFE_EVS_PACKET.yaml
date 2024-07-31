@@ -1,0 +1,32 @@
+!Packet
+name: CFE_EVS_PACKET
+fields:
+- !Field
+  name: PACKETID_EVENTID
+  desc: 'Numerical event identifier. (Parent: Event packet information.)'
+  type: LSB_U16
+
+- !Field
+  name: PACKETID_EVENTTYPE
+  desc: 'Numerical event type identifier. (Parent: Event packet information.)'
+  type: LSB_U16
+
+- !Field
+  name: PACKETID_SPACECRAFTID
+  desc: 'Spacecraft identifier. (Parent: Event packet information.)'
+  type: LSB_U32
+
+- !Field
+  name: PACKETID_PROCESSORID
+  desc: 'Numerical processor identifier. (Parent: Event packet information.)'
+  type: LSB_U32
+
+- !Field
+  name: SPARE1
+  desc: Structure padding.
+  type: U8
+
+- !Field
+  name: SPARE2
+  desc: Structure padding.
+  type: U8
