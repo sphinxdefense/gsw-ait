@@ -106,6 +106,7 @@ default:
                         2060: "CFE_TBL_TBLREGPACKET"
                         2200: "SCH_DIAGPACKET"
                         2199: "SCH_HKPACKET"
+                        2218: "SC_HKTLM"
 
                       packet_secondary_header_length: 10
 
