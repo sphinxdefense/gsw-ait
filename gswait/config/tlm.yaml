@@ -44,6 +44,7 @@
 - !include ./tlm/cfs/TO_HKPACKET.yaml
 - !include ./tlm/cfs/FM_DIRLISTPKT.yaml
 - !include ./tlm/cfs/CFE_SB_HKMSG.yaml
+- !include ./tlm/cfs/SC_HKTLM.yaml
 - !include ./tlm/star_tracker/GENERIC_STAR_TRACKER_DATA_TLM.yaml
 - !include ./tlm/star_tracker/GENERIC_STAR_TRACKER_HK_TLM.yaml
 - !include ./tlm/imu/GENERIC_IMU_HK_TLM.yaml
