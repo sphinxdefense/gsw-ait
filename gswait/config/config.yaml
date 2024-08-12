@@ -3,8 +3,8 @@ default:
     database:
         host: influxdb
         port: 8086
-        un: ait
-        pw: admin_password
+        un: root
+        pw: root
 
     extensions:
         ait.core.cmd.Cmd: gswait.cmd.cFSCmd

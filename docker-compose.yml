@@ -8,6 +8,21 @@ services:
       LOG_LEVEL: INFO
     networks:
       - ait
+    command: ["source ~/.bashrc && ait-server"]
+
+  gsw-api:
+    container_name: gsw-api
+    platform: linux/amd64
+    build:
+      context: .
+    environment:
+      LOG_LEVEL: INFO
+    networks:
+      - ait
+    ports:
+      - 8000:8000
+    command: ["source ~/.bashrc && uvicorn api.main:app --host=0.0.0.0 --port=8000 --log-config=logging.yml"]
+    #command: ["sleep infinity"]
 
   telem:
     container_name: telem
@@ -15,7 +30,7 @@ services:
     build:
       context: .
     depends_on: [gsw-ait]
-    command: ["source /home/ait/.bashrc && cd gsw-ait && workon gswait && python scripts/udp_replay.py"]
+    command: ["source ~/.bashrc && python ./scripts/udp_replay.py"]
     environment:
       HOST: gsw-ait
       PORT: 5013
@@ -29,8 +44,8 @@ services:
       - 8086:8086
     environment:
         INFLUXDB_DB: ait
-        INFLUXDB_ADMIN_USER: ait
-        INFLUXDB_ADMIN_PASSWORD: admin_password
+        INFLUXDB_ADMIN_USER: root
+        INFLUXDB_ADMIN_PASSWORD: root
     networks:
       - ait
 

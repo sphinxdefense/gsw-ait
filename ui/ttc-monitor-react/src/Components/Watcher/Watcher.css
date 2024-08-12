@@ -1,0 +1,102 @@
+.watcher .canvas-wrapper {
+  width: 60%;
+  border: 1px solid var(--container-color-border);
+  border-left: none;
+  background-color: var(--color-background-base-header);
+}
+
+.watcher rux-accordion {
+  height: 100%;
+}
+
+.watcher rux-accordion-item::part(container) {
+  display: block;
+  height: 100%;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.watcher .table-wrapper {
+  height: calc(100% - 58px);
+}
+
+.watcher rux-table-body {
+  height: 100px;
+}
+
+.watcher rux-table-cell:last-of-type {
+  display: flex;
+  justify-content: center;
+}
+
+.watcher rux-icon[icon="arrow-upward"],
+.watcher rux-icon[icon="arrow-downward"] {
+  color: var(--color-text-primary);
+  margin-bottom: 5px;
+}
+
+.watcher rux-icon[icon="arrow-upward"] {
+  transform: rotate(45deg);
+}
+
+.watcher rux-icon[icon="arrow-downward"] {
+  transform: rotate(-45deg);
+}
+
+/* THRESHOLD INPUT STYLES */
+
+.watcher rux-input {
+  width: 0px;
+}
+
+.watcher rux-input::part(form-field) {
+  position: relative;
+  left: 20px;
+  width: 110px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 0.25rem 0.5rem;
+}
+
+.watcher rux-input div[slot="suffix"] {
+  display: flex;
+}
+
+.watcher rux-input div[slot="suffix"] div {
+  display: flex;
+  justify-content: center;
+}
+
+rux-tooltip {
+  color: var(--color-text-interactive-default);
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+}
+
+rux-tooltip:hover {
+  border-bottom: 1px solid var(--color-text-interactive-default);
+}
+
+.threshold-value {
+  margin-left: "auto";
+
+  &::part(container) {
+    box-shadow: none;
+  }
+}
+
+.watcher rux-table-header-cell:nth-of-type(3) {
+  text-align: left;
+  padding-left: var(--spacing-4);
+}
+
+.watcher rux-table-cell.text-align-right {
+  padding-right: 0.5rem;
+}
+
+.watcher rux-table-cell.text-align-right rux-button::part(container) {
+  padding-right: 0px;
+}
+
+.watcher rux-table-cell:nth-of-type(3) {
+  padding-left: var(--spacing-4);
+  text-align: left;
+}

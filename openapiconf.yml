@@ -1,0 +1,6 @@
+generatorName: python
+inputSpec: /local/openapi.json
+additionalProperties:
+  projectName: gsw-api-client
+  packageName: gsw_api_client
+  library: asyncio

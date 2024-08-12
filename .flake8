@@ -1,5 +1,5 @@
 [flake8]
-extend-exclude = versioneer.py,_version.py,docs,doc,tests,test,setup.py
+extend-exclude = versioneer.py,_version.py,docs,doc,tests,test,setup.py,./ui/ttc-monitor-react/node_modules/*
 max-line-length = 120
 # Ignoring:
 # E203 prevents flake8 from complaining about whitespace around slice
