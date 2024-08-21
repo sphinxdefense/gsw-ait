@@ -1,0 +1,49 @@
+!Packet
+name: CFS_TO_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNTER
+  desc: Count of all commands received.
+  type: LSB_U16
+
+
+- !Field
+  name: ERRCOUNTER
+  desc: Count of command errors.
+  type: LSB_U16
+
+
+- !Field
+  name: MSGSUBCNT
+  desc: Count of subscribed messages by all telemetry pipes.
+  type: LSB_U16
+
+
+- !Field
+  name: MSGSUBERRCNT
+  desc: Count of subscription errors.
+  type: LSB_U16
+
+
+- !Field
+  name: TBLUPDATECNT
+  desc: Count of table updates through CFE_TBL.
+  type: LSB_U16
+
+
+- !Field
+  name: TBLEERRCNT
+  desc: Count of table update errors.
+  type: LSB_U16
+
+
+- !Field
+  name: CONFIGROUTES
+  desc: Current mask of configured routes.
+  type: LSB_U16
+
+
+- !Field
+  name: ENABLEDROUTES
+  desc: Current mask of enabled routes.
+  type: LSB_U16

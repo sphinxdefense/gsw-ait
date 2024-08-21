@@ -1,0 +1,33 @@
+!Packet
+name: CFS_CFE_SB_SUBRPRTMSG
+fields:
+- !Field
+  name: SUBTYPE
+  desc: Subscription or Unsubscription.
+  type: U8
+
+
+- !Field
+  name: MSGID
+  desc: MsgId subscribed or unsubscribe to.
+  type: LSB_U16
+
+
+- !Field
+  name: QOS_PRIORITY
+  desc: 'Specify high(1) or low(0) message priority for off-board routing, currently
+    unused. (Parent: Quality of Service, used only for interprocessor communication.)'
+  type: U8
+
+
+- !Field
+  name: QOS_RELIABILITY
+  desc: 'Specify high(1) or low(0) message transfer reliability for off-board routing,
+    currently unused. (Parent: Quality of Service, used only for interprocessor communication.)'
+  type: U8
+
+
+- !Field
+  name: PIPE
+  desc: Destination pipe id to send above msg id.
+  type: U8

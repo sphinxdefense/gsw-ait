@@ -1,0 +1,103 @@
+!Packet
+name: CFS_CFE_HK_COMBINED_PKT1
+fields:
+- !Field
+  name: COMMANDCOUNTER
+  desc: EVS  Command Counter.
+  type: U8
+
+
+- !Field
+  name: COMMANDERRCOUNTER
+  desc: EVS  Command Error Counter.
+  type: U8
+
+
+- !Field
+  name: MESSAGEFORMATMODE
+  desc: EVS  Event message format mode (short/long).
+  type: U8
+
+
+- !Field
+  name: MESSAGETRUNCCOUNTER
+  desc: EVS  Event message truncation counter.
+  type: U8
+
+
+- !Field
+  name: TIME_CMDCOUNTER
+  desc: TIME Time Command Execution Counter.
+  type: U8
+
+
+- !Field
+  name: TIME_ERRCOUNTER
+  desc: TIME Time Command Error Counter.
+  type: U8
+
+
+- !Field
+  name: CLOCKSTATEFLAGS
+  desc: TIME State Flags.
+  type: LSB_U16
+
+
+- !Field
+  name: SB_COMMANDCNT
+  desc: SB   Count of valid commands received.
+  type: U8
+
+
+- !Field
+  name: SB_CMDERRCNT
+  desc: SB   Count of invalid commands received.
+  type: U8
+
+
+- !Field
+  name: NOSUBSCRIBERSCNT
+  desc: SB   Count pkts sent with no subscribers.
+  type: U8
+
+
+- !Field
+  name: MSGSENDERRCNT
+  desc: SB   Count of message send errors.
+  type: U8
+
+
+- !Field
+  name: ES_CMDCOUNTER
+  desc: ES   The ES Application Command Counter.
+  type: U8
+
+
+- !Field
+  name: ES_ERRCOUNTER
+  desc: ES   The ES Application Command Error Counter.
+  type: U8
+
+
+- !Field
+  name: CFECORECHECKSUM
+  desc: ES   Checksum of cFE Core Code.
+  type: LSB_U16
+
+
+- !Field
+  name: TBL_CMDCOUNTER
+  desc: TBL  Count of valid commands received.
+  type: U8
+
+
+- !Field
+  name: TBL_ERRCOUNTER
+  desc: TBL  Count of invalid commands received.
+  type: U8
+
+
+- !Field
+  name: NUMTABLES
+  desc: TBL  Number of Tables Registered.
+  type: LSB_U16

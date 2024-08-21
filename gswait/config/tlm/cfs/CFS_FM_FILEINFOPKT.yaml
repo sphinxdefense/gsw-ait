@@ -1,0 +1,57 @@
+!Packet
+name: CFS_FM_FILEINFOPKT
+fields:
+- !Field
+  name: FILESTATUS
+  desc: Status indicating whether the file is open or closed.
+  type: U8
+
+
+- !Field
+  name: CRCCOMPUTED
+  desc: Flag indicating whether a CRC was computed or not.
+  type: U8
+
+
+- !Field
+  name: SPARE1
+  desc: Structure padding.
+  type: U8
+
+
+- !Field
+  name: SPARE2
+  desc: Structure padding.
+  type: U8
+
+
+- !Field
+  name: CRC
+  desc: CRC value if computed.
+  type: LSB_U32
+
+
+- !Field
+  name: FILESIZE
+  desc: File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: LASTMODIFIEDTIME
+  desc: Last Modification Time of File.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME
+  desc: BIG_ENDIAN
+  type: U8
+
+  bytes: [20, 531]

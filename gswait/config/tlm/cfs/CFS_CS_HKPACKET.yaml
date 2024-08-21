@@ -1,0 +1,142 @@
+!Packet
+name: CFS_CS_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNTER
+  desc: CS Application Command Counter.
+  type: U8
+
+- !Field
+  name: CMDERRCOUNTER
+  desc: CS Application Command Error Counter.
+  type: U8
+
+- !Field
+  name: CHECKSUMSTATE
+  desc: CS Application global checksum state.
+  type: U8
+
+- !Field
+  name: EEPROMCSSTATE
+  desc: CS Eeprom table checksum state.
+  type: U8
+
+- !Field
+  name: MEMORYCSSTATE
+  desc: CS Memory table checksum state.
+  type: U8
+
+- !Field
+  name: APPCSSTATE
+  desc: CS App table checksum state.
+  type: U8
+
+- !Field
+  name: TABLESCSSTATE
+  desc: CS Tables table checksum state.
+  type: U8
+
+- !Field
+  name: OSCSSTATE
+  desc: OS code segment checksum state.
+  type: U8
+
+- !Field
+  name: CFECORECSSTATE
+  desc: cFE Core code segment checksum state
+  type: U8
+
+- !Field
+  name: CHILDTASKINUSE
+  desc: CS 'Child Task In Use' flag.
+  type: U8
+
+- !Field
+  name: ONESHOTTASKINUSE
+  desc: CS 'OneShot Task In Use' flag.
+  type: U8
+
+- !Field
+  name: FILLER8
+  desc: 8 bit padding
+  type: U8
+
+- !Field
+  name: EEPROMCSERRCOUNTER
+  desc: Eeprom miscompare counter.
+  type: LSB_U16
+
+- !Field
+  name: MEMORYCSERRCOUNTER
+  desc: Memory miscompare counter.
+  type: LSB_U16
+
+- !Field
+  name: APPCSERRCOUNTER
+  desc: App miscompare counter.
+  type: LSB_U16
+
+- !Field
+  name: TABLESCSERRCOUNTER
+  desc: Tables miscompare counter.
+  type: LSB_U16
+
+- !Field
+  name: CFECORECSERRCOUNTER
+  desc: cFE core miscompare counter
+  type: LSB_U16
+
+- !Field
+  name: OSCSERRCOUNTER
+  desc: OS code segment miscopmare counter.
+  type: LSB_U16
+
+- !Field
+  name: CURRENTCSTABLE
+  desc: Current table being checksummed.
+  type: LSB_U16
+
+- !Field
+  name: CURRENTENTRYINTABLE
+  desc: Current entry ID in the table being checksummed.
+  type: LSB_U16
+
+- !Field
+  name: EEPROMBASELINE
+  desc: Baseline checksum for all of Eeprom.
+  type: LSB_U32
+
+- !Field
+  name: OSBASELINE
+  desc: Baseline checksum for the OS code segment.
+  type: LSB_U32
+
+- !Field
+  name: CFECOREBASELINE
+  desc: Basline checksum for the cFE core.
+  type: LSB_U32
+
+- !Field
+  name: LASTONESHOTADDRESS
+  desc: Address used in last one shot checksum command.
+  type: LSB_U32
+
+- !Field
+  name: LASTONESHOTSIZE
+  desc: Size used in the last one shot checksum command.
+  type: LSB_U32
+
+- !Field
+  name: LASTONESHOTMAXBYTESPERCYCLE
+  desc: Max bytes per cycle for last one shot checksum command.
+  type: LSB_U32
+
+- !Field
+  name: LASTONESHOTCHECKSUM
+  desc: Checksum of the last one shot checksum command.
+  type: LSB_U32
+
+- !Field
+  name: PASSCOUNTER
+  desc: Number of times CS has passed through all of its tables.
+  type: LSB_U32

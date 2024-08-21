@@ -1,0 +1,319 @@
+!Packet
+name: EPS_HK_TLM
+fields:
+- !Field
+  name: CMD_ERR_COUNT
+  desc: Command Error Count
+  type: U8
+
+- !Field
+  name: CMD_COUNT
+  desc: Command Count
+  type: U8
+
+- !Field
+  name: DEVICE_ERR_COUNT
+  desc: Device Command Error Count
+  type: U8
+
+- !Field
+  name: DEVICE_COUNT
+  desc: Device Command Count
+  type: U8
+
+- !Field
+  name: BATT_VOLTAGE
+  desc: Battery Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.BATT_VOLTAGE
+      units: Volts
+
+- !Field
+  name: BATT_TEMPERATURE
+  desc: Battery Temperature
+  type: LSB_U16
+  dntoeu:
+      equation: (.01 * raw.BATT_TEMPERATURE) - 60
+      units: Celsius
+
+- !Field
+  name: BUS_3P3V
+  desc: Bus 3.3 Volt Rail
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.BUS_3P3V
+      units: Volts
+
+- !Field
+  name: BUS_5P0V
+  desc: Bus 5.0 Volt Rail
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.BUS_5P0V
+      units: Volts
+
+- !Field
+  name: BUS_12V
+  desc: Bus 12 Volt Rail
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.BUS_12V
+      units: Volts
+
+- !Field
+  name: EPS_TEMPERATURE
+  desc: EPS Temperature
+  type: LSB_U16
+  dntoeu:
+      equation: (.01 * raw.EPS_TEMPERATURE) - 60
+      units: Celsius
+
+- !Field
+  name: SA_VOLTAGE
+  desc: Solar Array Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SA_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SA_TEMPERATURE
+  desc: Solar Array Temperature
+  type: LSB_U16
+  dntoeu:
+      equation: (.01 * raw.SA_TEMPERATURE) - 60
+      units: Celsius
+
+- !Field
+  name: SW_0_VOLTAGE
+  desc: Switch 0 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_0_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_0_CURRENT
+  desc: Switch 0 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_0_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_0_STATE
+  desc: Switch 0 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_0_FLAGS
+  desc: Switch 0 Flags
+  type: U8
+  enum:
+    0: HEALTHY
+- !Field
+  name: SW_1_VOLTAGE
+  desc: Switch 1 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_1_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_1_CURRENT
+  desc: Switch 1 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_1_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_1_STATE
+  desc: Switch 1 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_1_FLAGS
+  desc: Switch 1 Flags
+  type: U8
+  enum:
+    0: HEALTHY
+- !Field
+  name: SW_2_VOLTAGE
+  desc: Switch 2 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_2_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_2_CURRENT
+  desc: Switch 2 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_2_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_2_STATE
+  desc: Switch 2 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_2_FLAGS
+  desc: Switch 2 Flags
+  type: U8
+  enum:
+    0: HEALTHY
+- !Field
+  name: SW_3_VOLTAGE
+  desc: Switch 3 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_3_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_3_CURRENT
+  desc: Switch 3 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_3_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_3_STATE
+  desc: Switch 3 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_3_FLAGS
+  desc: Switch 3 Flags
+  type: U8
+  enum:
+    0: HEALTHY
+- !Field
+  name: SW_4_VOLTAGE
+  desc: Switch 4 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_4_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_4_CURRENT
+  desc: Switch 4 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_4_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_4_STATE
+  desc: Switch 4 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_4_FLAGS
+  desc: Switch 4 Flags
+  type: U8
+  enum:
+    0: HEALTHY
+- !Field
+  name: SW_5_VOLTAGE
+  desc: Switch 5 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_5_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_5_CURRENT
+  desc: Switch 5 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_5_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_5_STATE
+  desc: Switch 5 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_5_FLAGS
+  desc: Switch 5 Flags
+  type: U8
+  enum:
+    0: HEALTHY
+- !Field
+  name: SW_6_VOLTAGE
+  desc: Switch 6 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_6_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_6_CURRENT
+  desc: Switch 6 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_6_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_6_STATE
+  desc: Switch 6 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_6_FLAGS
+  desc: Switch 6 Flags
+  type: U8
+  enum:
+    0: HEALTHY
+- !Field
+  name: SW_7_VOLTAGE
+  desc: Switch 7 Voltage
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_7_VOLTAGE
+      units: Volts
+
+- !Field
+  name: SW_7_CURRENT
+  desc: Switch 7 Current
+  type: LSB_U16
+  dntoeu:
+      equation: .001 * raw.SW_7_CURRENT
+      units: Amps
+
+- !Field
+  name: SWITCH_7_STATE
+  desc: Switch 7 State
+  type: U8
+  enum:
+    170: 'ON'
+    0: 'OFF'
+- !Field
+  name: SWITCH_7_FLAGS
+  desc: Switch 7 Flags
+  type: U8
+  enum:
+    0: HEALTHY

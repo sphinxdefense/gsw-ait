@@ -1,0 +1,12 @@
+!Packet
+name: CFS_CI_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNTER
+  desc: Count of all commands received.
+  type: LSB_U16
+
+- !Field
+  name: ERRCOUNTER
+  desc: Count of command errors.
+  type: LSB_U16

@@ -19,7 +19,6 @@ WORKDIR $PROJECT_HOME
 COPY api $PROJECT_HOME/api
 COPY gswait $PROJECT_HOME/gswait
 COPY scripts $PROJECT_HOME/scripts
-COPY ui $PROJECT_HOME/ui
 COPY logging.yml openapiconf.yml $PROJECT_HOME
 RUN echo 'export PATH="${PROJECT_HOME}/.local/bin:$PATH"' >> ~/.bashrc \
     && echo 'export AIT_ROOT=/usr/lib/python3.9/site-packages/ait' >> ~/.bashrc \

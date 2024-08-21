@@ -1,0 +1,37 @@
+!Packet
+name: CFS_HK_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNTER
+  desc: Count of valid commands received.
+  type: U8
+
+
+- !Field
+  name: ERRCOUNTER
+  desc: Count of invalid commands received.
+  type: U8
+
+
+- !Field
+  name: PADDING
+  desc: Padding to force 32 bit alignment.
+  type: LSB_U16
+
+
+- !Field
+  name: COMBINEDPACKETSSENT
+  desc: Count of combined tlm pkts sent.
+  type: LSB_U16
+
+
+- !Field
+  name: MISSINGDATACTR
+  desc: Number of times missing data was detected.
+  type: LSB_U16
+
+
+- !Field
+  name: MEMPOOLHANDLE
+  desc: Memory pool handle used to get mempool diags.
+  type: LSB_U32

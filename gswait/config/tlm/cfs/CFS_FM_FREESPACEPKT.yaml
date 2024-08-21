@@ -1,0 +1,147 @@
+!Packet
+name: CFS_FM_FREESPACEPKT
+fields:
+- !Field
+  name: FREESPACE1A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE1B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME1
+  desc: File system name.
+  type: U8
+
+  bytes: [8, 519]
+- !Field
+  name: FREESPACE2A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE2B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME2
+  desc: File system name.
+  type: U8
+
+  bytes: [528, 1039]
+- !Field
+  name: FREESPACE3A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE3B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME3
+  desc: File system name.
+  type: U8
+
+  bytes: [1048, 1559]
+- !Field
+  name: FREESPACE4A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE4B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME4
+  desc: File system name.
+  type: U8
+
+  bytes: [1568, 2079]
+- !Field
+  name: FREESPACE5A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE5B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME5
+  desc: File system name.
+  type: U8
+
+  bytes: [2088, 2599]
+- !Field
+  name: FREESPACE6A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE6B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME6
+  desc: File system name.
+  type: U8
+
+  bytes: [2608, 3119]
+- !Field
+  name: FREESPACE7A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE7B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME7
+  desc: File system name.
+  type: U8
+
+  bytes: [3128, 3639]
+- !Field
+  name: FREESPACE8A
+  desc: First 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: FREESPACE8B
+  desc: Second 32 bit portion of a 64 bit value.
+  type: LSB_U32
+
+
+- !Field
+  name: NAME8
+  desc: File system name.
+  type: U8
+
+  bytes: [3648, 4159]

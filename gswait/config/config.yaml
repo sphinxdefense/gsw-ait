@@ -22,21 +22,321 @@ default:
     tlmdict:
         filename:  tlm.yaml
 
+
+    missions:
+        - nos3:
+            equipment: "ADCS IMU MAG NOVATEL_OEM615 ARDUCAM FSS STAR_TRACKER RADIO EPS TORQUER REACTION_WHEEL CFS CFDP CSS SYN SAMPLE"
+            subsystems:
+                - name: Attitude
+                  status: normal
+                  childSubsystems:
+                    - name: ADCS
+                      status: normal
+                      subsystemParent: Attitude
+                      assemblyDevices:
+                        - name: DO
+                          status: normal
+                          childSubsystemParent: ADCS
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: ADCS
+                        - name: AD
+                          status: normal
+                          childSubsystemParent: ADCS
+                        - name: AC
+                          status: normal
+                          childSubsystemParent: ADCS
+                        - name: DI
+                          status: normal
+                          childSubsystemParent: ADCS
+                        - name: GNC
+                          status: normal
+                          childSubsystemParent: ADCS
+                    - name: IMU
+                      status: normal
+                      subsystemParent: Attitude
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: IMU
+                        - name: DATA_TLM
+                          status: normal
+                          childSubsystemParent: IMU
+                - name: Payload
+                  status: normal
+                  childSubsystems:
+                    - name: MAG
+                      status: normal
+                      subsystemParent: Payload
+                      assemblyDevices:
+                        - name: DATA_TLM
+                          status: normal
+                          childSubsystemParent: MAG
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: MAG
+                    - name: NOVATEL_OEM615
+                      status: normal
+                      subsystemParent: Payload
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: NOVATEL_OEM615
+                        - name: DATA_TLM
+                          status: normal
+                          childSubsystemParent: NOVATEL_OEM615
+                    - name: ARDUCAM
+                      status: normal
+                      subsystemParent: Payload
+                      assemblyDevices:
+                        - name: EXP_TLM
+                          status: normal
+                          childSubsystemParent: ARDUCAM
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: ARDUCAM
+                - name: Navigation
+                  status: normal
+                  childSubsystems:
+                    - name: FSS
+                      status: normal
+                      subsystemParent: Navigation
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: FSS
+                        - name: DATA_TLM
+                          status: normal
+                          childSubsystemParent: FSS
+                    - name: STAR_TRACKER
+                      status: normal
+                      subsystemParent: Navigation
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: STAR_TRACKER
+                        - name: DATA_TLM
+                          status: normal
+                          childSubsystemParent: STAR_TRACKER
+                - name: Communications
+                  status: normal
+                  childSubsystems:
+                    - name: RADIO
+                      status: normal
+                      subsystemParent: Communications
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: RADIO
+                - name: Electrical
+                  status: normal
+                  childSubsystems:
+                    - name: EPS
+                      status: normal
+                      subsystemParent: Electrical
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: EPS
+                - name: Structure
+                  status: normal
+                  childSubsystems:
+                    - name: TORQUER
+                      status: normal
+                      subsystemParent: Structure
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: TORQUER
+                    - name: REACTION_WHEEL
+                      status: normal
+                      subsystemParent: Structure
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: REACTION_WHEEL
+                - name: Software
+                  status: normal
+                  childSubsystems:
+                    - name: CFS
+                      status: normal
+                      subsystemParent: Software
+                      assemblyDevices:
+                        - name: CF_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CF_TRANSPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_ES_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_ES_ONEAPPTLM
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_ES_POOLSTATSTLM
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_ES_SHELLPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_EVS_PACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_EVS_TLMPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_HK_COMBINED_PKT1
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_SB_HKMSG
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CS_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: DS_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: DS_FILEINFOPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: FM_DIRLISTPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: FM_FILEINFOPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: FM_FREESPACEPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: FM_HOUSEKEEPINGPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: FM_OPENFILESPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: HK_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: HS_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: LC_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: MD_DWELLPKT
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: MD_HKTLM
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: MM_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_SB_HKMSG
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_SB_PREVSUBMSG
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_SB_STATMSG
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_SB_SUBRPRTMSG
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: TO_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_TIME_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_TIME_DIAGPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_TBL_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: CFE_TBL_TBLREGPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: SCH_DIAGPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: SCH_HKPACKET
+                          status: normal
+                          childSubsystemParent: CFS
+                        - name: SC_HKTLM
+                          status: normal
+                          childSubsystemParent: CFS
+                    - name: CFDP
+                      status: normal
+                      subsystemParent: Software
+                      assemblyDevices:
+                        - name: ENGINE_HK
+                          status: normal
+                          childSubsystemParent: CFDP
+                    - name: CSS
+                      status: normal
+                      subsystemParent: Software
+                      assemblyDevices:
+                        - name: DATA_TLM
+                          status: normal
+                          childSubsystemParent: CSS
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: CSS
+                - name: Simulation
+                  status: normal
+                  childSubsystems:
+                    - name: SYN
+                      status: normal
+                      subsystemParent: Simulation
+                      assemblyDevices:
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: SYN
+                    - name: SAMPLE
+                      status: normal
+                      subsystemParent: Simulation
+                      assemblyDevices:
+                        - name: DATA_TLM
+                          status: normal
+                          childSubsystemParent: SAMPLE
+                        - name: HK_TLM
+                          status: normal
+                          childSubsystemParent: SAMPLE
+
+
+
+
+
+
     server:
 
         plugins:
             - plugin:
                 name: ait.core.server.plugins.DataArchive
                 inputs:
-                    - telem_stream_debug
+                    - telem_stream
                 datastore:
                     ait.core.db.InfluxDBBackend
+
+            - plugin:
+                name: gswait.plugins.AITWebsocket
+                inputs:
+                    - telem_stream
+                outputs:
+                    - command_stream
+
+
 
 
         inbound-streams:
 
             - stream:
-                name: telem_stream_debug
+                name: telem_stream
                 input:
                     - "UDP"
                     - "0.0.0.0"
@@ -44,69 +344,69 @@ default:
                 handlers:
                     - name: gswait.handlers.CCSDSPacketHandler
                       packet_types:
-                        2368: "GENERIC_ADCS_HK_TLM"
-                        2369: "GENERIC_ADCS_DI"
-                        2370: "GENERIC_ADCS_AD"
-                        2371: "GENERIC_ADCS_GNC"
-                        2372: "GENERIC_ADCS_AC"
-                        2373: "GENERIC_ADCS_DO"
-                        2249: "ARDUCAM_EXP_TLM_T"
-                        2248: "ARDUCAM_HK_TLM_T"
+                        2368: "ADCS_HK_TLM"
+                        2369: "ADCS_DI"
+                        2370: "ADCS_AD"
+                        2371: "ADCS_GNC"
+                        2372: "ADCS_AC"
+                        2373: "ADCS_DO"
+                        2249: "ARDUCAM_EXP_TLM"
+                        2248: "ARDUCAM_HK_TLM"
                         2298: "SAMPLE_HK_TLM"
                         2299: "SAMPLE_DATA_TLM"
-                        2320: "GENERIC_CSS_HK_TLM"
-                        2321: "GENERIC_CSS_DATA_TLM"
-                        2330: "GENERIC_EPS_HK_TLM"
-                        2336: "GENERIC_FSS_HK_TLM"
-                        2337: "GENERIC_FSS_DATA_TLM"
-                        2341: "GENERIC_IMU_HK_TLM"
-                        2342: "GENERIC_IMU_DATA_TLM"
-                        2346: "GENERIC_MAG_HK_TLM"
-                        2347: "GENERIC_MAG_DATA_TLM"
-                        2352: "GENERIC_RADIO_HK_TLM"
-                        2451: "GENRW_HK_TLM_T"
-                        2357: "GENERIC_STAR_TRACKER_HK_TLM"
-                        2358: "GENERIC_STAR_TRACKER_DATA_TLM"
-                        2362: "GENERIC_TORQUER_HK_TLM_T"
+                        2320: "CSS_HK_TLM"
+                        2321: "CSS_DATA_TLM"
+                        2330: "EPS_HK_TLM"
+                        2336: "FSS_HK_TLM"
+                        2337: "FSS_DATA_TLM"
+                        2341: "IMU_HK_TLM"
+                        2342: "IMU_DATA_TLM"
+                        2346: "MAG_HK_TLM"
+                        2347: "MAG_DATA_TLM"
+                        2352: "RADIO_HK_TLM"
+                        2451: "REACTION_WHEEL_HK_TLM"
+                        2357: "STAR_TRACKER_HK_TLM"
+                        2358: "STAR_TRACKER_DATA_TLM"
+                        2362: "TORQUER_HK_TLM"
                         2160: "NOVATEL_OEM615_HK_TLM"
                         2161: "NOVATEL_OEM615_DATA_TLM"
                         2300: "SYN_HK_TLM"
-                        2180: "CI_HKPACKET"
-                        2224: "CF_HKPACKET"
-                        2225: "CF_TRANSPACKET"
-                        2212: "CS_HKPACKET"
-                        2232: "DS_HKPACKET"
-                        2233: "DS_FILEINFOPKT"
-                        2048: "CFE_ES_HKPACKET"
-                        2059: "CFE_ES_ONEAPPTLM"
-                        2064: "CFE_ES_POOLSTATSTLM"
-                        2063: "CFE_ES_SHELLPACKET"
-                        2056: "CFE_EVS_PACKET"
-                        2049: "CFE_EVS_TLMPKT"
-                        2188: "FM_DIRLISTPKT"
-                        2187: "FM_FILEINFOPKT"
-                        2190: "FM_FREESPACEPKT"
-                        2186: "FM_HOUSEKEEPINGPKT"
-                        2189: "FM_OPENFILESPKT"
-                        2203: "HK_HKPACKET"
-                        2204: "CFE_HK_COMBINED_PKT1"
-                        2221: "HS_HKPACKET"
-                        2215: "LC_HKPACKET"
-                        2193: "MD_DWELLPKT"
-                        2192: "MD_HKTLM"
-                        2183: "MM_HKPACKET"
-                        2051: "CFE_SB_HKMSG"
-                        2061: "CFE_SB_PREVSUBMSG"
-                        2058: "CFE_SB_STATMSG"
-                        2062: "CFE_SB_SUBRPRTMSG"
-                        2176: "TO_HKPACKET"
-                        2053: "CFE_TIME_HKPACKET"
-                        2054: "CFE_TIME_DIAGPACKET"
-                        2052: "CFE_TBL_HKPACKET"
-                        2060: "CFE_TBL_TBLREGPACKET"
-                        2200: "SCH_DIAGPACKET"
-                        2199: "SCH_HKPACKET"
-                        2218: "SC_HKTLM"
+                        2180: "CFS_CI_HKPACKET"
+                        2224: "CFS_CF_HKPACKET"
+                        2225: "CFS_CF_TRANSPACKET"
+                        2212: "CFS_CS_HKPACKET"
+                        2232: "CFS_DS_HKPACKET"
+                        2233: "CFS_DS_FILEINFOPKT"
+                        2048: "CFS_CFE_ES_HKPACKET"
+                        2059: "CFS_CFE_ES_ONEAPPTLM"
+                        2064: "CFS_CFE_ES_POOLSTATSTLM"
+                        2063: "CFS_CFE_ES_SHELLPACKET"
+                        2056: "CFS_CFE_EVS_PACKET"
+                        2049: "CFS_CFE_EVS_TLMPKT"
+                        2188: "CFS_FM_DIRLISTPKT"
+                        2187: "CFS_FM_FILEINFOPKT"
+                        2190: "CFS_FM_FREESPACEPKT"
+                        2186: "CFS_FM_HOUSEKEEPINGPKT"
+                        2189: "CFS_FM_OPENFILESPKT"
+                        2203: "CFS_HK_HKPACKET"
+                        2204: "CFS_CFE_HK_COMBINED_PKT1"
+                        2221: "CFS_HS_HKPACKET"
+                        2215: "CFS_LC_HKPACKET"
+                        2193: "CFS_MD_DWELLPKT"
+                        2192: "CFS_MD_HKTLM"
+                        2183: "CFS_MM_HKPACKET"
+                        2051: "CFS_CFE_SB_HKMSG"
+                        2061: "CFS_CFE_SB_PREVSUBMSG"
+                        2058: "CFS_CFE_SB_STATMSG"
+                        2062: "CFS_CFE_SB_SUBRPRTMSG"
+                        2176: "CFS_TO_HKPACKET"
+                        2053: "CFS_CFE_TIME_HKPACKET"
+                        2054: "CFS_CFE_TIME_DIAGPACKET"
+                        2052: "CFS_CFE_TBL_HKPACKET"
+                        2060: "CFS_CFE_TBL_TBLREGPACKET"
+                        2200: "CFS_SCH_DIAGPACKET"
+                        2199: "CFS_SCH_HKPACKET"
+                        2218: "CFS_SC_HKTLM"
 
                       packet_secondary_header_length: 10
 

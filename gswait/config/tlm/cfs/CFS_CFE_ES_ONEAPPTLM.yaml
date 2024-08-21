@@ -1,0 +1,95 @@
+!Packet
+name: CFS_CFE_ES_ONEAPPTLM
+fields:
+- !Field
+  name: APPINFO_APPID
+  desc: 'Application ID for this Application. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_TYPE
+  desc: 'The type of App: CORE or EXTERNAL. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_STACKSIZE
+  desc: 'The Stack Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_MODULEID
+  desc: 'The ID of the Loadable Module for the Application. (Parent: For more information,
+    see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_ADDRESSESAREVALID
+  desc: 'Indicates that the Code, Data, and BSS addresses/sizes are valid. (Parent:
+    For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_CODEADDRESS
+  desc: 'The Address of the Application Code Segment. (Parent: For more information,
+    see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_CODESIZE
+  desc: 'The Code Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_DATAADDRESS
+  desc: 'The Address of the Application Data Segment. (Parent: For more information,
+    see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_DATASIZE
+  desc: 'The Data Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_BSSADDRESS
+  desc: 'The Address of the Application BSS Segment. (Parent: For more information,
+    see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_BSSSIZE
+  desc: 'The BSS Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_STARTADDRESS
+  desc: 'The Start Address of the Application. (Parent: For more information, see
+    CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_EXCEPTIONACTION
+  desc: 'What should occur if Application has an exception (Restart Application OR
+    Restart Processor). (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U16
+
+- !Field
+  name: APPINFO_PRIORITY
+  desc: 'The Priority of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U16
+
+- !Field
+  name: APPINFO_MAINTASKID
+  desc: 'The Application''s Main Task ID. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_EXECUTIONCOUNTER
+  desc: 'The Application''s Main Task Execution Counter. (Parent: For more information,
+    see CFE_ES_AppInfo_t.)'
+  type: LSB_U32
+
+- !Field
+  name: APPINFO_NUMOFCHILDTASKS
+  desc: 'Number of Child tasks for an App. (Parent: For more information, see CFE_ES_AppInfo_t.)'
+  type: LSB_U32

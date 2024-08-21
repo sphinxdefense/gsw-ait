@@ -382,6 +382,37 @@ class PacketResponse(BaseModel, metaclass=abc.ABCMeta):
     packets: list[Union[GenericAdcsAc, GenericAdcsAd, GenericAdcsDi, GenericAdcsGnc]]
 
 
+class ContactResponse(BaseModel, metaclass=abc.ABCMeta):
+    aos: int
+    los: int
+    id: str
+    iron: int
+    norad_id: int
+    name: int
+    type: str
+    priority: str
+    status: str
+    ground: str
+    rev: int
+    satellite: str
+    state: str
+    step: str
+    detail: str
+    dayOfYear: int
+    latitude: float
+    longitude: float
+    azimuth: float
+    elevation: float
+    mode: str
+    resolution: str
+    resolutionStatus: str
+    selected: bool
+
+
+class ContactQuery(BaseModel, metaclass=abc.ABCMeta):
+    contact_id: str
+
+
 # class GenericMagDataTlm(BaseModel):
 # 	raw_mag_x: int = Field(description="Raw mag data x component (nT)")
 # 	raw_mag_y: int = Field(description="Raw mag data y component (nT)")

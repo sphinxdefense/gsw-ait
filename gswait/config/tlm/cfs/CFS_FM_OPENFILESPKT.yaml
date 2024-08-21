@@ -1,0 +1,809 @@
+!Packet
+name: CFS_FM_OPENFILESPKT
+fields:
+- !Field
+  name: NUMOPENFILES
+  desc: Number of files opened via cFE.
+  type: LSB_U32
+
+
+- !Field
+  name: LOGICAL_NAME_1
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 4
+  - 515
+- !Field
+  name: APP_NAME_1
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 516
+  - 675
+- !Field
+  name: LOGICAL_NAME_2
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 676
+  - 1187
+- !Field
+  name: APP_NAME_2
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 1188
+  - 1347
+- !Field
+  name: LOGICAL_NAME_3
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 1348
+  - 1859
+- !Field
+  name: APP_NAME_3
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 1860
+  - 2019
+- !Field
+  name: LOGICAL_NAME_4
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 2020
+  - 2531
+- !Field
+  name: APP_NAME_4
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 2532
+  - 2691
+- !Field
+  name: LOGICAL_NAME_5
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 2692
+  - 3203
+- !Field
+  name: APP_NAME_5
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 3204
+  - 3363
+- !Field
+  name: LOGICAL_NAME_6
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 3364
+  - 3875
+- !Field
+  name: APP_NAME_6
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 3876
+  - 4035
+- !Field
+  name: LOGICAL_NAME_7
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 4036
+  - 4547
+- !Field
+  name: APP_NAME_7
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 4548
+  - 4707
+- !Field
+  name: LOGICAL_NAME_8
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 4708
+  - 5219
+- !Field
+  name: APP_NAME_8
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 5220
+  - 5379
+- !Field
+  name: LOGICAL_NAME_9
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 5380
+  - 5891
+- !Field
+  name: APP_NAME_9
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 5892
+  - 6051
+- !Field
+  name: LOGICAL_NAME_10
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 6052
+  - 6563
+- !Field
+  name: APP_NAME_10
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 6564
+  - 6723
+- !Field
+  name: LOGICAL_NAME_11
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 6724
+  - 7235
+- !Field
+  name: APP_NAME_11
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 7236
+  - 7395
+- !Field
+  name: LOGICAL_NAME_12
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 7396
+  - 7907
+- !Field
+  name: APP_NAME_12
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 7908
+  - 8067
+- !Field
+  name: LOGICAL_NAME_13
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 8068
+  - 8579
+- !Field
+  name: APP_NAME_13
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 8580
+  - 8739
+- !Field
+  name: LOGICAL_NAME_14
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 8740
+  - 9251
+- !Field
+  name: APP_NAME_14
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 9252
+  - 9411
+- !Field
+  name: LOGICAL_NAME_15
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 9412
+  - 9923
+- !Field
+  name: APP_NAME_15
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 9924
+  - 10083
+- !Field
+  name: LOGICAL_NAME_16
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 10084
+  - 10595
+- !Field
+  name: APP_NAME_16
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 10596
+  - 10755
+- !Field
+  name: LOGICAL_NAME_17
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 10756
+  - 11267
+- !Field
+  name: APP_NAME_17
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 11268
+  - 11427
+- !Field
+  name: LOGICAL_NAME_18
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 11428
+  - 11939
+- !Field
+  name: APP_NAME_18
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 11940
+  - 12099
+- !Field
+  name: LOGICAL_NAME_19
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 12100
+  - 12611
+- !Field
+  name: APP_NAME_19
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 12612
+  - 12771
+- !Field
+  name: LOGICAL_NAME_20
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 12772
+  - 13283
+- !Field
+  name: APP_NAME_20
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 13284
+  - 13443
+- !Field
+  name: LOGICAL_NAME_21
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 13444
+  - 13955
+- !Field
+  name: APP_NAME_21
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 13956
+  - 14115
+- !Field
+  name: LOGICAL_NAME_22
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 14116
+  - 14627
+- !Field
+  name: APP_NAME_22
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 14628
+  - 14787
+- !Field
+  name: LOGICAL_NAME_23
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 14788
+  - 15299
+- !Field
+  name: APP_NAME_23
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 15300
+  - 15459
+- !Field
+  name: LOGICAL_NAME_24
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 15460
+  - 15971
+- !Field
+  name: APP_NAME_24
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 15972
+  - 16131
+- !Field
+  name: LOGICAL_NAME_25
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 16132
+  - 16643
+- !Field
+  name: APP_NAME_25
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 16644
+  - 16803
+- !Field
+  name: LOGICAL_NAME_26
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 16804
+  - 17315
+- !Field
+  name: APP_NAME_26
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 17316
+  - 17475
+- !Field
+  name: LOGICAL_NAME_27
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 17476
+  - 17987
+- !Field
+  name: APP_NAME_27
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 17988
+  - 18147
+- !Field
+  name: LOGICAL_NAME_28
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 18148
+  - 18659
+- !Field
+  name: APP_NAME_28
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 18660
+  - 18819
+- !Field
+  name: LOGICAL_NAME_29
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 18820
+  - 19331
+- !Field
+  name: APP_NAME_29
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 19332
+  - 19491
+- !Field
+  name: LOGICAL_NAME_30
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 19492
+  - 20003
+- !Field
+  name: APP_NAME_30
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 20004
+  - 20163
+- !Field
+  name: LOGICAL_NAME_31
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 20164
+  - 20675
+- !Field
+  name: APP_NAME_31
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 20676
+  - 20835
+- !Field
+  name: LOGICAL_NAME_32
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 20836
+  - 21347
+- !Field
+  name: APP_NAME_32
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 21348
+  - 21507
+- !Field
+  name: LOGICAL_NAME_33
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 21508
+  - 22019
+- !Field
+  name: APP_NAME_33
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 22020
+  - 22179
+- !Field
+  name: LOGICAL_NAME_34
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 22180
+  - 22691
+- !Field
+  name: APP_NAME_34
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 22692
+  - 22851
+- !Field
+  name: LOGICAL_NAME_35
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 22852
+  - 23363
+- !Field
+  name: APP_NAME_35
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 23364
+  - 23523
+- !Field
+  name: LOGICAL_NAME_36
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 23524
+  - 24035
+- !Field
+  name: APP_NAME_36
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 24036
+  - 24195
+- !Field
+  name: LOGICAL_NAME_37
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 24196
+  - 24707
+- !Field
+  name: APP_NAME_37
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 24708
+  - 24867
+- !Field
+  name: LOGICAL_NAME_38
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 24868
+  - 25379
+- !Field
+  name: APP_NAME_38
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 25380
+  - 25539
+- !Field
+  name: LOGICAL_NAME_39
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 25540
+  - 26051
+- !Field
+  name: APP_NAME_39
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 26052
+  - 26211
+- !Field
+  name: LOGICAL_NAME_40
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 26212
+  - 26723
+- !Field
+  name: APP_NAME_40
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 26724
+  - 26883
+- !Field
+  name: LOGICAL_NAME_41
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 26884
+  - 27395
+- !Field
+  name: APP_NAME_41
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 27396
+  - 27555
+- !Field
+  name: LOGICAL_NAME_42
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 27556
+  - 28067
+- !Field
+  name: APP_NAME_42
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 28068
+  - 28227
+- !Field
+  name: LOGICAL_NAME_43
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 28228
+  - 28739
+- !Field
+  name: APP_NAME_43
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 28740
+  - 28899
+- !Field
+  name: LOGICAL_NAME_44
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 28900
+  - 29411
+- !Field
+  name: APP_NAME_44
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 29412
+  - 29571
+- !Field
+  name: LOGICAL_NAME_45
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 29572
+  - 30083
+- !Field
+  name: APP_NAME_45
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 30084
+  - 30243
+- !Field
+  name: LOGICAL_NAME_46
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 30244
+  - 30755
+- !Field
+  name: APP_NAME_46
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 30756
+  - 30915
+- !Field
+  name: LOGICAL_NAME_47
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 30916
+  - 31427
+- !Field
+  name: APP_NAME_47
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 31428
+  - 31587
+- !Field
+  name: LOGICAL_NAME_48
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 31588
+  - 32099
+- !Field
+  name: APP_NAME_48
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 32100
+  - 32259
+- !Field
+  name: LOGICAL_NAME_49
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 32260
+  - 32771
+- !Field
+  name: APP_NAME_49
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 32772
+  - 32931
+- !Field
+  name: LOGICAL_NAME_50
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 32932
+  - 33443
+- !Field
+  name: APP_NAME_50
+  desc: File system name.
+  type: U8
+
+  bytes:
+  - 33444
+  - 33603

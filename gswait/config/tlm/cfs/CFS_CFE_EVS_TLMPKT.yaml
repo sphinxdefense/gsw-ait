@@ -1,0 +1,232 @@
+!Packet
+name: CFS_CFE_EVS_TLMPKT
+fields:
+- !Field
+  name: COMMANDCOUNTER
+  desc: EVS Command Counter.
+  type: U8
+
+- !Field
+  name: COMMANDERRCOUNTER
+  desc: EVS Command Error Counter.
+  type: U8
+
+- !Field
+  name: MESSAGEFORMATMODE
+  desc: Event message format mode (short/long).
+  type: U8
+
+- !Field
+  name: MESSAGETRUNCCOUNTER
+  desc: Event message truncation counter.
+  type: U8
+
+- !Field
+  name: UNREGISTEREDAPPCOUNTER
+  desc: Unregistered application message send counter.
+  type: U8
+
+- !Field
+  name: OUTPUTPORT
+  desc: Output port mask.
+  type: U8
+
+- !Field
+  name: LOGFULLFLAG
+  desc: Local event log full flag.
+  type: U8
+
+- !Field
+  name: LOGMODE
+  desc: Local event logging mode (overwrite/discard).
+  type: U8
+
+- !Field
+  name: MESSAGESENDCOUNTER
+  desc: Event message send counter.
+  type: LSB_U16
+
+- !Field
+  name: LOGOVERFLOWCOUNTER
+  desc: Local event log overflow counter.
+  type: LSB_U16
+
+- !Field
+  name: LOGENABLED
+  desc: Current event log enable/disable state.
+  type: U8
+
+- !Field
+  name: SPARE1
+  desc: Padding for 32 bit boundary.
+  type: U8
+
+- !Field
+  name: SPARE2
+  desc: Padding for 32 bit boundary.
+  type: U8
+
+- !Field
+  name: SPARE3
+  desc: Padding for 32 bit boundary.
+  type: U8
+
+- !Field
+  name: APPDATA_1
+  desc: Array of registered application table data. byte 1
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_2
+  desc: Array of registered application table data. byte 2
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_3
+  desc: Array of registered application table data. byte 3
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_4
+  desc: Array of registered application table data. byte 4
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_5
+  desc: Array of registered application table data. byte 5
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_6
+  desc: Array of registered application table data. byte 6
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_7
+  desc: Array of registered application table data. byte 7
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_8
+  desc: Array of registered application table data. byte 8
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_9
+  desc: Array of registered application table data. byte 9
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_10
+  desc: Array of registered application table data. byte 10
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_11
+  desc: Array of registered application table data. byte 11
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_12
+  desc: Array of registered application table data. byte 12
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_13
+  desc: Array of registered application table data. byte 13
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_14
+  desc: Array of registered application table data. byte 14
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_15
+  desc: Array of registered application table data. byte 15
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_16
+  desc: Array of registered application table data. byte 16
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_17
+  desc: Array of registered application table data. byte 17
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_18
+  desc: Array of registered application table data. byte 18
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_19
+  desc: Array of registered application table data. byte 19
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_20
+  desc: Array of registered application table data. byte 20
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_21
+  desc: Array of registered application table data. byte 21
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_22
+  desc: Array of registered application table data. byte 22
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_23
+  desc: Array of registered application table data. byte 23
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_24
+  desc: Array of registered application table data. byte 24
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_25
+  desc: Array of registered application table data. byte 25
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_26
+  desc: Array of registered application table data. byte 26
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_27
+  desc: Array of registered application table data. byte 27
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_28
+  desc: Array of registered application table data. byte 28
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_29
+  desc: Array of registered application table data. byte 29
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_30
+  desc: Array of registered application table data. byte 30
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_31
+  desc: Array of registered application table data. byte 31
+  type: LSB_U32
+
+- !Field
+  name: APPDATA_32
+  desc: Array of registered application table data. byte 32
+  type: LSB_U32

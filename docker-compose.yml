@@ -6,6 +6,8 @@ services:
       context: .
     environment:
       LOG_LEVEL: INFO
+    ports:
+      - 8001:8001
     networks:
       - ait
     command: ["source ~/.bashrc && ait-server"]
@@ -21,6 +23,7 @@ services:
       - ait
     ports:
       - 8000:8000
+      - 8765:8765
     command: ["source ~/.bashrc && uvicorn api.main:app --host=0.0.0.0 --port=8000 --log-config=logging.yml"]
     #command: ["sleep infinity"]
 

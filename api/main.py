@@ -3,6 +3,7 @@ import logging
 
 from fastapi import FastAPI
 from fastapi.routing import APIRoute
+from fastapi.middleware.cors import CORSMiddleware
 
 from api.constants import ApiSpecTags
 from api.router import health_check, v1_router
@@ -25,6 +26,14 @@ app.get(
     tags=[ApiSpecTags.OTHER],
 )(health_check)
 app.include_router(v1_router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 def use_route_names_as_operation_ids(app: FastAPI) -> None:

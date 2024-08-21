@@ -1,0 +1,64 @@
+!Packet
+name: TORQUER_HK_TLM
+fields:
+- !Field
+  name: CMD_ERR_COUNT
+  desc: Command Error Count
+  type: U8
+
+- !Field
+  name: CMD_COUNT
+  desc: Command Count
+  type: U8
+
+- !Field
+  name: DEVICE_ERR_COUNT
+  desc: Device Command Error Count
+  type: U8
+
+- !Field
+  name: DEVICE_COUNT
+  desc: Device Command Count
+  type: U8
+
+- !Field
+  name: DEVICE_ENABLED
+  desc: Device Enable Status
+  type: U8
+  enum:
+    0: DISABLED
+    1: ENABLED
+- !Field
+  name: TORQUER_PERIOD
+  desc: Torquer Period
+  type: LSB_U32
+
+- !Field
+  name: TORQUER_DIRECTION_0
+  desc: Torquer 0 Direction
+  type: U8
+
+- !Field
+  name: TORQUER_PERCENT_ON_0
+  desc: Torquer 0 Percent On
+  type: U8
+
+- !Field
+  name: TORQUER_DIRECTION_1
+  desc: Torquer 1 Direction
+  type: U8
+
+- !Field
+  name: TORQUER_PERCENT_ON_1
+  desc: Torquer 1 Percent On
+  type: U8
+
+- !Field
+  name: TORQUER_DIRECTION_2
+  desc: Torquer 2 Direction
+  type: U8
+
+- !Field
+  name: TORQUER_PERCENT_ON_2
+  desc: Torquer 2 Percent On
+  type: U8

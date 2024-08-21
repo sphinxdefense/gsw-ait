@@ -1,0 +1,17 @@
+!Packet
+name: FSS_DATA_TLM
+fields:
+- !Field
+  name: GENERIC_FSS_ALPHA
+  desc: Raw generic_fss data alpha angle (-60 to 60)
+  type: LSB_F32
+
+- !Field
+  name: GENERIC_FSS_BETA
+  desc: Raw generic_fss data beta angle  (-60 to 60)
+  type: LSB_F32
+
+- !Field
+  name: GENERIC_FSS_ERROR_CODE
+  desc: Raw generic_fss data error code  (0=no error, 1=error)
+  type: U8

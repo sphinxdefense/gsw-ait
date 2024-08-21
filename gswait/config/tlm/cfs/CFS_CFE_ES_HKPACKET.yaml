@@ -1,0 +1,243 @@
+!Packet
+name: CFS_CFE_ES_HKPACKET
+fields:
+- !Field
+  name: CMDCOUNTER
+  desc: The ES Application Command Counter.
+  type: U8
+
+- !Field
+  name: ERRCOUNTER
+  desc: The ES Application Command Error Counter.
+  type: U8
+
+- !Field
+  name: CFECORECHECKSUM
+  desc: Checksum of cFE Core Code.
+  type: LSB_U16
+
+- !Field
+  name: CFEMAJORVERSION
+  desc: Major Version Number of cFE.
+  type: U8
+
+- !Field
+  name: CFEMINORVERSION
+  desc: Minor Version Number of cFE.
+  type: U8
+
+- !Field
+  name: CFEREVISION
+  desc: Sub-Minor Version Number of cFE.
+  type: U8
+
+- !Field
+  name: CFEMISSIONREVISION
+  desc: Mission Version Number of cFE.
+  type: U8
+
+- !Field
+  name: OSALMAJORVERSION
+  desc: OS Abstraction Layer Major Version Number.
+  type: U8
+
+- !Field
+  name: OSALMINORVERSION
+  desc: OS Abstraction Layer Minor Version Number.
+  type: U8
+
+- !Field
+  name: OSALREVISION
+  desc: OS Abstraction Layer Revision Number.
+  type: U8
+
+- !Field
+  name: OSALMISSIONREVISION
+  desc: OS Abstraction Layer MissionRevision Number.
+  type: U8
+
+- !Field
+  name: PSP_MAJORVERSION
+  desc: Platform Support Package Major Version Number.
+  type: U8
+
+- !Field
+  name: PSP_MINORVERSION
+  desc: Platform Support Package Minor Version Number.
+  type: U8
+
+- !Field
+  name: PSP_REVISION
+  desc: Platform Support Package Revision Number.
+  type: U8
+
+- !Field
+  name: PSP_MISSIONREVISION
+  desc: Platform Support Package MissionRevision Number.
+  type: U8
+
+- !Field
+  name: SYSLOGBYTESUSED
+  desc: Total number of bytes used in system log.
+  type: LSB_U32
+
+- !Field
+  name: SYSLOGSIZE
+  desc: Total size of the system log.
+  type: LSB_U32
+
+- !Field
+  name: SYSLOGENTRIES
+  desc: Number of entries in the system log.
+  type: LSB_U32
+
+- !Field
+  name: SYSLOGMODE
+  desc: Write/Overwrite Mode.
+  type: LSB_U32
+
+- !Field
+  name: ERLOGINDEX
+  desc: Current index of the ER Log (wraps around).
+  type: LSB_U32
+
+- !Field
+  name: ERLOGENTRIES
+  desc: Number of entries made in the ER Log since the power on.
+  type: LSB_U32
+
+- !Field
+  name: REGISTEREDCOREAPPS
+  desc: Number of Applications registered with ES.
+  type: LSB_U32
+
+- !Field
+  name: REGISTEREDEXTERNALAPPS
+  desc: Number of Applications registered with ES.
+  type: LSB_U32
+
+- !Field
+  name: REGISTEREDTASKS
+  desc: Number of Tasks ( main AND child tasks ) registered with ES.
+  type: LSB_U32
+
+- !Field
+  name: REGISTEREDLIBS
+  desc: Number of Libraries registered with ES.
+  type: LSB_U32
+
+- !Field
+  name: RESETTYPE
+  desc: Reset type ( PROCESSOR or POWERON ).
+  type: LSB_U32
+
+- !Field
+  name: RESETSUBTYPE
+  desc: Reset Sub Type.
+  type: LSB_U32
+
+- !Field
+  name: PROCESSORRESETS
+  desc: Number of processor resets since last power on.
+  type: LSB_U32
+
+- !Field
+  name: MAXPROCESSORRESETS
+  desc: Max processor resets before a power on is done.
+  type: LSB_U32
+
+- !Field
+  name: BOOTSOURCE
+  desc: Boot source ( as provided from BSP ).
+  type: LSB_U32
+
+- !Field
+  name: PERFSTATE
+  desc: Current state of Performance Analyzer.
+  type: LSB_U32
+
+- !Field
+  name: PERFMODE
+  desc: Current mode of Performance Analyzer.
+  type: LSB_U32
+
+- !Field
+  name: PERFTRIGGERCOUNT
+  desc: Number of Times Perfomance Analyzer has Triggered.
+  type: LSB_U32
+
+- !Field
+  name: PERFFILTERMASK_1
+  desc: Current Setting of Performance Analyzer Filter 1 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFFILTERMASK_2
+  desc: Current Setting of Performance Analyzer Filter 2 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFFILTERMASK_3
+  desc: Current Setting of Performance Analyzer Filter 3 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFFILTERMASK_4
+  desc: Current Setting of Performance Analyzer Filter 4 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFTRIGGERMASK_1
+  desc: Current Setting of Performance Analyzer Trigger 1 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFTRIGGERMASK_2
+  desc: Current Setting of Performance Analyzer Trigger 2 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFTRIGGERMASK_3
+  desc: Current Setting of Performance Analyzer Trigger 3 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFTRIGGERMASK_4
+  desc: Current Setting of Performance Analyzer Trigger 4 Masks.
+  type: LSB_U32
+
+- !Field
+  name: PERFDATASTART
+  desc: Identifies First Stored Entry in Performance Analyzer Log.
+  type: LSB_U32
+
+- !Field
+  name: PERFDATAEND
+  desc: Identifies Last Stored Entry in Performance Analyzer Log.
+  type: LSB_U32
+
+- !Field
+  name: PERFDATACOUNT
+  desc: Number of Entries Put Into the Performance Analyzer Log.
+  type: LSB_U32
+
+- !Field
+  name: PERFDATATOWRITE
+  desc: Number of Performance Analyzer Log Entries Left to be Written to Log Dump
+    File.
+  type: LSB_U32
+
+- !Field
+  name: HEAPBYTESFREE
+  desc: Number of free bytes remaining in the OS heap.
+  type: LSB_U32
+
+- !Field
+  name: HEAPBLOCKSFREE
+  desc: Number of free blocks remaining in the OS heap.
+  type: LSB_U32
+
+- !Field
+  name: HEAPMAXBLOCKSIZE
+  desc: Number of bytes in the largest free block.
+  type: LSB_U32

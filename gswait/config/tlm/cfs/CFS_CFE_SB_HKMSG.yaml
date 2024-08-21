@@ -1,0 +1,103 @@
+!Packet
+name: CFS_CFE_SB_HKMSG
+fields:
+- !Field
+  name: COMMANDCNT
+  desc: Count of valid commands received.
+  type: U8
+
+
+- !Field
+  name: CMDERRCNT
+  desc: Count of invalid commands received.
+  type: U8
+
+
+- !Field
+  name: NOSUBSCRIBERSCNT
+  desc: Count pkts sent with no subscribers.
+  type: U8
+
+
+- !Field
+  name: MSGSENDERRCNT
+  desc: Count of message send errors.
+  type: U8
+
+
+- !Field
+  name: MSGRECEIVEERRCNT
+  desc: Count of message receive errors.
+  type: U8
+
+
+- !Field
+  name: INTERNALERRCNT
+  desc: Count of queue read or write errors.
+  type: U8
+
+
+- !Field
+  name: CREATEPIPEERRCNT
+  desc: Count of errors in create pipe API.
+  type: U8
+
+
+- !Field
+  name: SUBSCRIBEERRCNT
+  desc: Count of errors in subscribe API.
+  type: U8
+
+
+- !Field
+  name: SPARE
+  desc: Spare Byte.
+  type: U8
+
+
+- !Field
+  name: DUPSUBSCRIPTIONSCNT
+  desc: Count of duplicate subscriptions.
+  type: U8
+
+
+- !Field
+  name: SPARE2ALIGN_1
+  desc: Spare bytes to ensure alignment. byte 1
+  type: U8
+
+
+- !Field
+  name: SPARE2ALIGN_2
+  desc: Spare bytes to ensure alignment. byte 2
+  type: U8
+
+
+- !Field
+  name: PIPEOVERFLOWERRCNT
+  desc: Count of pipe overflow errors.
+  type: LSB_U16
+
+
+- !Field
+  name: MSGLIMERRCNT
+  desc: Count of msg id to pipe errors.
+  type: LSB_U16
+
+
+- !Field
+  name: MEMPOOLHANDLE
+  desc: Handle to SB's Memory Pool.
+  type: LSB_U32
+
+
+- !Field
+  name: MEMINUSE
+  desc: Memory in use.
+  type: LSB_U32
+
+
+- !Field
+  name: UNMARKEDMEM
+  desc: cfg param CFE_SB_BUF_MEMORY_BYTES minus Peak Memory in use
+  type: LSB_U32

@@ -1,0 +1,353 @@
+!Packet
+name: CFS_CFE_TIME_DIAGPACKET
+fields:
+- !Field
+  name: ATTONEMET_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: MET at time of tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONEMET_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: MET at
+    time of tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONESTCF_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: STCF at time of tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONESTCF_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: STCF at
+    time of tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONEDELAY_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Adjustment for slow tone detection.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONEDELAY_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Adjustment
+    for slow tone detection.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONELATCH_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Local clock latched at time of tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONELATCH_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Local
+    clock latched at time of tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ATTONELEAPS
+  desc: Leap Seconds at time of tone.
+  type: LSB_I16
+
+
+- !Field
+  name: CLOCKSTATEAPI
+  desc: Clock state as per API.
+  type: LSB_I16
+
+
+- !Field
+  name: TIMESINCETONE_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Time elapsed since the tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: TIMESINCETONE_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Time elapsed
+    since the tone.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTLATCH_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Local clock latched just ''now''.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTLATCH_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Local
+    clock latched just ''now''.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTMET_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: MET at this instant.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTMET_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: MET at
+    this instant.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTTAI_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: TAI at this instant.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTTAI_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: TAI at
+    this instant.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTUTC_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: UTC at this instant.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CURRENTUTC_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: UTC at
+    this instant.)'
+  type: LSB_U32
+
+
+- !Field
+  name: CLOCKSETSTATE
+  desc: Time has been 'set'.
+  type: LSB_I16
+
+
+- !Field
+  name: CLOCKFLYSTATE
+  desc: Current fly-wheel state.
+  type: LSB_I16
+
+
+- !Field
+  name: CLOCKSOURCE
+  desc: Internal vs external, etc.
+  type: LSB_I16
+
+
+- !Field
+  name: CLOCKSIGNAL
+  desc: Primary vs redundant, etc.
+  type: LSB_I16
+
+
+- !Field
+  name: SERVERFLYSTATE
+  desc: Used by clients only.
+  type: LSB_I16
+
+
+- !Field
+  name: FORCED2FLY
+  desc: Commanded into fly-wheel.
+  type: LSB_I16
+
+
+- !Field
+  name: CLOCKSTATEFLAGS
+  desc: Clock State Flags.
+  type: LSB_U16
+
+
+- !Field
+  name: ONETIMEDIRECTION
+  desc: One time STCF adjustment direction (Add = 1, Sub = 2).
+  type: LSB_I16
+
+
+- !Field
+  name: ONEHZDIRECTION
+  desc: 1Hz STCF adjustment direction
+  type: LSB_I16
+
+
+- !Field
+  name: DELAYDIRECTION
+  desc: Client latency adjustment direction.
+  type: LSB_I16
+
+
+- !Field
+  name: ONETIMEADJUST_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Previous one-time STCF adjustment.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ONETIMEADJUST_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Previous
+    one-time STCF adjustment.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ONEHZADJUST_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Current 1Hz STCF adjustment.)'
+  type: LSB_U32
+
+
+- !Field
+  name: ONEHZADJUST_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Current
+    1Hz STCF adjustment.)'
+  type: LSB_U32
+
+
+- !Field
+  name: TONESIGNALLATCH_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Local Clock latched at most recent
+    tone signal.)'
+  type: LSB_U32
+
+
+- !Field
+  name: TONESIGNALLATCH_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Local
+    Clock latched at most recent tone signal.)'
+  type: LSB_U32
+
+
+- !Field
+  name: TONEDATALATCH_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Local Clock latched at arrival of
+    tone data.)'
+  type: LSB_U32
+
+
+- !Field
+  name: TONEDATALATCH_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Local
+    Clock latched at arrival of tone data.)'
+  type: LSB_U32
+
+
+- !Field
+  name: TONEMATCHCOUNT
+  desc: Tone signal / data verification count.
+  type: LSB_U32
+
+
+- !Field
+  name: TONEMATCHERRORS
+  desc: Tone signal / data verification error count.
+  type: LSB_U32
+
+
+- !Field
+  name: TONESIGNALCOUNT
+  desc: Tone signal detected SB message count.
+  type: LSB_U32
+
+
+- !Field
+  name: TONEDATACOUNT
+  desc: Time at the tone data SB message count.
+  type: LSB_U32
+
+
+- !Field
+  name: TONEINTCOUNT
+  desc: Tone signal ISR execution count.
+  type: LSB_U32
+
+
+- !Field
+  name: TONEINTERRORS
+  desc: Tone signal ISR error count.
+  type: LSB_U32
+
+
+- !Field
+  name: TONETASKCOUNT
+  desc: Tone task execution count.
+  type: LSB_U32
+
+
+- !Field
+  name: VERSIONCOUNT
+  desc: Count of mods to time at tone reference data (version).
+  type: LSB_U32
+
+
+- !Field
+  name: LOCALINTCOUNT
+  desc: Local 1Hz ISR execution count.
+  type: LSB_U32
+
+
+- !Field
+  name: LOCALTASKCOUNT
+  desc: Local 1Hz task execution count.
+  type: LSB_U32
+
+
+- !Field
+  name: VIRTUALMET
+  desc: Software MET.
+  type: LSB_U32
+
+
+- !Field
+  name: MINELAPSED
+  desc: Min tone signal / data pkt arrival window (Sub-seconds).
+  type: LSB_U32
+
+
+- !Field
+  name: MAXELAPSED
+  desc: Max tone signal / data pkt arrival window (Sub-seconds).
+  type: LSB_U32
+
+
+- !Field
+  name: MAXLOCALCLOCK_SECONDS
+  desc: 'Number of seconds since epoch. (Parent: Max local clock value before rollover.)'
+  type: LSB_U32
+
+
+- !Field
+  name: MAXLOCALCLOCK_SUBSECONDS
+  desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Max local
+    clock value before rollover.)'
+  type: LSB_U32
+
+
+- !Field
+  name: TONEOVERLIMIT
+  desc: Max between tone signal interrupts.
+  type: LSB_U32
+
+
+- !Field
+  name: TONEUNDERLIMIT
+  desc: Min between tone signal interrupts.
+  type: LSB_U32
+
+
+- !Field
+  name: DATASTORESTATUS
+  desc: Data Store status (preserved across processor reset).
+  type: LSB_U32

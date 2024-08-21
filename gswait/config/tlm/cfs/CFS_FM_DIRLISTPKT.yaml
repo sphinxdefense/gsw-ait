@@ -1,0 +1,505 @@
+!Packet
+name: CFS_FM_DIRLISTPKT
+fields:
+- !Field
+  name: DIRNAME
+  desc: Directory Name.
+  type: U8
+
+  bytes: [0, 511]
+- !Field
+  name: TOTALFILES
+  desc: Number of files in the directory.
+  type: LSB_U32
+
+
+- !Field
+  name: PACKETFILES
+  desc: Number of files in this packet.
+  type: LSB_U32
+
+
+- !Field
+  name: FIRSTFILE
+  desc: Index into directory files of first packet file.
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME1
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [524, 1035]
+- !Field
+  name: FILESIZE1
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME1
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE1
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME2
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [1048, 1559]
+- !Field
+  name: FILESIZE2
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME2
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE2
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME3
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [1572, 2083]
+- !Field
+  name: FILESIZE3
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME3
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE3
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME4
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [2096, 2607]
+- !Field
+  name: FILESIZE4
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME4
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE4
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME5
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [2620, 3131]
+- !Field
+  name: FILESIZE5
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME5
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE5
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME6
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [3144, 3655]
+- !Field
+  name: FILESIZE6
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME6
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE6
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME7
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [3668, 4179]
+- !Field
+  name: FILESIZE7
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME7
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE7
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME8
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [4192, 4703]
+- !Field
+  name: FILESIZE8
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME8
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE8
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME9
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [4716, 5227]
+- !Field
+  name: FILESIZE9
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME9
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE9
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME10
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [5240, 5751]
+- !Field
+  name: FILESIZE10
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME10
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE10
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME11
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [5764, 6275]
+- !Field
+  name: FILESIZE11
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME11
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE11
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME12
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [6288, 6799]
+- !Field
+  name: FILESIZE12
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME12
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE12
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME13
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [6812, 7323]
+- !Field
+  name: FILESIZE13
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME13
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE13
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME14
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [7336, 7847]
+- !Field
+  name: FILESIZE14
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME14
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE14
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME15
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [7860, 8371]
+- !Field
+  name: FILESIZE15
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME15
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE15
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME16
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [8384, 8895]
+- !Field
+  name: FILESIZE16
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME16
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE16
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME17
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [8908, 9419]
+- !Field
+  name: FILESIZE17
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME17
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE17
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME18
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [9432, 9943]
+- !Field
+  name: FILESIZE18
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME18
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE18
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME19
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [9956, 10467]
+- !Field
+  name: FILESIZE19
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME19
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE19
+  desc: Mode of the file (Permissions).
+  type: LSB_U32
+
+
+- !Field
+  name: FILENAME20
+  desc: Directory Listing Filename.
+  type: U8
+
+  bytes: [10480, 10991]
+- !Field
+  name: FILESIZE20
+  desc: Directory Listing File Size.
+  type: LSB_U32
+
+
+- !Field
+  name: MODIFYTIME20
+  desc: Directory Listing File Last Modification Times.
+  type: LSB_U32
+
+
+- !Field
+  name: MODE20
+  desc: Mode of the file (Permissions).
+  type: LSB_U32

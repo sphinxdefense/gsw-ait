@@ -1,0 +1,97 @@
+!Packet
+name: ADCS_DO
+fields:
+- !Field
+  name: QBA_0
+  desc: Quaternion from magnetic torqer to body frame
+  type: LSB_D64
+
+- !Field
+  name: QBA_1
+  desc: Quaternion from magnetic torquer to body frame
+  type: LSB_D64
+
+- !Field
+  name: QBA_2
+  desc: Quaternion from magnetic torquer to body frame
+  type: LSB_D64
+
+- !Field
+  name: QBA_3
+  desc: Quaternion from magnetic torquer to body frame
+  type: LSB_D64
+
+- !Field
+  name: MCMD_X
+  desc: Magnetorquer Command in Actuator Frame, X component (A-m^2)
+  type: LSB_D64
+
+- !Field
+  name: MCMD_Y
+  desc: Magnetorquer Command in Actuator Frame, Y component (A-m^2)
+  type: LSB_D64
+
+- !Field
+  name: MCMD_Z
+  desc: Magnetorquer Command in Actuator Frame, Z component (A-m^2)
+  type: LSB_D64
+
+- !Field
+  name: RW0_AXIS_X
+  desc: Reaction wheel 0 axis in body, X component
+  type: LSB_D64
+
+- !Field
+  name: RW0_AXIS_Y
+  desc: Reaction wheel 0 axis in body, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW0_AXIS_Z
+  desc: Reaction wheel 0 axis in body, Z component
+  type: LSB_D64
+
+- !Field
+  name: RW1_AXIS_X
+  desc: Reaction wheel 1 axis in body, X component
+  type: LSB_D64
+
+- !Field
+  name: RW1_AXIS_Y
+  desc: Reaction wheel 1 axis in body, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW1_AXIS_Z
+  desc: Reaction wheel 1 axis in body, Z component
+  type: LSB_D64
+
+- !Field
+  name: RW2_AXIS_X
+  desc: Reaction wheel 2 axis in body, X component
+  type: LSB_D64
+
+- !Field
+  name: RW2_AXIS_Y
+  desc: Reaction wheel 2 axis in body, Y component
+  type: LSB_D64
+
+- !Field
+  name: RW2_AXIS_Z
+  desc: Reaction wheel 2 axis in body, Z component
+  type: LSB_D64
+
+- !Field
+  name: TCMD_X
+  desc: Reaction wheel torque in body frame, X component (Nm)
+  type: LSB_D64
+
+- !Field
+  name: TCMD_Y
+  desc: Reaction wheel torque in body frame, Y component (Nm)
+  type: LSB_D64
+
+- !Field
+  name: TCMD_Z
+  desc: Reaction wheel torque in body frame, Z component (Nm)
+  type: LSB_D64

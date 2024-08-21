@@ -1,0 +1,27 @@
+!Packet
+name: REACTION_WHEEL_HK_TLM
+fields:
+- !Field
+  name: ERROR_COUNT
+  desc: Error Count
+  type: U8
+
+- !Field
+  name: COMMAND_COUNT
+  desc: Command Count
+  type: U8
+
+- !Field
+  name: MOMENTUM_NMS_0
+  desc: Reaction Wheel 0 Momentum in Newton-meter-seconds
+  type: LSB_D64
+
+- !Field
+  name: MOMENTUM_NMS_1
+  desc: Reaction Wheel 1 Momentum in Newton-meter-seconds
+  type: LSB_D64
+
+- !Field
+  name: MOMENTUM_NMS_2
+  desc: Reaction Wheel 2 Momentum in Newton-meter-seconds
+  type: LSB_D64

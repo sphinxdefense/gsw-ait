@@ -1,0 +1,11 @@
+!Packet
+name: ARDUCAM_HK_TLM
+fields:
+- !Field
+  name: COMMANDERRORCOUNT
+  desc: CommandErrorCount
+  type: U8
+- !Field
+  name: COMMANDCOUNT
+  desc: CommandCount
+  type: U8
