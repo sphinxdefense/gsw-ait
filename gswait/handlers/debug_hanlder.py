@@ -12,7 +12,7 @@ class DebugHandler(Handler):
 
     def handle(self, input_data):
         new_time = time.time()
-        ait.core.log.info(f"Packet rx delta: {self.time - new_time}")
+        ait.core.log.info(f"Packet rx delta: {new_time - self.time}")
         self.time = new_time
         ait.core.log.info(f"Debug handler received {len(input_data)} bytes")
         # ait.core.log.info(input_data)

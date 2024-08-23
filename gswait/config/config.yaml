@@ -324,26 +324,100 @@ default:
 
     server:
 
-        plugins:
-            - plugin:
-                name: ait.core.server.plugins.DataArchive
-                inputs:
-                    - telem_stream
-                datastore:
-                    ait.core.db.InfluxDBBackend
+        # plugins:
+        #     - plugin:
+        #         name: ait.core.server.plugins.DataArchive
+        #         inputs:
+        #             - telem_stream
+        #         datastore:
+        #             ait.core.db.InfluxDBBackend
 
-            - plugin:
-                name: gswait.plugins.AITWebsocket
-                inputs:
-                    - telem_stream
-                outputs:
-                    - command_stream
+        #     - plugin:
+        #         name: gswait.plugins.AITWebsocket
+        #         inputs:
+        #             - telem_stream
+        #         outputs:
+        #             - command_stream
 
 
 
 
         inbound-streams:
 
+            # - stream:
+            #     name: telem_stream
+            #     input:
+            #         - "UDP"
+            #         - "0.0.0.0"
+            #         - 5013
+            #     handlers:
+            #         - name: gswait.handlers.CCSDSPacketHandler
+            #           packet_types:
+            #             2368: "ADCS_HK_TLM"
+            #             2369: "ADCS_DI"
+            #             2370: "ADCS_AD"
+            #             2371: "ADCS_GNC"
+            #             2372: "ADCS_AC"
+            #             2373: "ADCS_DO"
+            #             2249: "ARDUCAM_EXP_TLM"
+            #             2248: "ARDUCAM_HK_TLM"
+            #             2298: "SAMPLE_HK_TLM"
+            #             2299: "SAMPLE_DATA_TLM"
+            #             2320: "CSS_HK_TLM"
+            #             2321: "CSS_DATA_TLM"
+            #             2330: "EPS_HK_TLM"
+            #             2336: "FSS_HK_TLM"
+            #             2337: "FSS_DATA_TLM"
+            #             2341: "IMU_HK_TLM"
+            #             2342: "IMU_DATA_TLM"
+            #             2346: "MAG_HK_TLM"
+            #             2347: "MAG_DATA_TLM"
+            #             2352: "RADIO_HK_TLM"
+            #             2451: "REACTION_WHEEL_HK_TLM"
+            #             2357: "STAR_TRACKER_HK_TLM"
+            #             2358: "STAR_TRACKER_DATA_TLM"
+            #             2362: "TORQUER_HK_TLM"
+            #             2160: "NOVATEL_OEM615_HK_TLM"
+            #             2161: "NOVATEL_OEM615_DATA_TLM"
+            #             2300: "SYN_HK_TLM"
+            #             2180: "CFS_CI_HKPACKET"
+            #             2224: "CFS_CF_HKPACKET"
+            #             2225: "CFS_CF_TRANSPACKET"
+            #             2212: "CFS_CS_HKPACKET"
+            #             2232: "CFS_DS_HKPACKET"
+            #             2233: "CFS_DS_FILEINFOPKT"
+            #             2048: "CFS_CFE_ES_HKPACKET"
+            #             2059: "CFS_CFE_ES_ONEAPPTLM"
+            #             2064: "CFS_CFE_ES_POOLSTATSTLM"
+            #             2063: "CFS_CFE_ES_SHELLPACKET"
+            #             2056: "CFS_CFE_EVS_PACKET"
+            #             2049: "CFS_CFE_EVS_TLMPKT"
+            #             2188: "CFS_FM_DIRLISTPKT"
+            #             2187: "CFS_FM_FILEINFOPKT"
+            #             2190: "CFS_FM_FREESPACEPKT"
+            #             2186: "CFS_FM_HOUSEKEEPINGPKT"
+            #             2189: "CFS_FM_OPENFILESPKT"
+            #             2203: "CFS_HK_HKPACKET"
+            #             2204: "CFS_CFE_HK_COMBINED_PKT1"
+            #             2221: "CFS_HS_HKPACKET"
+            #             2215: "CFS_LC_HKPACKET"
+            #             2193: "CFS_MD_DWELLPKT"
+            #             2192: "CFS_MD_HKTLM"
+            #             2183: "CFS_MM_HKPACKET"
+            #             2051: "CFS_CFE_SB_HKMSG"
+            #             2061: "CFS_CFE_SB_PREVSUBMSG"
+            #             2058: "CFS_CFE_SB_STATMSG"
+            #             2062: "CFS_CFE_SB_SUBRPRTMSG"
+            #             2176: "CFS_TO_HKPACKET"
+            #             2053: "CFS_CFE_TIME_HKPACKET"
+            #             2054: "CFS_CFE_TIME_DIAGPACKET"
+            #             2052: "CFS_CFE_TBL_HKPACKET"
+            #             2060: "CFS_CFE_TBL_TBLREGPACKET"
+            #             2200: "CFS_SCH_DIAGPACKET"
+            #             2199: "CFS_SCH_HKPACKET"
+            #             2218: "CFS_SC_HKTLM"
+
+            #           packet_secondary_header_length: 10
             - stream:
                 name: telem_stream
                 input:
@@ -351,82 +425,16 @@ default:
                     - "0.0.0.0"
                     - 5013
                 handlers:
-                    - name: gswait.handlers.CCSDSPacketHandler
-                      packet_types:
-                        2368: "ADCS_HK_TLM"
-                        2369: "ADCS_DI"
-                        2370: "ADCS_AD"
-                        2371: "ADCS_GNC"
-                        2372: "ADCS_AC"
-                        2373: "ADCS_DO"
-                        2249: "ARDUCAM_EXP_TLM"
-                        2248: "ARDUCAM_HK_TLM"
-                        2298: "SAMPLE_HK_TLM"
-                        2299: "SAMPLE_DATA_TLM"
-                        2320: "CSS_HK_TLM"
-                        2321: "CSS_DATA_TLM"
-                        2330: "EPS_HK_TLM"
-                        2336: "FSS_HK_TLM"
-                        2337: "FSS_DATA_TLM"
-                        2341: "IMU_HK_TLM"
-                        2342: "IMU_DATA_TLM"
-                        2346: "MAG_HK_TLM"
-                        2347: "MAG_DATA_TLM"
-                        2352: "RADIO_HK_TLM"
-                        2451: "REACTION_WHEEL_HK_TLM"
-                        2357: "STAR_TRACKER_HK_TLM"
-                        2358: "STAR_TRACKER_DATA_TLM"
-                        2362: "TORQUER_HK_TLM"
-                        2160: "NOVATEL_OEM615_HK_TLM"
-                        2161: "NOVATEL_OEM615_DATA_TLM"
-                        2300: "SYN_HK_TLM"
-                        2180: "CFS_CI_HKPACKET"
-                        2224: "CFS_CF_HKPACKET"
-                        2225: "CFS_CF_TRANSPACKET"
-                        2212: "CFS_CS_HKPACKET"
-                        2232: "CFS_DS_HKPACKET"
-                        2233: "CFS_DS_FILEINFOPKT"
-                        2048: "CFS_CFE_ES_HKPACKET"
-                        2059: "CFS_CFE_ES_ONEAPPTLM"
-                        2064: "CFS_CFE_ES_POOLSTATSTLM"
-                        2063: "CFS_CFE_ES_SHELLPACKET"
-                        2056: "CFS_CFE_EVS_PACKET"
-                        2049: "CFS_CFE_EVS_TLMPKT"
-                        2188: "CFS_FM_DIRLISTPKT"
-                        2187: "CFS_FM_FILEINFOPKT"
-                        2190: "CFS_FM_FREESPACEPKT"
-                        2186: "CFS_FM_HOUSEKEEPINGPKT"
-                        2189: "CFS_FM_OPENFILESPKT"
-                        2203: "CFS_HK_HKPACKET"
-                        2204: "CFS_CFE_HK_COMBINED_PKT1"
-                        2221: "CFS_HS_HKPACKET"
-                        2215: "CFS_LC_HKPACKET"
-                        2193: "CFS_MD_DWELLPKT"
-                        2192: "CFS_MD_HKTLM"
-                        2183: "CFS_MM_HKPACKET"
-                        2051: "CFS_CFE_SB_HKMSG"
-                        2061: "CFS_CFE_SB_PREVSUBMSG"
-                        2058: "CFS_CFE_SB_STATMSG"
-                        2062: "CFS_CFE_SB_SUBRPRTMSG"
-                        2176: "CFS_TO_HKPACKET"
-                        2053: "CFS_CFE_TIME_HKPACKET"
-                        2054: "CFS_CFE_TIME_DIAGPACKET"
-                        2052: "CFS_CFE_TBL_HKPACKET"
-                        2060: "CFS_CFE_TBL_TBLREGPACKET"
-                        2200: "CFS_SCH_DIAGPACKET"
-                        2199: "CFS_SCH_HKPACKET"
-                        2218: "CFS_SC_HKTLM"
-
-                      packet_secondary_header_length: 10
-
-
-        outbound-streams:
-            - stream:
-                name: command_stream
-                handlers:
                     - name: gswait.handlers.DebugHandler
-                # output:
-                #     - "UDP"
-                #     - "nos_fsw"
-                #     - 5012
-                command-subscriber: True
+
+
+        # outbound-streams:
+        #     - stream:
+        #         name: command_stream
+        #         handlers:
+        #             - name: gswait.handlers.DebugHandler
+        #         # output:
+        #         #     - "UDP"
+        #         #     - "nos_fsw"
+        #         #     - 5012
+        #         command-subscriber: True
