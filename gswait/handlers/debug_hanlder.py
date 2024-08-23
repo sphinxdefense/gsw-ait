@@ -9,6 +9,7 @@ class DebugHandler(Handler):
         super(DebugHandler, self).__init__(input_type, output_type)
         self.data = []
         self.time = time.time()
+        self.file_write_done = False
 
     def handle(self, input_data):
         new_time = time.time()
@@ -17,8 +18,9 @@ class DebugHandler(Handler):
         ait.core.log.info(f"Debug handler received {len(input_data)} bytes")
         # ait.core.log.info(input_data)
         self.data.append(input_data)
-        if len(self.data) > 1000:
-            fname = "~/packets.pkl"
+        if len(self.data) > 1000 and not self.file_write_done:
+            self.file_write_done = True
+            fname = "/tmp/packets.pkl"  # nosec
             ait.core.log.info(f"Writing data to file: {fname}")
             with open(fname, "wb") as f:
                 pickle.dump(self.data, f)
