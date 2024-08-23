@@ -1,21 +1,25 @@
-- !Command
-  name:      TO_DEBUG_ENABLE_OUTPUT_CC
-  opcode:    0x06
-  ccsds:     { apid: 0x80 }
-  subsystem: TO
-  title:     Enable Telemetry
-  desc:      |
-    Enable Output Command
-  arguments:
-    - !Argument
-      name:  dest_ip
-      desc:  Destination IP
-      units: none
-      type:  S16
-      bytes: [0, 15]
-    - !Argument
-      name:  dest_port
-      desc:  Destination Port
-      units: none
-      type:  MSB_U16
-      bytes: [16, 17]
+# - !Command
+#   name:      TO_DEBUG_ENABLE_OUTPUT_CC
+#   opcode:    0x06
+#   ccsds:     { apid: 0x80 }
+#   subsystem: TO
+#   title:     Enable Telemetry
+#   desc:      |
+#     Enable Output Command
+#   arguments:
+#     - !Argument
+#       name:  dest_ip
+#       desc:  Destination IP
+#       units: none
+#       type:  S16
+#       bytes: [0, 15]
+#     - !Argument
+#       name:  dest_port
+#       desc:  Destination Port
+#       units: none
+#       type:  MSB_U16
+#       bytes: [16, 17]
+
+
+- !include ./cmd/adcs/ADCS_NOOP_CC.yml
+- !include ./cmd/adcs/ADCS_RST_COUNTERS_CC.yml

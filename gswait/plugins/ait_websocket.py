@@ -268,21 +268,37 @@ _RUNNING_SEQ = None
 CMD_API = ait.core.api.CmdAPI()
 
 
-# the decorator
-def enable_cors(fn):
-    def _enable_cors(*args, **kwargs):
-        # set CORS headers
-        response.headers["Access-Control-Allow-Origin"] = "*"
-        response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, OPTIONS"
-        response.headers["Access-Control-Allow-Headers"] = (
-            "Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token"
-        )
+# # the decorator
+# def enable_cors(fn):
+#     def _enable_cors(*args, **kwargs):
+#         # set CORS headers
+#         response.headers["Access-Control-Allow-Origin"] = "*"
+#         response.headers["Access-Control-Allow-Methods"] = "*"
+#         response.headers["Access-Control-Allow-Headers"] = "*"
 
-        if bottle.request.method != "OPTIONS":
-            # actual request; reply with the actual response
-            return fn(*args, **kwargs)
+#         if bottle.request.method != "OPTIONS":
+#             # actual request; reply with the actual response
+#             return fn(*args, **kwargs)
 
-    return _enable_cors
+#     return _enable_cors
+
+
+class EnableCors(object):
+    name = "enable_cors"
+    api = 2
+
+    def apply(self, fn, context):
+        def _enable_cors(*args, **kwargs):
+            # set CORS headers
+            response.headers["Access-Control-Allow-Origin"] = "*"
+            response.headers["Access-Control-Allow-Methods"] = "*"
+            response.headers["Access-Control-Allow-Headers"] = "*"
+
+            if bottle.request.method != "OPTIONS":
+                # actual request; reply with the actual response
+                return fn(*args, **kwargs)
+
+        return _enable_cors
 
 
 # class HTMLRoot:
@@ -305,6 +321,15 @@ def enable_cors(fn):
 App = bottle.Bottle()
 Servers = []
 Greenlets = []  # type: ignore[var-annotated]
+
+
+@App.route("/cors", method=["OPTIONS", "GET"])
+def lvambience():
+    response.headers["Content-type"] = "*"
+    return "[1]"
+
+
+App.install(EnableCors())
 
 
 # try:
@@ -378,31 +403,32 @@ class AITWebsocket(Plugin):
         # The /cmd endpoint requires access to the AITGUIPlugin object so it
         # can publish commands via the Plugin interface. It's defined here with
         # the static file routes so that things are grouped semi-neatly.
-        # @App.route("/cmd", method="POST")
-        # def handle_cmd():
-        #     """Send a given command
-        #     :formparam command: The command that should be sent. If arguments
-        #                         are to be included they should be separated via
-        #                         whitespace.
-        #     **Example command format**
-        #     .. sourcecode:
-        #        myExampleCommand argumentOne argumentTwo
-        #     """
-        #     with Sessions.current() as session:  # noqa: F841
-        #         command = bottle.request.forms.get("command").strip()
+        @App.route("/cmd", method="POST")
+        # @enable_cors
+        def handle_cmd():
+            """Send a given command
+            :formparam command: The command that should be sent. If arguments
+                                are to be included they should be separated via
+                                whitespace.
+            **Example command format**
+            .. sourcecode:
+               myExampleCommand argumentOne argumentTwo
+            """
+            with Sessions.current() as session:  # noqa: F841
+                command = bottle.request.forms.get("command").strip()
+                log.info(command)
+                args = command.split()
+                if args:
+                    name = args[0].upper()
+                    args = [util.toNumber(t, t) for t in args[1:]]
 
-        #         args = command.split()
-        #         if args:
-        #             name = args[0].upper()
-        #             args = [util.toNumber(t, t) for t in args[1:]]
-
-        #             if self.send(name, *args):
-        #                 Sessions.add_event("cmd:hist", command)
-        #                 bottle.response.status = 200
-        #             else:
-        #                 bottle.response.status = 400
-        #         else:
-        #             bottle.response.status = 400
+                    if self.send(name, *args):
+                        Sessions.add_event("cmd:hist", command)
+                        bottle.response.status = 200
+                    else:
+                        bottle.response.status = 400
+                else:
+                    bottle.response.status = 400
 
         # @App.route("/ait/gui/static/<pathname:path>")
         # def handle_static_files(pathname):
@@ -509,7 +535,7 @@ class AITWebsocket(Plugin):
 
 
 @App.route("/")
-@enable_cors
+# @enable_cors
 def handle_root():
     """Return index page"""
     return Sessions.create()
@@ -517,7 +543,7 @@ def handle_root():
 
 #     return bottle.template("index.html", version=VERSION)
 @App.route("/contact", method="POST")
-@enable_cors
+# @enable_cors
 def handle_set_contact():
     log.info(bottle.request.POST.data)
 
@@ -586,7 +612,7 @@ def handle_set_contact():
 
 
 @App.route("/tlm/dict", method="GET")
-@enable_cors
+# @enable_cors
 def handle_tlm_get():
     """Return JSON Telemetry dictionary
     **Example Response**:
@@ -620,6 +646,7 @@ def handle_tlm_get():
 
 
 @App.route("/cmd/dict", method="GET")
+# @enable_cors
 def handle_cmd_get():
     """Return JSON Command dictionary
     **Example Response**:
@@ -892,7 +919,7 @@ def replace_datetimes(delta):
 
 
 @App.route("/tlm/realtime")
-@enable_cors
+# @enable_cors
 def handle_tlm_realtime():
     """Return telemetry packets in realtime to client"""
     with Sessions.current() as session:
@@ -907,17 +934,18 @@ def handle_tlm_realtime():
                 try:
                     name, delta, dntoeus, counter = session.deltas.popleft(timeout=30)
                     uid, packet, _ = session.telemetry.popleft(timeout=30)
-                    wsock.send(
-                        json.dumps(
-                            {
-                                "packet": name,
-                                "delta": delta,
-                                "dntoeus": dntoeus,
-                                "counter": counter,
-                                "data": packet,
-                            }
+                    if packet:
+                        wsock.send(
+                            json.dumps(
+                                {
+                                    "packet": name,
+                                    "delta": delta,
+                                    "dntoeus": dntoeus,
+                                    "counter": counter,
+                                    "data": packet,
+                                }
+                            )
                         )
-                    )
 
                 except IndexError as e:
                     log.info(e)
@@ -1012,7 +1040,7 @@ def handle_data_get():
 
 
 @App.route("/missions", method="GET")
-@enable_cors
+# @enable_cors
 def handle_missions_get():
     """Expose ait.config.missions info to the frontend"""
     return json.dumps(ait.config.missions)

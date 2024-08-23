@@ -26,6 +26,15 @@ default:
     missions:
         - nos3:
             equipment: "ADCS IMU MAG NOVATEL_OEM615 ARDUCAM FSS STAR_TRACKER RADIO EPS TORQUER REACTION_WHEEL CFS CFDP CSS SYN SAMPLE"
+            commands:
+              - commandString: ADCS_NOOP_CC
+                description: This command sets the operational mode
+                commandId: 0x0001
+                mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
+              - commandString: ADCS_RST_COUNTERS_CC
+                description: ADCS Reset Counters Command
+                commandId: 0x0002
+                mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
             subsystems:
                 - name: Attitude
                   status: normal
@@ -416,8 +425,8 @@ default:
                 name: command_stream
                 handlers:
                     - name: gswait.handlers.DebugHandler
-                output:
-                    - "UDP"
-                    - "nos_fsw"
-                    - 5012
+                # output:
+                #     - "UDP"
+                #     - "nos_fsw"
+                #     - 5012
                 command-subscriber: True

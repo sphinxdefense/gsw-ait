@@ -1,0 +1,42 @@
+--- !Command
+  name:      ADCS_NOOP_CC
+  opcode:    0x0001
+  subsystem: ATTITUDE
+  desc:      |
+    This command sets the operational mode.
+
+  arguments:
+    - !Fixed
+      name:  CCSDS_STREAMID
+      type:  MSB_U16
+      bytes: [0,1]
+      value: 0x1940
+      desc: CCSDS Packet Identification
+
+    - !Fixed
+      name:  CCSDS_SEQUENCE
+      type:  MSB_U16
+      bytes: [2,3]
+      value: 0xC000
+      desc: CCSDS Packet Sequence Control
+
+    - !Fixed
+      name:  CCSDS_LENGTH
+      type:  MSB_U16
+      bytes: [4,5]
+      value: 0xC000
+      desc: CCSDS Packet Data Length
+
+    - !Fixed
+      name:  CCSDS_FC
+      desc:  CCSDS Command Function Code
+      type:  U8
+      bytes: 6
+      value: 0
+
+    - !Fixed
+      name:  CCSDS_CHECKSUM
+      desc:  CCSDS Command Checksum
+      type:  U8
+      bytes: 7
+      value: 0
