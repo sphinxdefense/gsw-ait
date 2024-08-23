@@ -20,7 +20,7 @@ class DebugHandler(Handler):
         self.data.append(input_data)
         if len(self.data) > 1000 and not self.file_write_done:
             self.file_write_done = True
-            fname = "/tmp/packets.pkl"  # nosec
+            fname = "/tmp/nos3/packets.pkl"  # nosec
             ait.core.log.info(f"Writing data to file: {fname}")
             with open(fname, "wb") as f:
                 pickle.dump(self.data, f)
