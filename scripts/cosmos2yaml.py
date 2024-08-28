@@ -37,6 +37,48 @@ class Packet(yaml.YAMLObject):
         return f"{self.__class__.__name__}(name={self.name}, fields={self.fields})"
 
 
+class Command(yaml.YAMLObject):
+    yaml_tag = "!Command"
+
+    def __init__(self, name, opcode, subsystem, desc, arguments):
+        self.name = name
+        self.opcode = opcode
+        self.subsystem = subsystem
+        self.desc = desc
+        self.arguments = arguments
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name}, opcode={self.opcode}, subsystem={self.subsystem}, desc={self.desc}, arguments={self.arguments})"
+
+
+class Fixed(yaml.YAMLObject):
+    yaml_tag = "!Fixed"
+
+    def __init__(self, name, desc, type, enum=None, value=None):
+        self.name = name
+        self.desc = desc
+        self.type = type
+        self.value = value
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name}, desc={self.desc} type={self.type}, value={self.value})"
+
+
+class Argument(yaml.YAMLObject):
+    yaml_tag = "!Argument"
+
+    def __init__(self, name, desc, type, enum=None, units=None):
+        self.name = name
+        self.desc = desc
+        self.type = type
+        if enum is None:
+            self.enum = {}
+        self.units = units
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name}, desc={self.desc} type={self.type} enum={self.enum}, units={self.units})"
+
+
 class Field(yaml.YAMLObject):
     yaml_tag = "!Field"
 
@@ -52,7 +94,7 @@ class Field(yaml.YAMLObject):
         return f"{self.__class__.__name__}(name={self.name}, desc={self.desc} type={self.type} enum={self.enum})"
 
 
-def main(args):
+def tlm(args):
     fn = args[0]
     with open(fn, mode="r") as f:
         lines = f.readlines()
@@ -107,5 +149,121 @@ def main(args):
         cur_write_fn.close()
 
 
+def cmd(args):
+    fn = args[0]
+    with open(fn, mode="r") as f:
+        lines = f.readlines()
+        cur_write_fn = None
+        cur_yaml = None
+        cmd_name = None
+        start_opcode = hex(int(args[1], 16))
+        subsystem = args[2]
+        cur_strm_id = None
+        cur_seq_id = None
+        cur_len = None
+        cur_fc = None
+        cur_check = None
+        cur_cfg_yml = []
+        for line in lines:
+            words = shlex.split(line)
+            if len(words) == 0:
+                continue
+            if words[0].startswith("#"):
+                continue
+            if words[0] == "COMMAND":
+                if cur_write_fn is not None and cur_yaml is not None:
+                    yaml.dump(cur_yaml, cur_write_fn, sort_keys=False)
+                    cur_write_fn.close()
+                cmd_name = words[2].replace("GENERIC_", "")
+                desc = words[4]
+                cur_write_fn = open(f"{cmd_name}.yaml", "w")
+                cur_yaml = Command(
+                    name=cmd_name,
+                    opcode=start_opcode,
+                    subsystem=subsystem,
+                    desc=desc,
+                    arguments=[],
+                )
+                cur_cfg_yml.append(
+                    {
+                        "commandString": cmd_name,
+                        "description": desc,
+                        "commandId": start_opcode,
+                        "mnemonicIds": [],
+                    }
+                )
+                start_opcode = hex(int(start_opcode, 16) + 1)
+                cur_strm_id = None
+                cur_seq_id = None
+                cur_len = None
+                cur_fc = None
+                cur_check = None
+            if words[1] == "CCSDS_STREAMID":
+                cur_strm_id = hex(int(words[6], 16))
+            if words[1] == "CCSDS_SEQUENCE":
+                cur_seq_id = hex(int(words[6], 16))
+            if words[1] == "CCSDS_LENGTH":
+                cur_len = int(words[6])
+            if words[1] == "CCSDS_FC":
+                cur_fc = int(words[6])
+            if words[1] == "CCSDS_CHECKSUM":
+                cur_check = int(words[6])
+            if (
+                cur_strm_id is not None
+                and cur_seq_id is not None
+                and cur_len is not None
+                and cur_fc is not None
+                and cur_check is not None
+                and cur_yaml is not None
+            ):
+                cur_yaml.arguments.append(
+                    Fixed(
+                        name="CCSDS_STREAMID",
+                        desc="CCSDS Packet Identification",
+                        type="MSB_U16",
+                        value=cur_strm_id,
+                    )
+                )
+                cur_yaml.arguments.append(
+                    Fixed(
+                        name="CCSDS_SEQUENCE",
+                        desc="CCSDS Packet Sequence Control",
+                        type="MSB_U16",
+                        value=cur_seq_id,
+                    )
+                )
+                cur_yaml.arguments.append(
+                    Fixed(
+                        name="CCSDS_LENGTH",
+                        desc="CCSDS Packet Data Length",
+                        type="MSB_U16",
+                        value=cur_len,
+                    )
+                )
+                cur_yaml.arguments.append(
+                    Fixed(
+                        name="CCSDS_FC",
+                        desc="CCSDS Command Function Code",
+                        type="U8",
+                        value=cur_fc,
+                    )
+                )
+                cur_yaml.arguments.append(
+                    Fixed(
+                        name="CCSDS_CHECKSUM",
+                        desc="CCSDS Command Checksum",
+                        type="U8",
+                        value=cur_check,
+                    )
+                )
+
+        print(yaml.dump(cur_cfg_yml, sort_keys=False))
+        yaml.dump(cur_yaml, cur_write_fn, sort_keys=False)
+        cur_write_fn.close()
+
+
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    if sys.argv[1] == "cmd":
+        sys.exit(cmd(sys.argv[2:]))
+    else:
+        sys.exit(tlm(sys.argv[2:]))

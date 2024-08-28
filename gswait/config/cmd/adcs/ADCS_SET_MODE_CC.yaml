@@ -1,0 +1,53 @@
+--- !Command
+  name:      ADCS_SET_MODE_CC
+  opcode:    0x000A
+  subsystem: ATTITUDE
+  desc:      |
+    Generic ADCS Set Mode Command
+
+  arguments:
+    - !Fixed
+      name:  CCSDS_STREAMID
+      type:  MSB_U16
+      bytes: [0,1]
+      value: 0x1940
+      desc: CCSDS Packet Identification
+
+    - !Fixed
+      name:  CCSDS_SEQUENCE
+      type:  MSB_U16
+      bytes: [2,3]
+      value: 0xC000
+      desc: CCSDS Packet Sequence Control
+
+    - !Fixed
+      name:  CCSDS_LENGTH
+      type:  MSB_U16
+      bytes: [4,5]
+      value: 2
+      desc: CCSDS Packet Data Length
+
+    - !Fixed
+      name:  CCSDS_FC
+      desc:  CCSDS Command Function Code
+      type:  U8
+      bytes: 6
+      value: 2
+
+    - !Fixed
+      name:  CCSDS_CHECKSUM
+      desc:  CCSDS Command Checksum
+      type:  U8
+      bytes: 7
+      value: 0
+
+    - !Argument
+      name:  GNC_MODE
+      desc:  GN&C Mode
+      units: none
+      type:  U8
+      bytes: 8
+      enum:
+        0: PASSIVE
+        1: BDOT_MODE
+        2: SUNSAFE_MODE

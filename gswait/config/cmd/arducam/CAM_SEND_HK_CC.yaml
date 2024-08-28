@@ -1,0 +1,36 @@
+!Command
+name: CAM_SEND_HK_CC
+opcode: 0x10
+subsystem: Payload
+desc: Camera HK Request
+arguments:
+  - !Fixed
+    name: CCSDS_STREAMID
+    desc: CCSDS Packet Identification
+    type: MSB_U16
+    bytes: [0,1]
+    value: 0x18c9
+  - !Fixed
+    name: CCSDS_SEQUENCE
+    desc: CCSDS Packet Sequence Control
+    type: MSB_U16
+    bytes: [2,3]
+    value: 0xc000
+  - !Fixed
+    name: CCSDS_LENGTH
+    desc: CCSDS Packet Data Length
+    type: MSB_U16
+    bytes: [4,5]
+    value: 1
+  - !Fixed
+    name: CCSDS_FC
+    desc: CCSDS Command Function Code
+    type: U8
+    bytes: 6
+    value: 0
+  - !Fixed
+    name: CCSDS_CHECKSUM
+    desc: CCSDS Command Checksum
+    type: U8
+    bytes: 7
+    value: 0

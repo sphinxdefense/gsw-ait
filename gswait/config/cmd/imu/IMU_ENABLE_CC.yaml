@@ -1,0 +1,31 @@
+!Command
+name: IMU_ENABLE_CC
+opcode: 0x23
+subsystem: Attitude
+desc: Generic_imu Enable Command
+arguments:
+  - !Fixed
+    name: CCSDS_STREAMID
+    desc: CCSDS Packet Identification
+    type: MSB_U16
+    value: 0x1925
+  - !Fixed
+    name: CCSDS_SEQUENCE
+    desc: CCSDS Packet Sequence Control
+    type: MSB_U16
+    value: 0xc000
+  - !Fixed
+    name: CCSDS_LENGTH
+    desc: CCSDS Packet Data Length
+    type: MSB_U16
+    value: 1
+  - !Fixed
+    name: CCSDS_FC
+    desc: CCSDS Command Function Code
+    type: U8
+    value: 2
+  - !Fixed
+    name: CCSDS_CHECKSUM
+    desc: CCSDS Command Checksum
+    type: U8
+    value: 0

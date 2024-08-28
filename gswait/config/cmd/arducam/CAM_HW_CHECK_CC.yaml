@@ -1,0 +1,36 @@
+!Command
+name: CAM_HW_CHECK_CC
+opcode: 0xf
+subsystem: Payload
+desc: Camera HW Checkout
+arguments:
+  - !Fixed
+    name: CCSDS_STREAMID
+    desc: CCSDS Packet Identification
+    type: MSB_U16
+    bytes: [0, 1]
+    value: 0x18c8
+  - !Fixed
+    name: CCSDS_SEQUENCE
+    desc: CCSDS Packet Sequence Control
+    type: MSB_U16
+    bytes: [2, 3]
+    value: 0xc000
+  - !Fixed
+    name: CCSDS_LENGTH
+    desc: CCSDS Packet Data Length
+    type: MSB_U16
+    bytes: [4, 5]
+    value: 1
+  - !Fixed
+    name: CCSDS_FC
+    desc: CCSDS Command Function Code
+    type: U8
+    bytes: 6
+    value: 13
+  - !Fixed
+    name: CCSDS_CHECKSUM
+    desc: CCSDS Command Checksum
+    type: U8
+    bytes: 7
+    value: 0

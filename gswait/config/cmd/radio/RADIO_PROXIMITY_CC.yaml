@@ -1,0 +1,38 @@
+# FIXME: Need an AIT BLOCK type for this command
+
+# !Command
+# name: RADIO_PROXIMITY_CC
+# opcode: 0x30
+# subsystem: Communications
+# desc: Generic_radio Proximity Forward Command
+# arguments:
+# - !Fixed
+#   name: CCSDS_STREAMID
+#   desc: CCSDS Packet Identification
+#   type: MSB_U16
+#   bytes: null
+#   value: 0x1930
+# - !Fixed
+#   name: CCSDS_SEQUENCE
+#   desc: CCSDS Packet Sequence Control
+#   type: MSB_U16
+#   bytes: null
+#   value: 0xc000
+# - !Fixed
+#   name: CCSDS_LENGTH
+#   desc: CCSDS Packet Data Length
+#   type: MSB_U16
+#   bytes: null
+#   value: 67
+# - !Fixed
+#   name: CCSDS_FC
+#   desc: CCSDS Command Function Code
+#   type: U8
+#   bytes: null
+#   value: 3
+# - !Fixed
+#   name: CCSDS_CHECKSUM
+#   desc: CCSDS Command Checksum
+#   type: U8
+#   bytes: null
+#   value: 0

@@ -5,96 +5,111 @@ fields:
   name: CMDCOUNTER
   desc: Count of valid commands received.
   type: U8
+  bytes: 0
 
 
 - !Field
   name: ERRCOUNTER
   desc: Count of invalid commands received.
   type: U8
+  bytes: 1
 
 
 - !Field
   name: NUMTABLES
   desc: Number of Tables Registered.
   type: LSB_U16
+  bytes: [2,3]
 
 
 - !Field
   name: NUMLOADPENDING
   desc: Number of Tables pending on Applications for their update.
   type: LSB_U16
+  bytes: [4,5]
 
 
 - !Field
   name: VALIDATIONCTR
   desc: Number of completed table validations.
   type: LSB_U16
+  bytes: [6,7]
 
 
 - !Field
   name: LASTVALCRC
   desc: Data Integrity Value computed for last table validated.
   type: LSB_U32
+  bytes: [8,11]
 
 
 - !Field
   name: LASTVALSTATUS
   desc: Returned status from validation function for last table validated.
   type: LSB_I32
+  bytes: [12,15]
 
 
 - !Field
   name: ACTIVEBUFFER
   desc: Indicator of whether table buffer validated was 0=Inactive, 1=Active.
   type: U8
+  bytes: 16
 
 
-- !Field
-  name: LASTVALTABLENAME
-  desc: Name of last table validated.
-  type: U8
+# - !Field
+#   name: LASTVALTABLENAME
+#   desc: Name of last table validated.
+#   type:
+#   bytes: [17, 56]
 
-  bytes: [17, 336]
 - !Field
   name: SUCCESSVALCTR
   desc: Total number of successful table validations.
   type: U8
+  bytes: 57
 
 
 - !Field
   name: FAILEDVALCTR
   desc: Total number of unsuccessful table validations.
   type: U8
+  bytes: 58
 
 
 - !Field
   name: NUMVALREQUESTS
   desc: Number of times Table Services has requested validations from Apps.
   type: U8
+  bytes: 59
 
 
 - !Field
   name: NUMFREESHAREDBUFS
   desc: Number of free Shared Working Buffers.
   type: U8
+  bytes: 60
 
 
 - !Field
   name: BYTEALIGNPAD1
   desc: Spare byte to ensure longword alignment.
   type: U8
+  bytes: 61
 
 
 - !Field
   name: MEMPOOLHANDLE
   desc: Handle to TBL's memory pool.
   type: LSB_U32
+  bytes: [62,65]
 
 
 - !Field
   name: LASTUPDATETIME_SECONDS
   desc: 'Number of seconds since epoch. (Parent: Time of last table update.)'
   type: LSB_U32
+  bytes: [66,69]
 
 
 - !Field
@@ -102,33 +117,35 @@ fields:
   desc: 'Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Time of
     last table update.)'
   type: LSB_U32
+  bytes: [70,73]
 
 
-- !Field
-  name: LASTUPDATEDTBL
-  desc: Name of the last table updated.
-  type: U8
+# - !Field
+#   name: LASTUPDATEDTBL
+#   desc: Name of the last table updated.
+#   type: STRING
+#   bytes: [74, 113]
 
-  bytes: [354, 673]
-- !Field
-  name: LASTFILELOADED
-  desc: Path and Name of last table image file loaded.
-  type: U8
+# - !Field
+#   name: LASTFILELOADED
+#   desc: Path and Name of last table image file loaded.
+#   type:
+#   bytes: [114, 177]
 
-  bytes: [674, 1185]
-- !Field
-  name: LASTFILEDUMPED
-  desc: Path and Name of last file dumped to.
-  type: U8
+# - !Field
+#   name: LASTFILEDUMPED
+#   desc: Path and Name of last file dumped to.
+#   type:
+#   bytes: [178, 241]
 
-  bytes: [1186, 1697]
-- !Field
-  name: LASTTABLELOADED
-  desc: Name of the last table loaded.
-  type: U8
+# - !Field
+#   name: LASTTABLELOADED
+#   desc: Name of the last table loaded.
+#   type:
+#   bytes: [242, 281]
 
-  bytes: [1698, 2017]
 - !Field
   name: PADDING
   desc: Spare bytes to maintain byte alignment.
   type: LSB_U16
+  bytes: [282, 283]

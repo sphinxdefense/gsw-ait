@@ -1,0 +1,31 @@
+!Command
+name: MAG_REQ_HK
+opcode: 0x2b
+subsystem: Payload
+desc: Generic_mag Request HK Packet Command
+arguments:
+  - !Fixed
+    name: CCSDS_STREAMID
+    desc: CCSDS Packet Identification
+    type: MSB_U16
+    value: 0x192b
+  - !Fixed
+    name: CCSDS_SEQUENCE
+    desc: CCSDS Packet Sequence Control
+    type: MSB_U16
+    value: 0xc000
+  - !Fixed
+    name: CCSDS_LENGTH
+    desc: CCSDS Packet Data Length
+    type: MSB_U16
+    value: 1
+  - !Fixed
+    name: CCSDS_FC
+    desc: CCSDS Command Function Code
+    type: U8
+    value: 0
+  - !Fixed
+    name: CCSDS_CHECKSUM
+    desc: CCSDS Command Checksum
+    type: U8
+    value: 0

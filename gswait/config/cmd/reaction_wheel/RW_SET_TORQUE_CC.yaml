@@ -1,0 +1,42 @@
+!Command
+name: RW_SET_TORQUE_CC
+opcode: 0x35
+subsystem: Structure
+desc: Generic Reaction Wheel Set Torque Command
+arguments:
+  - !Fixed
+    name: CCSDS_STREAMID
+    desc: CCSDS Packet Identification
+    type: MSB_U16
+    value: 0x1992
+  - !Fixed
+    name: CCSDS_SEQUENCE
+    desc: CCSDS Packet Sequence Control
+    type: MSB_U16
+    value: 0xc000
+  - !Fixed
+    name: CCSDS_LENGTH
+    desc: CCSDS Packet Data Length
+    type: MSB_U16
+    value: 4
+  - !Fixed
+    name: CCSDS_FC
+    desc: CCSDS Command Function Code
+    type: U8
+    value: 3
+  - !Fixed
+    name: CCSDS_CHECKSUM
+    desc: CCSDS Command Checksum
+    type: U8
+    value: 0
+  - !Argument
+    name:  WHEEL_NUMBER
+    desc:  Wheel number to command
+    units: none
+    range: [0,2]
+    type:  U8
+  - !Argument
+    name:  TORQUE
+    desc:  Torque to set in 10^-4 Newton-meters
+    units: none
+    type:  MSB_I16

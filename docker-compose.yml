@@ -2,8 +2,6 @@ services:
   gsw-ait:
     container_name: gsw-ait
     platform: linux/amd64
-    volumes:
-    - /tmp/:/tmp
     build:
       context: .
     environment:

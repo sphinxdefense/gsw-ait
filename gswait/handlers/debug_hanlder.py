@@ -1,7 +1,8 @@
 import ait.core.log
 import time
 from ait.core.server.handler import Handler
-import pickle  # nosec
+
+# import pickle  # nosec
 
 
 class DebugHandler(Handler):
@@ -17,11 +18,11 @@ class DebugHandler(Handler):
         self.time = new_time
         ait.core.log.info(f"Debug handler received {len(input_data)} bytes")
         # ait.core.log.info(input_data)
-        self.data.append(input_data)
-        if len(self.data) > 1000 and not self.file_write_done:
-            self.file_write_done = True
-            fname = "/tmp/nos3/packets.pkl"  # nosec
-            ait.core.log.info(f"Writing data to file: {fname}")
-            with open(fname, "wb") as f:
-                pickle.dump(self.data, f)
+        # self.data.append(input_data)
+        # if len(self.data) > 1000 and not self.file_write_done:
+        #     self.file_write_done = True
+        #     fname = "/tmp/nos3/packets.pkl"  # nosec
+        #     ait.core.log.info(f"Writing data to file: {fname}")
+        #     with open(fname, "wb") as f:
+        #         pickle.dump(self.data, f)
         return input_data

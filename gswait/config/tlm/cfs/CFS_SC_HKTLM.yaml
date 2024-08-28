@@ -5,7 +5,7 @@ fields:
   name: ATSNUMBER
   desc: current ATS number 1 = ATS A, 2 = ATS B
   type: U8
-  bytes: [0]
+  bytes: 0
   enum:
     0: A
     1: B
@@ -14,7 +14,7 @@ fields:
   name: ATPSTATE
   desc: 'current ATP state valid values are: 2 = IDLE, 5 = EXECUTING'
   type: U8
-  bytes: [1]
+  bytes: 1
   enum:
     2: IDLE
     5: EXECUTING
@@ -25,7 +25,7 @@ fields:
     execution will continue if this flag is set to TRUE and will stop if this flag
     is set to FALSE.
   type: U8
-  bytes: [2]
+  bytes: 2
   enum:
     0: STOP
     1: CONTINUE
@@ -34,21 +34,22 @@ fields:
   name: CMDERRCTR
   desc: Counts Request Errors.
   type: U8
-  bytes: [3]
+  bytes: 3
+
 
 
 - !Field
   name: CMDCTR
   desc: Counts Ground Requests.
   type: U8
-  bytes: [4]
+  bytes: 4
 
 
 - !Field
   name: PADDING8
   desc: ''
   type: U8
-  bytes: [5]
+  bytes: 5
 
 
 - !Field
@@ -66,7 +67,6 @@ fields:
   desc: number of RTSs currently active
   type: LSB_U16
   bytes: [8,9]
-
 
 - !Field
   name: RTSNUMBER
@@ -116,6 +116,7 @@ fields:
   type: LSB_U16
   bytes: [22,23]
 
+
 - !Field
   name: LASTATSERRSEQ
   desc: 'Last ATS Errant Sequence Num Values: 1 or 2.'
@@ -153,11 +154,13 @@ fields:
   bytes: [32,33]
 
 
+
 - !Field
   name: APPENDENTRYCOUNT
   desc: Number of cmd entries in current Append ATS table.
   type: LSB_U16
   bytes: [34,35]
+
 
 
 - !Field
@@ -167,6 +170,7 @@ fields:
   bytes: [36,37]
 
 
+
 - !Field
   name: APPENDLOADCOUNT
   desc: Total number of Append ATS table loads.
@@ -174,52 +178,56 @@ fields:
   bytes: [38,39]
 
 
+
 - !Field
   name: ATPCMDNUMBER
   desc: current command number
   type: LSB_U32
-  bytes: [40,41]
+  bytes: [40,43]
+
 
 
 - !Field
   name: ATPFREEBYTES_1
   desc: Free Bytes in each ATS. byte 1
   type: LSB_U32
-  bytes: [42,43]
+  bytes: [44,47]
 
 
 - !Field
   name: ATPFREEBYTES_2
   desc: Free Bytes in each ATS. byte 2
   type: LSB_U32
-  bytes: [44,45]
+  bytes: [48,51]
 
 
 - !Field
   name: NEXTRTSTIME
   desc: next RTS cmd Absolute Time
   type: LSB_U32
-  bytes: [46,47]
+  bytes: [52,55]
+
 
 
 - !Field
   name: NEXTATSTIME
   desc: Next ATS Command Time (seconds).
   type: LSB_U32
-  bytes: [48,49]
+  bytes: [56,59]
+
 
 
 - !Field
   name: RTSEXECUTINGSTATUS_1
   desc: RTS 1-16 Executing Status
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
 
 - !Field
   name: EXECUTING_1
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x8000
   enum:
     0: "NO"
@@ -229,7 +237,7 @@ fields:
   name: EXECUTING_2
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x4000
   enum:
     0: "NO"
@@ -240,7 +248,7 @@ fields:
   name: EXECUTING_3
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x2000
   enum:
     0: "NO"
@@ -250,7 +258,7 @@ fields:
   name: EXECUTING_4
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x1000
   enum:
     0: "NO"
@@ -260,7 +268,7 @@ fields:
   name: EXECUTING_5
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0800
   enum:
     0: "NO"
@@ -270,7 +278,7 @@ fields:
   name: EXECUTING_6
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0400
   enum:
     0: "NO"
@@ -281,7 +289,7 @@ fields:
   name: EXECUTING_7
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0200
   enum:
     0: "NO"
@@ -291,7 +299,7 @@ fields:
   name: EXECUTING_8
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0100
   enum:
     0: "NO"
@@ -301,7 +309,7 @@ fields:
   name: EXECUTING_9
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0080
   enum:
     0: "NO"
@@ -311,7 +319,7 @@ fields:
   name: EXECUTING_10
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0040
   enum:
     0: "NO"
@@ -321,7 +329,7 @@ fields:
   name: EXECUTING_11
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0020
   enum:
     0: "NO"
@@ -332,7 +340,7 @@ fields:
   name: EXECUTING_12
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0010
   enum:
     0: "NO"
@@ -342,7 +350,7 @@ fields:
   name: EXECUTING_13
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0008
   enum:
     0: "NO"
@@ -352,7 +360,7 @@ fields:
   name: EXECUTING_14
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0004
   enum:
     0: "NO"
@@ -362,7 +370,7 @@ fields:
   name: EXECUTING_15
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0002
   enum:
     0: "NO"
@@ -372,7 +380,7 @@ fields:
   name: EXECUTING_16
   desc: "RTS 1-16 Executing Status"
   type: LSB_U16
-  bytes: [50,51]
+  bytes: [60,61]
   mask: 0x0001
   enum:
     0: "NO"
@@ -383,13 +391,13 @@ fields:
   name: RTSEXECUTINGSTATUS_17
   desc: RTS 17-32 Executing Status
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
 
 - !Field
   name: EXECUTING_17
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x8000
   enum:
     0: "NO"
@@ -399,7 +407,7 @@ fields:
   name: EXECUTING_18
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x4000
   enum:
     0: "NO"
@@ -410,7 +418,7 @@ fields:
   name: EXECUTING_19
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x2000
   enum:
     0: "NO"
@@ -420,7 +428,7 @@ fields:
   name: EXECUTING_20
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x1000
   enum:
     0: "NO"
@@ -430,7 +438,7 @@ fields:
   name: EXECUTING_21
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0800
   enum:
     0: "NO"
@@ -440,7 +448,7 @@ fields:
   name: EXECUTING_22
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0400
   enum:
     0: "NO"
@@ -451,7 +459,7 @@ fields:
   name: EXECUTING_23
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0200
   enum:
     0: "NO"
@@ -461,7 +469,7 @@ fields:
   name: EXECUTING_24
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0100
   enum:
     0: "NO"
@@ -471,7 +479,7 @@ fields:
   name: EXECUTING_25
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0080
   enum:
     0: "NO"
@@ -481,7 +489,7 @@ fields:
   name: EXECUTING_26
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0040
   enum:
     0: "NO"
@@ -491,7 +499,7 @@ fields:
   name: EXECUTING_27
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0020
   enum:
     0: "NO"
@@ -502,7 +510,7 @@ fields:
   name: EXECUTING_28
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0010
   enum:
     0: "NO"
@@ -512,7 +520,7 @@ fields:
   name: EXECUTING_29
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0008
   enum:
     0: "NO"
@@ -522,7 +530,7 @@ fields:
   name: EXECUTING_30
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0004
   enum:
     0: "NO"
@@ -532,7 +540,7 @@ fields:
   name: EXECUTING_31
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0002
   enum:
     0: "NO"
@@ -542,7 +550,7 @@ fields:
   name: EXECUTING_32
   desc: "RTS 17-32 Executing Status"
   type: LSB_U16
-  bytes: [52,53]
+  bytes: [62,63]
   mask: 0x0001
   enum:
     0: "NO"
@@ -553,13 +561,13 @@ fields:
   name: RTSEXECUTINGSTATUS_33
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
 
 - !Field
   name: EXECUTING_33
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x8000
   enum:
     0: "NO"
@@ -569,7 +577,7 @@ fields:
   name: EXECUTING_34
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x4000
   enum:
     0: "NO"
@@ -580,7 +588,7 @@ fields:
   name: EXECUTING_35
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x2000
   enum:
     0: "NO"
@@ -590,7 +598,7 @@ fields:
   name: EXECUTING_36
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x1000
   enum:
     0: "NO"
@@ -600,7 +608,7 @@ fields:
   name: EXECUTING_37
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0800
   enum:
     0: "NO"
@@ -610,7 +618,7 @@ fields:
   name: EXECUTING_38
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0400
   enum:
     0: "NO"
@@ -621,7 +629,7 @@ fields:
   name: EXECUTING_39
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0200
   enum:
     0: "NO"
@@ -631,7 +639,7 @@ fields:
   name: EXECUTING_40
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0100
   enum:
     0: "NO"
@@ -641,7 +649,7 @@ fields:
   name: EXECUTING_41
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0080
   enum:
     0: "NO"
@@ -651,7 +659,7 @@ fields:
   name: EXECUTING_42
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0040
   enum:
     0: "NO"
@@ -661,7 +669,7 @@ fields:
   name: EXECUTING_43
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0020
   enum:
     0: "NO"
@@ -672,7 +680,7 @@ fields:
   name: EXECUTING_44
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0010
   enum:
     0: "NO"
@@ -682,7 +690,7 @@ fields:
   name: EXECUTING_45
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0008
   enum:
     0: "NO"
@@ -692,7 +700,7 @@ fields:
   name: EXECUTING_46
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0004
   enum:
     0: "NO"
@@ -702,7 +710,7 @@ fields:
   name: EXECUTING_47
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0002
   enum:
     0: "NO"
@@ -712,7 +720,7 @@ fields:
   name: EXECUTING_48
   desc: RTS 33-48 Executing Status
   type: LSB_U16
-  bytes: [54,55]
+  bytes: [64,65]
   mask: 0x0001
   enum:
     0: "NO"
@@ -723,13 +731,13 @@ fields:
   name: RTSEXECUTINGSTATUS_49
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
 
 - !Field
   name: EXECUTING_49
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x8000
   enum:
     0: "NO"
@@ -739,7 +747,7 @@ fields:
   name: EXECUTING_50
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x4000
   enum:
     0: "NO"
@@ -750,7 +758,7 @@ fields:
   name: EXECUTING_51
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x2000
   enum:
     0: "NO"
@@ -760,7 +768,7 @@ fields:
   name: EXECUTING_52
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x1000
   enum:
     0: "NO"
@@ -770,7 +778,7 @@ fields:
   name: EXECUTING_53
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0800
   enum:
     0: "NO"
@@ -780,7 +788,7 @@ fields:
   name: EXECUTING_54
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0400
   enum:
     0: "NO"
@@ -791,7 +799,7 @@ fields:
   name: EXECUTING_55
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0200
   enum:
     0: "NO"
@@ -801,7 +809,7 @@ fields:
   name: EXECUTING_56
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0100
   enum:
     0: "NO"
@@ -811,7 +819,7 @@ fields:
   name: EXECUTING_57
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0080
   enum:
     0: "NO"
@@ -821,7 +829,7 @@ fields:
   name: EXECUTING_58
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0040
   enum:
     0: "NO"
@@ -831,7 +839,7 @@ fields:
   name: EXECUTING_59
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0020
   enum:
     0: "NO"
@@ -842,7 +850,7 @@ fields:
   name: EXECUTING_60
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0010
   enum:
     0: "NO"
@@ -852,7 +860,7 @@ fields:
   name: EXECUTING_61
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0008
   enum:
     0: "NO"
@@ -862,7 +870,7 @@ fields:
   name: EXECUTING_62
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0004
   enum:
     0: "NO"
@@ -872,7 +880,7 @@ fields:
   name: EXECUTING_63
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0002
   enum:
     0: "NO"
@@ -882,7 +890,7 @@ fields:
   name: EXECUTING_64
   desc: RTS 49-64 Executing Status
   type: LSB_U16
-  bytes: [56,57]
+  bytes: [66,67]
   mask: 0x0001
   enum:
     0: "NO"
@@ -893,13 +901,13 @@ fields:
   name: RTSDISABLEDSTATUS_1
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
 
 - !Field
   name: RTS1_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x8000
   enum:
     0: "ENABLED"
@@ -909,7 +917,7 @@ fields:
   name: RTS2_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x4000
   enum:
     0: "ENABLED"
@@ -920,7 +928,7 @@ fields:
   name: RTS3_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x2000
   enum:
     0: "ENABLED"
@@ -930,7 +938,7 @@ fields:
   name: RTS4_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x1000
   enum:
     0: "ENABLED"
@@ -940,7 +948,7 @@ fields:
   name: RTS5_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0800
   enum:
     0: "ENABLED"
@@ -950,7 +958,7 @@ fields:
   name: RTS6_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0400
   enum:
     0: "ENABLED"
@@ -961,7 +969,7 @@ fields:
   name: RTS7_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0200
   enum:
     0: "ENABLED"
@@ -971,7 +979,7 @@ fields:
   name: RTS8_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0100
   enum:
     0: "ENABLED"
@@ -981,7 +989,7 @@ fields:
   name: RTS9_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0080
   enum:
     0: "ENABLED"
@@ -991,7 +999,7 @@ fields:
   name: RTS10_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0040
   enum:
     0: "ENABLED"
@@ -1001,7 +1009,7 @@ fields:
   name: RTS11_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0020
   enum:
     0: "ENABLED"
@@ -1012,7 +1020,7 @@ fields:
   name: RTS12_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0010
   enum:
     0: "ENABLED"
@@ -1022,7 +1030,7 @@ fields:
   name: RTS13_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0008
   enum:
     0: "ENABLED"
@@ -1032,7 +1040,7 @@ fields:
   name: RTS14_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0004
   enum:
     0: "ENABLED"
@@ -1042,7 +1050,7 @@ fields:
   name: RTS15_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0002
   enum:
     0: "ENABLED"
@@ -1052,7 +1060,7 @@ fields:
   name: RTS16_DISABLED
   desc: RTS 1-16 Disabled Status
   type: LSB_U16
-  bytes: [58,59]
+  bytes: [68,69]
   mask: 0x0001
   enum:
     0: "ENABLED"
@@ -1063,13 +1071,13 @@ fields:
   name: RTSDISABLEDSTATUS_17
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
 
 - !Field
   name: RTS17_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x8000
   enum:
     0: "ENABLED"
@@ -1079,7 +1087,7 @@ fields:
   name: RTS18_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x4000
   enum:
     0: "ENABLED"
@@ -1090,7 +1098,7 @@ fields:
   name: RTS19_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x2000
   enum:
     0: "ENABLED"
@@ -1100,7 +1108,7 @@ fields:
   name: RTS20_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x1000
   enum:
     0: "ENABLED"
@@ -1110,7 +1118,7 @@ fields:
   name: RTS21_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0800
   enum:
     0: "ENABLED"
@@ -1120,7 +1128,7 @@ fields:
   name: RTS22_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0400
   enum:
     0: "ENABLED"
@@ -1131,7 +1139,7 @@ fields:
   name: RTS23_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0200
   enum:
     0: "ENABLED"
@@ -1141,7 +1149,7 @@ fields:
   name: RTS24_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0100
   enum:
     0: "ENABLED"
@@ -1151,7 +1159,7 @@ fields:
   name: RTS25_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0080
   enum:
     0: "ENABLED"
@@ -1161,7 +1169,7 @@ fields:
   name: RTS26_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0040
   enum:
     0: "ENABLED"
@@ -1171,7 +1179,7 @@ fields:
   name: RTS27_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0020
   enum:
     0: "ENABLED"
@@ -1182,7 +1190,7 @@ fields:
   name: RTS28_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0010
   enum:
     0: "ENABLED"
@@ -1192,7 +1200,7 @@ fields:
   name: RTS29_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0008
   enum:
     0: "ENABLED"
@@ -1202,7 +1210,7 @@ fields:
   name: RTS30_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0004
   enum:
     0: "ENABLED"
@@ -1212,7 +1220,7 @@ fields:
   name: RTS31_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0002
   enum:
     0: "ENABLED"
@@ -1222,7 +1230,7 @@ fields:
   name: RTS32_DISABLED
   desc: RTS 17-32 Disabled Status
   type: LSB_U16
-  bytes: [60,61]
+  bytes: [70,71]
   mask: 0x0001
   enum:
     0: "ENABLED"
@@ -1233,13 +1241,13 @@ fields:
   name: RTSDISABLEDSTATUS_33
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
 
 - !Field
   name: RTS33_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x8000
   enum:
     0: "ENABLED"
@@ -1249,7 +1257,7 @@ fields:
   name: RTS34_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x4000
   enum:
     0: "ENABLED"
@@ -1260,7 +1268,7 @@ fields:
   name: RTS35_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x2000
   enum:
     0: "ENABLED"
@@ -1270,7 +1278,7 @@ fields:
   name: RTS36_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x1000
   enum:
     0: "ENABLED"
@@ -1280,7 +1288,7 @@ fields:
   name: RTS37_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0800
   enum:
     0: "ENABLED"
@@ -1290,7 +1298,7 @@ fields:
   name: RTS38_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0400
   enum:
     0: "ENABLED"
@@ -1301,7 +1309,7 @@ fields:
   name: RTS39_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0200
   enum:
     0: "ENABLED"
@@ -1311,7 +1319,7 @@ fields:
   name: RTS40_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0100
   enum:
     0: "ENABLED"
@@ -1321,7 +1329,7 @@ fields:
   name: RTS41_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0080
   enum:
     0: "ENABLED"
@@ -1331,7 +1339,7 @@ fields:
   name: RTS42_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0040
   enum:
     0: "ENABLED"
@@ -1341,7 +1349,7 @@ fields:
   name: RTS43_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0020
   enum:
     0: "ENABLED"
@@ -1352,7 +1360,7 @@ fields:
   name: RTS44_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0010
   enum:
     0: "ENABLED"
@@ -1362,7 +1370,7 @@ fields:
   name: RTS45_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0008
   enum:
     0: "ENABLED"
@@ -1372,7 +1380,7 @@ fields:
   name: RTS46_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0004
   enum:
     0: "ENABLED"
@@ -1382,7 +1390,7 @@ fields:
   name: RTS47_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0002
   enum:
     0: "ENABLED"
@@ -1392,7 +1400,7 @@ fields:
   name: RTS48_DISABLED
   desc: RTS 33-48 Disabled Status
   type: LSB_U16
-  bytes: [62,63]
+  bytes: [72,73]
   mask: 0x0001
   enum:
     0: "ENABLED"
@@ -1403,13 +1411,13 @@ fields:
   name: RTSDISABLEDSTATUS_49
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
 
 - !Field
   name: RTS49_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x8000
   enum:
     0: "ENABLED"
@@ -1419,7 +1427,7 @@ fields:
   name: RTS50_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x4000
   enum:
     0: "ENABLED"
@@ -1430,7 +1438,7 @@ fields:
   name: RTS51_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x2000
   enum:
     0: "ENABLED"
@@ -1440,7 +1448,7 @@ fields:
   name: RTS52_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x1000
   enum:
     0: "ENABLED"
@@ -1450,7 +1458,7 @@ fields:
   name: RTS53_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0800
   enum:
     0: "ENABLED"
@@ -1460,7 +1468,7 @@ fields:
   name: RTS54_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0400
   enum:
     0: "ENABLED"
@@ -1471,7 +1479,7 @@ fields:
   name: RTS55_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0200
   enum:
     0: "ENABLED"
@@ -1481,7 +1489,7 @@ fields:
   name: RTS56_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0100
   enum:
     0: "ENABLED"
@@ -1491,7 +1499,7 @@ fields:
   name: RTS57_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0080
   enum:
     0: "ENABLED"
@@ -1501,7 +1509,7 @@ fields:
   name: RTS58_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0040
   enum:
     0: "ENABLED"
@@ -1511,7 +1519,7 @@ fields:
   name: RTS59_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0020
   enum:
     0: "ENABLED"
@@ -1522,7 +1530,7 @@ fields:
   name: RTS60_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0010
   enum:
     0: "ENABLED"
@@ -1532,7 +1540,7 @@ fields:
   name: RTS61_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0008
   enum:
     0: "ENABLED"
@@ -1542,7 +1550,7 @@ fields:
   name: RTS62_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0004
   enum:
     0: "ENABLED"
@@ -1552,7 +1560,7 @@ fields:
   name: RTS63_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0002
   enum:
     0: "ENABLED"
@@ -1562,7 +1570,7 @@ fields:
   name: RTS64_DISABLED
   desc: RTS 49-64 Disabled Status
   type: LSB_U16
-  bytes: [64,65]
+  bytes: [74,75]
   mask: 0x0001
   enum:
     0: "ENABLED"

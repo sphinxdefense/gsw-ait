@@ -1,9 +1,9 @@
 --- !Command
-  name:      ADCS_NOOP_CC
-  opcode:    0x0001
+  name:      ADCS_REQ_HK
+  opcode:    0x0003
   subsystem: ATTITUDE
   desc:      |
-    This command sets the operational mode.
+    Generic ADCS Request HK Packet Command
 
   arguments:
     - !Fixed
@@ -24,7 +24,7 @@
       name:  CCSDS_LENGTH
       type:  MSB_U16
       bytes: [4,5]
-      value: 0xC000
+      value: 1
       desc: CCSDS Packet Data Length
 
     - !Fixed

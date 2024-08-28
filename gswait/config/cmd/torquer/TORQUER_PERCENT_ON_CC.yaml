@@ -1,0 +1,49 @@
+!Command
+name: TORQUER_PERCENT_ON_CC
+opcode: 0x40
+subsystem: Structure
+desc: Generic_torquer Percent On Command
+arguments:
+  - !Fixed
+    name: CCSDS_STREAMID
+    desc: CCSDS Packet Identification
+    type: MSB_U16
+    value: 0x193a
+  - !Fixed
+    name: CCSDS_SEQUENCE
+    desc: CCSDS Packet Sequence Control
+    type: MSB_U16
+    value: 0xc000
+  - !Fixed
+    name: CCSDS_LENGTH
+    desc: CCSDS Packet Data Length
+    type: MSB_U16
+    value: 4
+  - !Fixed
+    name: CCSDS_FC
+    desc: CCSDS Command Function Code
+    type: U8
+    value: 4
+  - !Fixed
+    name: CCSDS_CHECKSUM
+    desc: CCSDS Command Checksum
+    type: U8
+    value: 0
+  - !Argument
+    name:  TRQNUM
+    desc:  The number corresponding to the torquer
+    units: none
+    range: [0,2]
+    type:  U8
+  - !Argument
+    name:  DIRECTION
+    desc:  he direction for the current to flow
+    units: none
+    range: [0,1]
+    type:  U8
+  - !Argument
+    name:  PERCENT_ON
+    desc:  The percent of maximum current to use
+    units: none
+    range: [0,100]
+    type:  U8

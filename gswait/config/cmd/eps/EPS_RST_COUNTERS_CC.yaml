@@ -1,0 +1,36 @@
+!Command
+name: EPS_RST_COUNTERS_CC
+opcode: 0x18
+subsystem: Electrical
+desc: Generic_eps Reset Counters Command
+arguments:
+  - !Fixed
+    name: CCSDS_STREAMID
+    desc: CCSDS Packet Identification
+    type: MSB_U16
+    bytes: [0, 1]
+    value: 0x191a
+  - !Fixed
+    name: CCSDS_SEQUENCE
+    desc: CCSDS Packet Sequence Control
+    type: MSB_U16
+    bytes: [2, 3]
+    value: 0xc000
+  - !Fixed
+    name: CCSDS_LENGTH
+    desc: CCSDS Packet Data Length
+    type: MSB_U16
+    bytes: [4, 5]
+    value: 1
+  - !Fixed
+    name: CCSDS_FC
+    desc: CCSDS Command Function Code
+    type: U8
+    bytes: 6
+    value: 1
+  - !Fixed
+    name: CCSDS_CHECKSUM
+    desc: CCSDS Command Checksum
+    type: U8
+    bytes: 7
+    value: 0
