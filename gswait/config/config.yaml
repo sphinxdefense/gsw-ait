@@ -5,8 +5,8 @@ default:
         un: root
         pw: root
 
-    extensions:
-        ait.core.cmd.Cmd: gswait.cmd.cFSCmd
+    # extensions:
+    #     ait.core.cmd.Cmd: gswait.cmd.cFSCmd
 
     command:
         port: 3075
@@ -26,270 +26,643 @@ default:
         - nos3:
             equipment: "ADCS IMU MAG NOVATEL_OEM615 ARDUCAM FSS STAR_TRACKER RADIO EPS TORQUER REACTION_WHEEL CFS CFDP CSS SYN SAMPLE"
             commands:
+              # ADCS
               - commandString: ADCS_NOOP_CC
                 description: This command sets the operational mode
                 commandId: 0x0001
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_RST_COUNTERS_CC
-                description: ADCS Reset Counters Command
+
+              - commandString: ADCS_PERFORM_ADAC
+                description: Generic ADCS Perform AD and AC Command
                 commandId: 0x0002
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_RST_COUNTERS_CC
-                description: Generic ADCS Set Mode Command
+
+              - commandString: ADCS_REQ_HK
+                description: Generic ADCS Request HK Packet Command
                 commandId: 0x0003
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_SET_MOMENTUM_MANAGEMENT_CC
-                description: Generic ADCS Set Momentum Management Command
+
+              - commandString: ADCS_RST_COUNTERS_CC
+                description: ADCS Reset Counters Command
                 commandId: 0x0004
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_SEND_DI_CC
-                description: Generic ADCS Send DI Command
+
+              - commandString: ADCS_SEND_AC_CC
+                description: Generic ADCS Send AC Command
                 commandId: 0x0005
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
+
               - commandString: ADCS_SEND_AD_CC
                 description: Generic ADCS Send AD Command
                 commandId: 0x0006
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_SEND_GNC_CC
-                description: Generic ADCS Send GNC Command
+
+              - commandString: ADCS_SEND_DI_CC
+                description: Generic ADCS Send DI Command
                 commandId: 0x0007
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_SEND_AC_CC
-                description: Generic ADCS Send AC Command
-                commandId: 0x0008
-                mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
+
               - commandString: ADCS_SEND_DO_CC
                 description: Generic ADCS Send DO Command
+                commandId: 0x0008
+                mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
+
+              - commandString: ADCS_SEND_GNC_CC
+                description: Generic ADCS Send GNC Command
                 commandId: 0x0009
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_REQ_HK
-                description: Generic ADCS Request HK Packet Command
+
+              - commandString: ADCS_SET_MODE_CC
+                description: Generic ADCS Set Mode Command
                 commandId: 0x000A
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
-              - commandString: ADCS_PERFORM_ADAC
-                description: Generic ADCS Perform AD and AC Command
+                args: ["GNC_MODE O: PASSIVE, 1: BDOT_MODE, 2: SUNSAFE_MODE"]
+
+              - commandString: ADCS_SET_MOMENTUM_MANAGEMENT_CC
+                description: Generic ADCS Set Momentum Management Command
                 commandId: 0x000B
                 mnemonicIds: [ADCS_HK_TLM_CMD_COUNT]
+                args: ["GNC_MODE O: OFF, 1: ON"]
+
+              # ARDUCAM
               - commandString: CAM_NOOP_CC
                 description: Camera NOOP Command
                 commandId: 0xc
                 mnemonicIds: [ARDUCAM_HK_TLM_CMD_COUNT]
+
               - commandString: CAM_RESET_COUNTERS_CC
                 description: Camera Reset Counters Command
                 commandId: 0xd
                 mnemonicIds: [ARDUCAM_HK_TLM_CMD_COUNT]
+
               - commandString: CAM_EXP3_CC
                 description: Camera Experiment 3 Command - Large Image
                 commandId: 0xe
                 mnemonicIds: [ARDUCAM_HK_TLM_CMD_COUNT]
+
               - commandString: CAM_HW_CHECK_CC
                 description: Camera HW Checkout
                 commandId: 0xf
                 mnemonicIds: [ARDUCAM_HK_TLM_CMD_COUNT]
+
               - commandString: CAM_SEND_HK_CC
                 description: Camera HK Request
                 commandId: 0x10
                 mnemonicIds: [ARDUCAM_HK_TLM_CMD_COUNT]
+
+              # CSS
               - commandString: CSS_NOOP_CC
                 description: css NOOP Command
                 commandId: 0x11
                 mnemonicIds: [CSS_HK_TLM_CMD_COUNT]
+
               - commandString: CSS_RST_COUNTERS_CC
                 description: css Reset Counters Command
                 commandId: 0x12
                 mnemonicIds: [CSS_HK_TLM_CMD_COUNT]
+
               - commandString: CSS_ENABLE_CC
                 description: css Enable Command
                 commandId: 0x13
                 mnemonicIds: [CSS_HK_TLM_CMD_COUNT]
+
               - commandString: CSS_DISABLE_CC
                 description: css Disable Command
                 commandId: 0x14
                 mnemonicIds: [CSS_HK_TLM_CMD_COUNT]
+
               - commandString: CSS_REQ_HK
                 description: css Request HK Packet Command
                 commandId: 0x15
                 mnemonicIds: [CSS_HK_TLM_CMD_COUNT]
+
               - commandString: CSS_REQ_DATA
                 description: css Request Data Packet Command
                 commandId: 0x16
                 mnemonicIds: [CSS_HK_TLM_CMD_COUNT]
+
+              # EPS
               - commandString: EPS_NOOP_CC
                 description: eps NOOP Command
                 commandId: 0x17
                 mnemonicIds: [EPS_HK_TLM_CMD_COUNT]
+
               - commandString: EPS_RST_COUNTERS_CC
                 description: eps Reset Counters Command
                 commandId: 0x18
                 mnemonicIds: [EPS_HK_TLM_CMD_COUNT]
+
               - commandString: EPS_SWITCH_CC
                 description: eps Switch Command
                 commandId: 0x19
                 mnemonicIds: [EPS_HK_TLM_CMD_COUNT]
+                args: ["SWITCH_NUMBER - 0: SWITCH_0, 1: SWITCH_1, 2: SWITCH_2, 3: SWITCH_3, 4: SWITCH_4, 5: SWITCH_5, 6: SWITCH_6, 7: SWITCH_7, 255: UNDEFINED", "STATE - 0: OFF, 170: ON"]
+
               - commandString: EPS_REQ_HK
                 description: eps Request HK Packet Command
                 commandId: 0x1a
                 mnemonicIds: [EPS_HK_TLM_CMD_COUNT]
+
+              # FSS
               - commandString: FSS_NOOP_CC
                 description: fss NOOP Command
                 commandId: 0x1b
                 mnemonicIds: [FSS_HK_TLM_CMD_COUNT]
+
               - commandString: FSS_RST_COUNTERS_CC
                 description: fss Reset Counters Command
                 commandId: 0x1c
                 mnemonicIds: [FSS_HK_TLM_CMD_COUNT]
+
               - commandString: FSS_ENABLE_CC
                 description: fss Enable Command
                 commandId: 0x1d
                 mnemonicIds: [FSS_HK_TLM_CMD_COUNT]
+
               - commandString: FSS_DISABLE_CC
                 description: fss Disable Command
                 commandId: 0x1e
                 mnemonicIds: [FSS_HK_TLM_CMD_COUNT]
+
               - commandString: FSS_REQ_HK
                 description: fss Request HK Packet Command
                 commandId: 0x1f
                 mnemonicIds: [FSS_HK_TLM_CMD_COUNT]
+
               - commandString: FSS_REQ_DATA
                 description: fss Request Data Packet Command
                 commandId: 0x20
                 mnemonicIds: [FSS_HK_TLM_CMD_COUNT]
+
+              # IMU
               - commandString: IMU_NOOP_CC
                 description: Generic_imu NOOP Command
                 commandId: 0x21
                 mnemonicIds: [IMU_HK_TLM_CMD_COUNT]
+
               - commandString: IMU_RST_COUNTERS_CC
                 description: Generic_imu Reset Counters Command
                 commandId: 0x22
                 mnemonicIds: [IMU_HK_TLM_CMD_COUNT]
+
               - commandString: IMU_ENABLE_CC
                 description: Generic_imu Enable Command
                 commandId: 0x23
                 mnemonicIds: [IMU_HK_TLM_CMD_COUNT]
+
               - commandString: IMU_DISABLE_CC
                 description: Generic_imu Disable Command
                 commandId: 0x24
                 mnemonicIds: [IMU_HK_TLM_CMD_COUNT]
+
               - commandString: IMU_REQ_HK
                 description: Generic_imu Request HK Packet Command
                 commandId: 0x25
                 mnemonicIds: [IMU_HK_TLM_CMD_COUNT]
+
               - commandString: IMU_REQ_DATA
                 description: Generic_imu Request Data Packet Command
                 commandId: 0x26
                 mnemonicIds: [IMU_HK_TLM_CMD_COUNT]
+
+              # MAG
               - commandString: MAG_NOOP_CC
                 description: Generic_mag NOOP Command
                 commandId: 0x27
                 mnemonicIds: [MAG_HK_TLM_CMD_COUNT]
+
               - commandString: MAG_RST_COUNTERS_CC
                 description: Generic_mag Reset Counters Command
                 commandId: 0x28
                 mnemonicIds: [MAG_HK_TLM_CMD_COUNT]
+
               - commandString: MAG_ENABLE_CC
                 description: Generic_mag Enable Command
                 commandId: 0x29
                 mnemonicIds: [MAG_HK_TLM_CMD_COUNT]
+
               - commandString: MAG_DISABLE_CC
                 description: Generic_mag Disable Command
                 commandId: 0x2a
                 mnemonicIds: [MAG_HK_TLM_CMD_COUNT]
+
               - commandString: MAG_REQ_HK
                 description: Generic_mag Request HK Packet Command
                 commandId: 0x2b
                 mnemonicIds: [MAG_HK_TLM_CMD_COUNT]
+
               - commandString: MAG_REQ_DATA
                 description: Generic_mag Request Data Packet Command
                 commandId: 0x2c
                 mnemonicIds: [MAG_HK_TLM_CMD_COUNT]
+
+              # RADIO
               - commandString: RADIO_NOOP_CC
                 description: Generic_radio NOOP Command
                 commandId: 0x2d
                 mnemonicIds: [RADIO_HK_TLM_CMD_COUNT]
+
               - commandString: RADIO_RST_COUNTERS_CC
                 description: Generic_radio Reset Counters Command
                 commandId: 0x2e
                 mnemonicIds: [RADIO_HK_TLM_CMD_COUNT]
+
               - commandString: RADIO_CONFIG_CC
                 description: Generic_radio Configuration Command
                 commandId: 0x2f
                 mnemonicIds: [RADIO_HK_TLM_CMD_COUNT]
+                args: [DEVICE_CONFIG]
+
               # - commandString: RADIO_PROXIMITY_CC
               #   description: Generic_radio Proximity Forward Command
               #   commandId: 0x30
               #   mnemonicIds: []
+
               - commandString: RADIO_REQ_HK
                 description: Generic_radio Request HK Packet Command
                 commandId: 0x31
                 mnemonicIds: [RADIO_HK_TLM_CMD_COUNT]
+
+              # REACTION WHEEL
               - commandString: RW_NOOP_CC
                 description: Generic Reaction Wheel NOOP Command
                 commandId: 0x32
                 mnemonicIds: [REACTION_WHEEL_HK_TLM_COMMAND_COUNT]
+
               - commandString: RW_RST_COUNTERS_CC
                 description: Generic Reaction Wheel Reset Counters Command
                 commandId: 0x33
                 mnemonicIds: [REACTION_WHEEL_HK_TLM_COMMAND_COUNT]
+
               - commandString: RW_REQ_DATA_CC
                 description: Generic Reaction Wheel Request Data Command
                 commandId: 0x34
                 mnemonicIds: [REACTION_WHEEL_HK_TLM_COMMAND_COUNT]
+
               - commandString: RW_SET_TORQUE_CC
                 description: Generic Reaction Wheel Set Torque Command
                 commandId: 0x35
                 mnemonicIds: [REACTION_WHEEL_HK_TLM_COMMAND_COUNT, REACTION_WHEEL_HK_TLM_MOMENTUM_NMS_0,REACTION_WHEEL_HK_TLM_MOMENTUM_NMS_1,REACTION_WHEEL_HK_TLM_MOMENTUM_NMS_2]
+                args: ["WHEEL_NUMBER - (0-2)", "TORQUE"]
+
+              # STAR TRACKER
               - commandString: STAR_TRACKER_NOOP_CC
                 description: Generic_star_tracker NOOP Command
                 commandId: 0x36
                 mnemonicIds: [STAR_TRACKER_HK_TLM_CMD_COUNT]
+
               - commandString: STAR_TRACKER_RST_COUNTERS_CC
                 description: Generic_star_tracker Reset Counters Command
                 commandId: 0x37
                 mnemonicIds: [STAR_TRACKER_HK_TLM_CMD_COUNT]
+
               - commandString: STAR_TRACKER_ENABLE_CC
                 description: Generic_star_tracker Enable Command
                 commandId: 0x38
                 mnemonicIds: [STAR_TRACKER_HK_TLM_CMD_COUNT]
+
               - commandString: STAR_TRACKER_DISABLE_CC
                 description: Generic_star_tracker Disable Command
                 commandId: 0x39
                 mnemonicIds: [STAR_TRACKER_HK_TLM_CMD_COUNT]
+
               - commandString: STAR_TRACKER_REQ_HK
                 description: Generic_star_tracker Request HK Packet Command
                 commandId: 0x3a
                 mnemonicIds: [STAR_TRACKER_HK_TLM_CMD_COUNT]
+
               - commandString: STAR_TRACKER_REQ_DATA
                 description: Generic_star_tracker Request Data Packet Command
                 commandId: 0x3b
                 mnemonicIds: [STAR_TRACKER_HK_TLM_CMD_COUNT]
+
+              # TORQUER
               - commandString: TORQUER_NOOP_CC
                 description: Generic_torquer NOOP Command
                 commandId: 0x3c
                 mnemonicIds: [TORQUER_HK_TLM_CMD_COUNT]
+
               - commandString: TORQUER_RST_COUNTERS_CC
                 description: Generic_torquer Reset Counters Command
                 commandId: 0x3d
                 mnemonicIds: [TORQUER_HK_TLM_CMD_COUNT]
+
               - commandString: TORQUER_ENABLE_CC
                 description: Generic_torquer Enable Command
                 commandId: 0x3e
                 mnemonicIds: [TORQUER_HK_TLM_CMD_COUNT]
+
               - commandString: TORQUER_DISABLE_CC
                 description: Generic_torquer Disable Command
                 commandId: 0x3f
                 mnemonicIds: [TORQUER_HK_TLM_CMD_COUNT]
+
               - commandString: TORQUER_PERCENT_ON_CC
                 description: Generic_torquer Percent On Command
                 commandId: 0x40
                 mnemonicIds: [TORQUER_HK_TLM_CMD_COUNT, TORQUER_HK_TLM_TORQUER_DIRECTION_0,TORQUER_HK_TLM_TORQUER_DIRECTION_1,TORQUER_HK_TLM_TORQUER_DIRECTION_2,TORQUER_HK_TLM_TORQUER_PERCENT_ON_0,TORQUER_HK_TLM_TORQUER_PERCENT_ON_1,TORQUER_HK_TLM_TORQUER_PERCENT_ON_2]
+                args: ["TRQNUM - (0-2)","Direction - (0-1)","PERCENT_ON - (0-100)"]
+
               - commandString: TORQUER_ALL_PERCENT_ON_CC
                 description: Generic_torquer All Percent On Command
                 commandId: 0x41
                 mnemonicIds: [TORQUER_HK_TLM_CMD_COUNT, TORQUER_HK_TLM_TORQUER_DIRECTION_0,TORQUER_HK_TLM_TORQUER_DIRECTION_1,TORQUER_HK_TLM_TORQUER_DIRECTION_2,TORQUER_HK_TLM_TORQUER_PERCENT_ON_0,TORQUER_HK_TLM_TORQUER_PERCENT_ON_1,TORQUER_HK_TLM_TORQUER_PERCENT_ON_2]
+                args: ["DIRECTION_0 - (0-1)", "PERCENT_ON_0 - (0-100)","DIRECTION_1 - (0-1)", "PERCENT_ON_1 - (0-100)","DIRECTION_2 - (0-1)", "PERCENT_ON_2 - (0-100)"]
+
               - commandString: TORQUER_SEND_HK_CC
                 description: Generic_torquer Device Send HK Command
                 commandId: 0x42
                 mnemonicIds: [TORQUER_HK_TLM_CMD_COUNT]
+
+              # OEM615
+              - commandString: NOVATEL_OEM615_NOOP_CC
+                description: Novatel_oem615 NOOP Command
+                commandId: 0x43
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              - commandString: NOVATEL_OEM615_RST_COUNTERS_CC
+                description: Novatel_oem615 Reset Counters Command
+                commandId: 0x44
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              - commandString: NOVATEL_OEM615_ENABLE_CC
+                description: Novatel_oem615 Enable Command
+                commandId: 0x45
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              - commandString: NOVATEL_OEM615_DISABLE_CC
+                description: Novatel_oem615 Disable Command
+                commandId: 0x46
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              - commandString: NOVATEL_OEM615_LOG_CC
+                description: Novatel_oem615 Log Command
+                commandId: 0x47
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+                args: ["LOG_TYPE - 0: BESTXYZA, 1: GPGGAA, 2: RANGECMPA, 3: BESTXYZB, 4: RANGECMPB", "PERIOD - 0: ONCE, 1: 0.05, 2: 0.1, 3: 0.2, 4: 0.25, 5: 0.5"]
+
+              - commandString: NOVATEL_OEM615_UNLOG_CC
+                description: Novatel_oem615 Unlog Command
+                commandId: 0x48
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+                args: ["LOG_TYPE - 0: BESTXYZA, 1: GPGGAA, 2: RANGECMPA, 3: BESTXYZB, 4: RANGECMPB"]
+
+              - commandString: NOVATEL_OEM615_UNLOGALL_CC
+                description: Novatel_oem615 Unlog All Command
+                commandId: 0x49
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              - commandString: NOVATEL_OEM615_SERIALCONFIG_CC
+                description: Novatel_oem615 Serial Config Command
+                commandId: 0x4a
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              - commandString: NOVATEL_OEM615_REQ_HK
+                description: Novatel_oem615 Request HK Packet Command
+                commandId: 0x4b
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              - commandString: NOVATEL_OEM615_REQ_DATA
+                description: Novatel_oem615 Request Data Packet Command
+                commandId: 0x4c
+                mnemonicIds: [NOVATEL_OEM615_HK_TLM_CMD_COUNT]
+
+              # SAMPLE
+              - commandString: SAMPLE_NOOP_CC
+                description: Sample NOOP Command
+                commandId: 0x4d
+                mnemonicIds: [SAMPLE_HK_TLM_CMD_COUNT]
+
+              - commandString: SAMPLE_RST_COUNTERS_CC
+                description: Sample Reset Counters Command
+                commandId: 0x4e
+                mnemonicIds: [SAMPLE_HK_TLM_CMD_COUNT]
+
+              - commandString: SAMPLE_ENABLE_CC
+                description: Sample Enable Command
+                commandId: 0x4f
+                mnemonicIds: [SAMPLE_HK_TLM_CMD_COUNT]
+
+              - commandString: SAMPLE_DISABLE_CC
+                description: Sample Disable Command
+                commandId: 0x50
+                mnemonicIds: [SAMPLE_HK_TLM_CMD_COUNT]
+
+              - commandString: SAMPLE_CONFIG_CC
+                description: Sample Configuration Command
+                commandId: 0x51
+                mnemonicIds: [SAMPLE_HK_TLM_CMD_COUNT]
+                args: [DEVICE_CONFIG]
+
+              - commandString: SAMPLE_REQ_HK
+                description: Sample Request HK Packet Command
+                commandId: 0x52
+                mnemonicIds: [SAMPLE_HK_TLM_CMD_COUNT]
+
+              - commandString: SAMPLE_REQ_DATA
+                description: Sample Request Data Packet Command
+                commandId: 0x53
+                mnemonicIds: [SAMPLE_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_NOOP_CC
+                description: Syn NOOP Command
+                commandId: 0x54
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_RST_COUNTERS_CC
+                description: Syn Reset Counters Command
+                commandId: 0x55
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_REQ_HK
+                description: Syn Request HK Packet Command
+                commandId: 0x56
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_REQ_DATA
+                description: Syn Request Data Packet Command
+                commandId: 0x57
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_RESET_CC
+                description: SYN RESET Command
+                commandId: 0x58
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_PRIO_CC
+                description: SYN PRIORITIZE Command
+                commandId: 0x59
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_GET_PDATA_CC
+                description: SYN GET PRIORITY DATA Command
+                commandId: 0x5a
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_DISP_PDATA_CC
+                description: SYN DISPLAY PRIORITY DATA Command
+                commandId: 0x5b
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_ADD_DATA_CC
+                description: SYN ADD DATA Command
+                commandId: 0x5c
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+
+              - commandString: SYN_CONFIG_DL_CC
+                description: SYN SET DOWNLINK VALUE Command
+                commandId: 0x5d
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+                args: ["DEVICE_CONFIG - (0 - 1500)"]
+
+              - commandString: SYN_CONFIG_ALPHA_CC
+                description: SYN SET ALPHA VALUE Command
+                commandId: 0x5e
+                mnemonicIds: [SYN_HK_TLM_CMD_COUNT]
+                args: ["DEVICE_CONFIG - (0,100)"]
+
+              # CFS
+              - commandString: CF_NOOP
+                description: CF App Noop Command.
+                commandId: 0x5f
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
+              - commandString: CF_RESET_COUNTERS
+                description: This command resets the chosen CF Counters
+                commandId: 0x60
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["VALUE - 0: ALL, 1: CMD, 2: FAULT, 3: UP, 4: DOWN"]
+
+              # - commandString: CF_TX_FILE
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x61
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_PLAYBACK_DIR
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x62
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
+              - commandString: CF_FREEZE
+                description: CF Freeze Active Transactions Command.
+                commandId: 0x63
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
+              - commandString: CF_THAW
+                description: CF Thaw Active Transactions Command.
+                commandId: 0x64
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
+              # - commandString: CF_SUSPEND
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x65
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_RESUME
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x66
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_CANCEL
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x67
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_ABANDON
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x68
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_SET_MIB_PARAMETER
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x69
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_GET_MIB_PARAMETER
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x6a
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_SEND_TRANS_DIAG
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x6b
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              # - commandString: CF_SET_POLL_PARAMETER
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x6c
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              - commandString: CF_SEND_CFG_PARAMS
+                description: CF Send configuration parameters in a packet.
+                commandId: 0x6d
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
+              - commandString: CF_WRITE_QUEUE_INFO
+                description: Command to write a queues information.
+                commandId: 0x6e
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["TYPE - 1: UP, 2: DOWN", "CHAN - 0: CHAN0, 1: CHAN1", "QUEUE - 1: ACTIVE, 2: HISTORY"]
+
+              - commandString: CF_ENABLE_DEQUEUE
+                description: Command to Enable dequeueing.
+                commandId: 0x6f
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: [CHAN]
+
+              - commandString: CF_DISABLE_DEQUEUE
+                description: Command to Disable dequeueing.
+                commandId: 0x70
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: [CHAN]
+
+              - commandString: CF_ENABLE_DIRECTORY_POLLING
+                description: Command to Enable directory polling.
+                commandId: 0x71
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["CHAN - 0: CHAN0, 1: CHAN1", DIRECTORY]
+
+              - commandString: CF_DISABLE_DIRECTORY_POLLING
+                description: Command to Disable directory polling.
+                commandId: 0x72
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["CHAN - 0: CHAN0, 1: CHAN1", DIRECTORY]
+
+                ###
+              # - commandString: CF_DELETE_QUEUE_NODE
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x73
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
+              - commandString: CF_PURGE_QUEUE
+                description: CF Purge queue command.
+                commandId: 0x74
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["TYPE - 1: UP, 2: DOWN", "CHAN - 0: CHAN0, 1: CHAN1", "QUEUE - 1: ACTIVE, 2: HISTORY"]
+
+              # - commandString: CF_WRITE_ACTIVE_TRANS
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x75
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
+              - commandString: CF_KICKSTART
+                description: CF Kickstart command.
+                commandId: 0x76
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["CHAN - 0: CHAN0, 1: CHAN1"]
+
+              # - commandString: CF_QUICK_STAT
+              #   description: CosmosCfsConfig::PROCESSOR_ENDIAN
+              #   commandId: 0x77
+              #   mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+              - commandString: CF_GIVE_TAKE
+                description: CF Give / Take Semaphore command.
+                commandId: 0x78
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["CHAN - 0: CHAN0, 1: CHAN1", GIVE_OR_TAKE]
+
+              - commandString: CF_ENADIS_AUTO_SUSPEND
+                description: Command to Enable or Disable auto suspending.
+                commandId: 0x79
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+                args: ["DIS_EN - 0: DISABLE, 1: ENABLE"]
+
+              - commandString: CF_SEND_HK
+                description: CF App Send HK.
+                commandId: 0x7a
+                mnemonicIds: [CF_HKPACKET_CMDCOUNTER]
+
             subsystems:
                 - name: Attitude
                   status: normal

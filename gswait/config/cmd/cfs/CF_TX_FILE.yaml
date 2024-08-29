@@ -1,0 +1,56 @@
+# FIXME: AIT String ARG?
+
+# !Command
+# name: CF_TX_FILE
+# opcode: '0x61'
+# subsystem: Software
+# desc: CosmosCfsConfig::PROCESSOR_ENDIAN
+# arguments:
+#   - !Fixed
+#     name: CCSDS_STREAMID
+#     desc: CCSDS Packet Identification
+#     type: MSB_U16
+#     value: 0x18B3
+#     bytes: [0,1]
+#   - !Fixed
+#     name: CCSDS_SEQUENCE
+#     desc: CCSDS Packet Sequence Control
+#     type: MSB_U16
+#     value: 0xc000
+#     bytes: [2,3]
+#   - !Fixed
+#     name: CCSDS_LENGTH
+#     desc: CCSDS Packet Data Length
+#     type: MSB_U16
+#     value: 5
+#     bytes: [4,5]
+#   - !Fixed
+#     name: CCSDS_FC
+#     desc: CCSDS Command Function Code
+#     type: U8
+#     value: 1
+#     bytes: 6
+#   - !Fixed
+#     name: CCSDS_CHECKSUM
+#     desc: CCSDS Command Checksum
+#     type: U8
+#     value: 0
+#     bytes: 7
+#   - !Argument
+#     name:  VALUE
+#     desc:  Counters to reset
+#     units: none
+#     type:  U8
+#     bytes: 8
+#     enum:
+#       0: ALL
+#       1: CMD
+#       2: FAULT
+#       3: UP
+#       4: DOWN
+#   - !Argument
+#     name:  SPARE
+#     desc:  Spare - Unused
+#     units: none
+#     type:  U8
+#     bytes: 9

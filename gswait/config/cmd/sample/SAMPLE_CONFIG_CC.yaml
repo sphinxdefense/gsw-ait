@@ -1,14 +1,14 @@
 !Command
-name: RADIO_CONFIG_CC
-opcode: 0x2f
-subsystem: Communications
-desc: Generic_radio Configuration Command
+name: SAMPLE_CONFIG_CC
+opcode: 0x51
+subsystem: Simulation
+desc: Sample Configuration Command
 arguments:
   - !Fixed
     name: CCSDS_STREAMID
     desc: CCSDS Packet Identification
     type: MSB_U16
-    value: 0x1930
+    value: 0x18fa
     bytes: [0,1]
   - !Fixed
     name: CCSDS_SEQUENCE
@@ -20,13 +20,13 @@ arguments:
     name: CCSDS_LENGTH
     desc: CCSDS Packet Data Length
     type: MSB_U16
-    bytes: [4,5]
     value: 5
+    bytes: [4,5]
   - !Fixed
     name: CCSDS_FC
     desc: CCSDS Command Function Code
     type: U8
-    value: 2
+    value: 4
     bytes: 6
   - !Fixed
     name: CCSDS_CHECKSUM

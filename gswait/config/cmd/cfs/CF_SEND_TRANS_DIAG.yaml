@@ -1,0 +1,58 @@
+# FIXME: AIT String ARG?
+
+# !Command
+# name: CF_SEND_TRANS_DIAG
+# opcode: '0x6b'
+# subsystem: Software
+# desc: CosmosCfsConfig::PROCESSOR_ENDIAN
+# arguments:
+# - !Fixed
+#   name: CCSDS_STREAMID
+#   desc: CCSDS Packet Identification
+#   type: MSB_U16
+#   value: '0x18b3'
+# - !Fixed
+#   name: CCSDS_SEQUENCE
+#   desc: CCSDS Packet Sequence Control
+#   type: MSB_U16
+#   value: '0xc000'
+# - !Fixed
+#   name: CCSDS_LENGTH
+#   desc: CCSDS Packet Data Length
+#   type: MSB_U16
+#   value: 65
+# - !Fixed
+#   name: CCSDS_FC
+#   desc: CCSDS Command Function Code
+#   type: U8
+#   value: 12
+# - !Fixed
+#   name: CCSDS_CHECKSUM
+#   desc: CCSDS Command Checksum
+#   type: U8
+#   value: 0
+# - !Fixed
+#   name: CCSDS_STREAMID
+#   desc: CCSDS Packet Identification
+#   type: MSB_U16
+#   value: '0x18b3'
+# - !Fixed
+#   name: CCSDS_SEQUENCE
+#   desc: CCSDS Packet Sequence Control
+#   type: MSB_U16
+#   value: '0xc000'
+# - !Fixed
+#   name: CCSDS_LENGTH
+#   desc: CCSDS Packet Data Length
+#   type: MSB_U16
+#   value: 65
+# - !Fixed
+#   name: CCSDS_FC
+#   desc: CCSDS Command Function Code
+#   type: U8
+#   value: 12
+# - !Fixed
+#   name: CCSDS_CHECKSUM
+#   desc: CCSDS Command Checksum
+#   type: U8
+#   value: 0

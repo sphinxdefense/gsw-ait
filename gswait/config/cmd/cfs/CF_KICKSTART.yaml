@@ -1,14 +1,14 @@
 !Command
-name: RADIO_CONFIG_CC
-opcode: 0x2f
-subsystem: Communications
-desc: Generic_radio Configuration Command
+name: CF_KICKSTART
+opcode: 0x76
+subsystem: Software
+desc: CF Kickstart command.
 arguments:
   - !Fixed
     name: CCSDS_STREAMID
     desc: CCSDS Packet Identification
     type: MSB_U16
-    value: 0x1930
+    value: 0x18b3
     bytes: [0,1]
   - !Fixed
     name: CCSDS_SEQUENCE
@@ -20,13 +20,13 @@ arguments:
     name: CCSDS_LENGTH
     desc: CCSDS Packet Data Length
     type: MSB_U16
-    bytes: [4,5]
     value: 5
+    bytes: [4,5]
   - !Fixed
     name: CCSDS_FC
     desc: CCSDS Command Function Code
     type: U8
-    value: 2
+    value: 23
     bytes: 6
   - !Fixed
     name: CCSDS_CHECKSUM
@@ -35,8 +35,32 @@ arguments:
     value: 0
     bytes: 7
   - !Argument
-    name:  DEVICE_CONFIG
-    desc:  Device Configuration
+    name:  CHAN
+    desc:  CFDP Chan 0 or 1
     units: none
-    type:  MSB_U32
-    bytes: [8,9]
+    type:  U8
+    bytes: 8
+    enum:
+      0: Chan 0
+      1: Chan 1
+  - !Fixed
+    name:  SPARE1
+    desc:  Spare - Unused
+    units: none
+    type:  U8
+    bytes: 9
+    value: 0
+  - !Fixed
+    name:  SPARE2
+    desc:  Spare - Unused
+    units: none
+    type:  U8
+    bytes: 10
+    value: 0
+  - !Fixed
+    name:  SPARE3
+    desc:  Spare - Unused
+    units: none
+    type:  U8
+    bytes: 11
+    value: 0

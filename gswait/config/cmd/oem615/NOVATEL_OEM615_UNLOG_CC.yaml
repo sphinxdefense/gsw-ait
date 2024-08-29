@@ -1,14 +1,14 @@
 !Command
-name: RADIO_CONFIG_CC
-opcode: 0x2f
-subsystem: Communications
-desc: Generic_radio Configuration Command
+name: NOVATEL_OEM615_UNLOG_CC
+opcode: 0x48
+subsystem: Payload
+desc: Novatel_oem615 Unlog Command
 arguments:
   - !Fixed
     name: CCSDS_STREAMID
     desc: CCSDS Packet Identification
     type: MSB_U16
-    value: 0x1930
+    value: 0x1870
     bytes: [0,1]
   - !Fixed
     name: CCSDS_SEQUENCE
@@ -20,13 +20,13 @@ arguments:
     name: CCSDS_LENGTH
     desc: CCSDS Packet Data Length
     type: MSB_U16
+    value: 2
     bytes: [4,5]
-    value: 5
   - !Fixed
     name: CCSDS_FC
     desc: CCSDS Command Function Code
     type: U8
-    value: 2
+    value: 5
     bytes: 6
   - !Fixed
     name: CCSDS_CHECKSUM
@@ -35,8 +35,14 @@ arguments:
     value: 0
     bytes: 7
   - !Argument
-    name:  DEVICE_CONFIG
-    desc:  Device Configuration
+    name:  LOG_TYPE
+    desc:  Log Type
     units: none
-    type:  MSB_U32
-    bytes: [8,9]
+    type:  U8
+    bytes: 8
+    enum:
+      0: BESTXYZA
+      1: GPGGAA
+      2: RANGECMPA
+      3: BESTXYZB
+      4: RANGECMPB

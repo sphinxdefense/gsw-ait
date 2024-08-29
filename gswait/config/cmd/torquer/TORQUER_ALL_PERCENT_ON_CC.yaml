@@ -8,37 +8,44 @@ arguments:
     name: CCSDS_STREAMID
     desc: CCSDS Packet Identification
     type: MSB_U16
+    bytes: [0,1]
     value: 0x193a
   - !Fixed
     name: CCSDS_SEQUENCE
     desc: CCSDS Packet Sequence Control
     type: MSB_U16
+    bytes: [2,3]
     value: 0xc000
   - !Fixed
     name: CCSDS_LENGTH
     desc: CCSDS Packet Data Length
     type: MSB_U16
+    bytes: [4,5]
     value: 7
   - !Fixed
     name: CCSDS_FC
     desc: CCSDS Command Function Code
     type: U8
+    bytes: 6
     value: 5
   - !Fixed
     name: CCSDS_CHECKSUM
     desc: CCSDS Command Checksum
     type: U8
+    bytes: 7
     value: 0
   - !Argument
     name:  DIRECTION_0
     desc:  Direction - 0
     units: none
+    bytes: 8
     range: [0,1]
     type:  U8
   - !Argument
     name:  PERCENT_ON_0
     desc:  Percent On - 0
     units: none
+    bytes: 9
     range: [0,100]
     type:  U8
   - !Argument
@@ -46,22 +53,26 @@ arguments:
     desc:  Direction - 1
     units: none
     range: [0,1]
+    bytes: 10
     type:  U8
   - !Argument
     name:  PERCENT_ON_1
     desc:  Percent On - 1
     units: none
     range: [0,100]
+    bytes: 11
     type:  U8
   - !Argument
     name:  DIRECTION_2
     desc:  Direction - 2
     units: none
     range: [0,1]
+    bytes: 12
     type:  U8
   - !Argument
     name:  PERCENT_ON_2
     desc:  Percent On - 2
     units: none
     range: [0,100]
+    bytes: 13
     type:  U8
