@@ -97,7 +97,7 @@ class CCSDSPacketHandler(Handler):
         udf_length = packet_data_length - self.packet_secondary_header_length
         udf_start = CCSDS_PRIMARY_HEADER_LEN + self.packet_secondary_header_length
         user_data_field = input_data[udf_start : udf_start + udf_length + 1]
-        ait.core.log.info(
+        ait.core.log.debug(
             f"CCSDSPacketHandler: Handling APID {stream_id} with length: {len(user_data_field)}"
         )
         return pickle.dumps((packet_uid, user_data_field), 2)
