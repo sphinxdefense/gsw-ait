@@ -5,8 +5,8 @@ default:
         un: root
         pw: root
 
-    extensions:
-        ait.core.cmd.Cmd: gswait.cmd.cFSCmd
+    # extensions:
+    #     ait.core.cmd.Cmd: gswait.cmd.cFSCmd
 
     command:
         port: 3075
