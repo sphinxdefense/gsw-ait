@@ -12,6 +12,16 @@ services:
       - ait
     command: ["source ~/.bashrc && ait-server"]
 
+  nos-fsw:
+    container_name: nos-fsw
+    hostname: nos_fsw
+    platform: linux/amd64
+    build:
+      context: .
+    networks:
+      - ait
+    command: ["source ~/.bashrc && nc -lvu 0.0.0.0 5012"]
+
   gsw-api:
     container_name: gsw-api
     platform: linux/amd64

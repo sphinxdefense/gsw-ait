@@ -1,0 +1,33 @@
+--- !Command
+  name:      DEBUG
+  opcode:    0xFF
+  subsystem: DEBUG
+  desc:      |
+    "Sends 'hello'"
+
+  arguments:
+    - !Fixed
+      name:  H
+      type:  U8
+      value: 72
+      bytes: 0
+    - !Fixed
+      name:  e
+      type:  U8
+      value: 101
+      bytes: 1
+    - !Fixed
+      name:  l
+      type:  U8
+      value: 108
+      bytes: 2
+    - !Fixed
+      name:  l
+      type:  U8
+      value: 108
+      bytes: 3
+    - !Fixed
+      name:  o
+      type:  U8
+      value: 111
+      bytes: 4

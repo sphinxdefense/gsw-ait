@@ -26,6 +26,12 @@ default:
         - nos3:
             equipment: "ADCS IMU MAG NOVATEL_OEM615 ARDUCAM FSS STAR_TRACKER RADIO EPS TORQUER REACTION_WHEEL CFS CFDP CSS SYN SAMPLE"
             commands:
+              # DEBUG
+              - commandString: DEBUG
+                description: "Sends 'hello'"
+                commandId: 0x9999
+                mnemonicIds: []
+
               # ADCS
               - commandString: ADCS_NOOP_CC
                 description: This command sets the operational mode
@@ -1111,8 +1117,8 @@ default:
         outbound-streams:
             - stream:
                 name: command_stream
-                # handlers:
-                #     - name: gswait.handlers.DebugHandler
+                handlers:
+                    - name: gswait.handlers.DebugHandler
                 output:
                     - "UDP"
                     - "nos_fsw"

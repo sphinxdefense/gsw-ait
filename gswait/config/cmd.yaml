@@ -123,3 +123,4 @@
 - !include ./cmd/cfs/CF_SEND_HK.yaml
 - !include ./cmd/cfs/CF_THAW.yaml
 - !include ./cmd/cfs/CF_WRITE_QUEUE_INFO.yaml
+- !include ./cmd/debug/DEBUG.yaml
