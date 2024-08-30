@@ -25,6 +25,24 @@ import struct
 from ait.core import ccsds, cmd
 
 
+class NOS3Cmd(cmd.Cmd):
+    def __init__(self, defn, *args):
+        super(NOS3Cmd, self).__init__(defn, *args)
+
+    def encode(self, pad=0, header=False):
+        encoded = bytearray([])
+        index = 0
+        for defn in self.defn.argdefns:
+            if defn.fixed:
+                value = defn.value
+            else:
+                value = self.args[index]
+                index += 1
+            encoded.extend(defn.encode(value))
+
+        return encoded
+
+
 class cFSCmd(cmd.Cmd):
     def __init__(self, defn, *args):
         super(cFSCmd, self).__init__(defn, *args)
