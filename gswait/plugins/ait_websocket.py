@@ -173,9 +173,7 @@ class SessionStore(dict):
         HTTP 401 Unauthorized error.
         """
         sid = bottle.request.get_cookie("sid")
-        log.info(sid)
         session = self.get(sid)
-        log.info(session)
         if session is None:
             log.info("invalid session id")
             raise bottle.HTTPError(401, "Invalid Session Id")
@@ -416,7 +414,6 @@ class AITWebsocket(Plugin):
             """
             with Sessions.current() as session:  # noqa: F841
                 command = bottle.request.forms.get("command").strip()
-                log.info(command)
                 args = command.split()
                 if args:
                     name = args[0].upper()
@@ -612,6 +609,7 @@ def handle_set_contact():
 
 
 @App.route("/contact", method="GET")
+# @enable_cors
 def contact():
     return {
         "aos": 1724011334001,  # int(time.time()), #datetime.now(timezone.utc).isoformat(),
