@@ -611,6 +611,36 @@ def handle_set_contact():
 #                 yield "event: probe\ndata:\n\n"
 
 
+@App.route("/contact", method="GET")
+def contact():
+    return {
+        "aos": 1724011334001,  # int(time.time()), #datetime.now(timezone.utc).isoformat(),
+        "los": 1724012606001,  # int(time.time()) + 60*10, #(datetime.now(timezone.utc) + timedelta(minutes=10)).isoformat(),
+        "id": "296017c1-2fa9-4e12-9ef2-56d73680feaa",
+        "iron": 9999,
+        "norad_id": 99999,
+        "name": 6619323894333440,
+        "type": "contact",
+        "priority": "low",
+        "status": "normal",
+        "ground": "AWS",
+        "rev": 3856,
+        "satellite": "nos3",
+        "state": "executing",
+        "step": "Lock",
+        "detail": "nos3 Simulation",
+        "dayOfYear": 231,
+        "latitude": 10.0,
+        "longitude": 30.0,
+        "azimuth": 5.0,
+        "elevation": 30.0,
+        "mode": "automatic",
+        "resolution": "pass",
+        "resolutionStatus": "normal",
+        "selected": True,
+    }
+
+
 @App.route("/tlm/dict", method="GET")
 # @enable_cors
 def handle_tlm_get():

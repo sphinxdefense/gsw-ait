@@ -22,20 +22,20 @@ services:
       - ait
     command: ["source ~/.bashrc && nc -lvu 0.0.0.0 5012"]
 
-  gsw-api:
-    container_name: gsw-api
-    platform: linux/amd64
-    build:
-      context: .
-    environment:
-      LOG_LEVEL: INFO
-    networks:
-      - ait
-    ports:
-      - 8000:8000
-      - 8765:8765
-    command: ["source ~/.bashrc && uvicorn api.main:app --host=0.0.0.0 --port=8000 --log-config=logging.yml"]
-    #command: ["sleep infinity"]
+  # gsw-api:
+  #   container_name: gsw-api
+  #   platform: linux/amd64
+  #   build:
+  #     context: .
+  #   environment:
+  #     LOG_LEVEL: INFO
+  #   networks:
+  #     - ait
+  #   ports:
+  #     - 8000:8000
+  #     - 8765:8765
+  #   command: ["source ~/.bashrc && uvicorn api.main:app --host=0.0.0.0 --port=8000 --log-config=logging.yml"]
+  #   #command: ["sleep infinity"]
 
   telem:
     container_name: telem

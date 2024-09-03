@@ -22,4 +22,4 @@ time.sleep(10)
 while True:
     for packet in packets:
         sock.sendto(packet, (host, port))
-        time.sleep(1)
+        time.sleep(0.01)

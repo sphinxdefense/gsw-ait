@@ -16,7 +16,6 @@ WORKDIR $PROJECT_HOME
 RUN poetry install --no-interaction --no-ansi --no-root
 
 WORKDIR $PROJECT_HOME
-COPY api $PROJECT_HOME/api
 COPY gswait $PROJECT_HOME/gswait
 COPY scripts $PROJECT_HOME/scripts
 COPY data $PROJECT_HOME/data

@@ -1,5 +1,0 @@
-> select * from GENERIC_ADCS_AC
-name: GENERIC_ADCS_AC
-time                BDOT_X BDOT_Y BDOT_Z BOLD_X BOLD_Y BOLD_Z B_RANGE     CMD_WBN_X CMD_WBN_Y CMD_WBN_Z ERR_T H_MGMT KB  KP_X   KP_Y   KP_Z   KR_X   KR_Y   KR_Z   SSIDE_X SSIDE_Y SSIDE_Z TCMD_X TCMD_Y TCMD_Z THERR_X THERR_Y THERR_Z VMAX WERR_X WERR_Y WERR_Z
-----                ------ ------ ------ ------ ------ ------ -------     --------- --------- --------- ----- ------ --  ----   ----   ----   ----   ----   ----   ------- ------- ------- ------ ------ ------ ------- ------- ------- ---- ------ ------ ------
-1723236065021677000 0      0      0      0      0      0      0.000004096 0         0         0         0     0      200 0.0047 0.0047 0.0047 0.1329 0.1329 0.1329 1       0       0       0      0      0      0       0       0       0.1  0      0      0
