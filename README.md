@@ -12,12 +12,13 @@ This software implements a telemetry de-commutation and command encoding server 
 
 ## Quick Start
 
-A basic demonstration of AIT’s capabilities can be seen by running make on the supplied Makefile.  This will create four services:
+A basic demonstration of AIT’s capabilities can be seen by running make on the supplied Makefile.  This will create five services:
 
     - gsw-ait: The core de-commutation and encoding software
     - nos-fsw: A basic endpoint to receive commands
     - telem: replays a nos3 telemetry recording on repeat for ingestion by gsw-ait
     - Influxdb: a database to store the de-commutated telemetry
+    - ttc-command: a basic demo ui
 
 To run the demo, simply clone the repository and then run
 
@@ -25,17 +26,17 @@ To run the demo, simply clone the repository and then run
 make run
 ```
 
-from the top level of the repository.  You can then use your preferred graphical or command line utility to view the data in InfluxDB or you can connect a UI (insert link here) to the defined websocket port.
+from the top level of the repository.  You can then use your preferred graphical or command line utility to view the data in InfluxDB or you can connect to the UI at http://localhost:80.
 
 ## Default Endpoints and Ports
 
 The following are the default ports for communication with various endpoints and services assuming you have started the services with the supplied docker compose file:
 
-    - influxdb   : influxdb:8086
-    - command rx : gsw-ait:3075
-    - command tx : nos_fsw:5012
-    - telem rx   : 0.0.0.0:5013
-    - websocket  : localhost:8001
+    influxdb   : influxdb:8086
+    command rx : gsw-ait:3075
+    command tx : nos_fsw:5012
+    telem rx   : 0.0.0.0:5013
+    websocket  : localhost:8001
 
 ## Current Limitations
 
