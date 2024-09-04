@@ -47,6 +47,8 @@ from ait.core.server.plugin import Plugin
 import copy
 from datetime import datetime  # , timedelta
 
+sid = None
+
 
 class Session(object):
     """Session
@@ -172,7 +174,8 @@ class SessionStore(dict):
         """Returns the current Session for this HTTP connection or raise an
         HTTP 401 Unauthorized error.
         """
-        sid = bottle.request.get_cookie("sid")
+        # sid = bottle.request.get_cookie("sid")
+        log.info(f"current sid: {sid}")
         session = self.get(sid)
         if session is None:
             log.info("invalid session id")
@@ -535,7 +538,10 @@ class AITWebsocket(Plugin):
 # @enable_cors
 def handle_root():
     """Return index page"""
-    return Sessions.create()
+    global sid
+    sid = Sessions.create()
+    log.info(f"create sid: {sid}")
+    return sid
 
 
 #     return bottle.template("index.html", version=VERSION)
