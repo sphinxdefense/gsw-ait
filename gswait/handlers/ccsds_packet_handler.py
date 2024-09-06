@@ -75,6 +75,8 @@ class CCSDSPacketHandler(Handler):
             ],
         )
         stream_id = int(ccsds_hdr.stream_id)
+        if stream_id != 2451:  # FIXME
+            return
 
         if stream_id not in self.packet_types:
             msg = f"CCSDSPacketHandler: Packet APID {stream_id} not present in config - Available packet APIDs are {self.packet_types.keys()}"
