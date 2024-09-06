@@ -968,7 +968,7 @@ def handle_tlm_realtime():
                 try:
                     name, delta, dntoeus, counter = session.deltas.popleft(timeout=30)
                     uid, packet, _ = session.telemetry.popleft(timeout=30)
-                    if packet:
+                    if packet and uid in [65]:
                         wsock.send(
                             json.dumps(
                                 {
